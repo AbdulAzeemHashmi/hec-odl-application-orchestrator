@@ -1,0 +1,36 @@
+{
+    "name": "hec-odl-application-orchestrator",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "postinstall": "prisma generate"
+    },
+    "dependencies": {
+        "@auth0/nextjs-auth0": "^3.5.0",
+        "@google/generative-ai": "^0.2.0",
+        "@langchain/community": "^0.2.0",
+        "@langchain/core": "^0.2.0",
+        "@langchain/ollama": "^0.0.1",
+        "@langchain/xai": "^0.0.1",
+        "@prisma/client": "^5.14.0",
+        "@supabase/supabase-js": "^2.43.0",
+        "@types/node": "20.11.0",
+        "@types/react": "18.2.48",
+        "@types/react-dom": "18.2.18",
+        "ai": "^3.2.0",
+        "autoprefixer": "^10.4.19",
+        "langchain": "^0.2.0",
+        "next": "14.1.0",
+        "postcss": "^8.4.38",
+        "prisma": "^5.14.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5.3.3",
+        "zod": "^3.22.4"
+    }
+}

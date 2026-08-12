@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  name          String?
+  role          String   @default("hei") // hei, qad, expert, admin
+  applications  Application[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Application {
+  id            String   @id @default(cuid())
+  heiId         String
+  hei           User     @relation(fields: [heiId], references: [id])
+  status        String   @default("DRAFT") // DRAFT, SUBMITTED, UNDER_SCRUTINY, RETURNED, PANEL_REVIEW, APPROVED, REFUSED
+  data          Json     // Stores the full dossier JSON (Part A, B, etc.)
+  evidenceUrls  Json     // Array of uploaded file URLs
+  scrutinyScore Float?
+  panelRemarks  String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Document {
+  id          String   @id @default(cuid())
+  content     String   // Text content of the document
+  metadata    Json     // Source, page, type
+  embedding   Unsupported("vector(1536)")? // pgvector column
+  createdAt   DateTime @default(now())
+}
