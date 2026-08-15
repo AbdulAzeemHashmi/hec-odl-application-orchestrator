@@ -27,4 +27,11 @@ export class GeminiClient implements AIClient {
             return false
         }
     }
+
+    async embed(text: string): Promise<number[]> {
+        const genAI = new GoogleGenerativeAI(this.apiKey)
+        const embeddingModel = genAI.getGenerativeModel({ model: 'text-embedding-004' })
+        const result = await embeddingModel.embedContent(text)
+        return result.embedding.values
+    }
 }

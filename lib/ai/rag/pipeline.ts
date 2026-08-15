@@ -56,13 +56,12 @@ export class RAGPipeline {
         let count = 0
         for (const doc of documents) {
             const embedding = await this.embedder.embed(doc.content)
-            await prisma.document.create({
-                data: {
-                    content: doc.content,
-                    metadata: doc.metadata,
-                    embedding: embedding as any, // pgvector expects vector type
-                },
-            })
+            const id = `doc_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`
+            const embeddingString = `[${embedding.join(',')}]`
+            await prisma.$executeRaw`
+                INSERT INTO "Document" ("id", "content", "metadata", "embedding", "createdAt")
+                VALUES (${id}, ${doc.content}, ${JSON.stringify(doc.metadata)}::jsonb, ${embeddingString}::vector, NOW())
+            `
             count++
         }
         return count
