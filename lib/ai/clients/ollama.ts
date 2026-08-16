@@ -5,10 +5,10 @@ export class OllamaClient implements AIClient {
     private model: ChatOllama
     private baseUrl: string
 
-    constructor(baseUrl: string = 'http://localhost:11434') {
+    constructor(baseUrl: string = 'http://localhost:11434', model = process.env.OLLAMA_MODEL || 'llama3.2:3b') {
         this.baseUrl = baseUrl
         this.model = new ChatOllama({
-            model: 'llama3',
+            model,
             temperature: 0,
             baseUrl: baseUrl,
         })

@@ -5,11 +5,18 @@ import { GeminiClient } from '../clients/gemini'
 import { GrokClient } from '../clients/grok'
 import { OllamaClient } from '../clients/ollama'
 import { prisma } from '@/lib/db/prisma'
+import { aiConfig, hasGemini, hasGrok, hasOllama } from '../config'
 
-const grok = new GrokClient(process.env.XAI_API_KEY!)
-const gemini = new GeminiClient(process.env.GEMINI_API_KEY!)
-const ollama = new OllamaClient(process.env.OLLAMA_BASE_URL)
-const router = new FailoverRouter([grok, gemini, ollama])
+function createRouter() {
+    // Local Ollama is first to keep the default deployment free. Cloud providers are optional fallbacks.
+    const clients = [
+        ...(hasOllama() ? [new OllamaClient(aiConfig.ollamaUrl)] : []),
+        ...(hasGemini() ? [new GeminiClient(aiConfig.geminiKey!)] : []),
+        ...(hasGrok() ? [new GrokClient(aiConfig.grokKey!)] : []),
+    ]
+    if (!clients.length) throw new Error('No AI provider is configured. Start Ollama locally or configure an optional provider.')
+    return new FailoverRouter(clients)
+}
 
 export class RAGPipeline {
     private retriever: Retriever
@@ -45,7 +52,7 @@ export class RAGPipeline {
 
         // Step 3: Generate response using the failover router
         try {
-            return await router.invoke(prompt)
+            return await createRouter().invoke(prompt)
         } catch (error: any) {
             return `Error: ${error.message}`
         }

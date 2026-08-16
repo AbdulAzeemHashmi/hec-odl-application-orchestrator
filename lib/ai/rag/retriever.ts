@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { GeminiClient } from '../clients/gemini'
+import { EmbeddingGenerator } from './embeddings'
 
 function getSupabaseClient() {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_URL.startsWith('http')
@@ -10,16 +10,15 @@ function getSupabaseClient() {
 }
 
 export class Retriever {
-    private gemini: GeminiClient
+    private embedder: EmbeddingGenerator
 
     constructor() {
-        this.gemini = new GeminiClient(process.env.GEMINI_API_KEY || 'placeholder')
+        this.embedder = new EmbeddingGenerator()
     }
 
     async retrieve(query: string, limit: number = 5): Promise<any[]> {
         const supabase = getSupabaseClient()
-        // Generate embedding for the query using Gemini
-        const embedding = await this.gemini.embed(query)
+        const embedding = await this.embedder.embed(query)
 
         // Perform vector similarity search in Supabase
         const { data, error } = await supabase.rpc('match_documents', {

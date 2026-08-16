@@ -34,6 +34,6 @@ model Document {
   id          String   @id @default(cuid())
   content     String   // Text content of the document
   metadata    Json     // Source, page, type
-  embedding   Unsupported("vector(1536)")? // pgvector column
+  embedding   Unsupported("vector(768)")? // pgvector column; matches nomic-embed-text
   createdAt   DateTime @default(now())
 }
