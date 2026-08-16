@@ -1,0 +1,2 @@
+export function Metric({ label, value, note }: { label: string; value: string; note: string }) { return <div className="card"><p className="text-sm text-slate-500">{label}</p><p className="mt-2 text-3xl font-bold text-slate-900">{value}</p><p className="mt-2 text-xs text-slate-500">{note}</p></div> }
+export function EmptyState({ title, text }: { title: string; text: string }) { return <div className="card py-10 text-center"><h2 className="font-semibold text-slate-900">{title}</h2><p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-slate-500">{text}</p></div> }

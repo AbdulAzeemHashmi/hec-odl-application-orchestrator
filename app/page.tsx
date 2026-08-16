@@ -1,59 +1,12 @@
-'use client'
+import Link from 'next/link'
 
-import { useState } from 'react'
+const stages = ['Submit dossier', 'QAD scrutiny', 'Expert panel', 'Visit & report', 'Decision & NOC']
 
 export default function Home() {
-    const [query, setQuery] = useState('')
-    const [response, setResponse] = useState('')
-    const [loading, setLoading] = useState(false)
-
-    const handleAsk = async () => {
-        if (!query) return
-        setLoading(true)
-        try {
-            const res = await fetch('/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ messages: [{ content: query }] }),
-            })
-            const data = await res.json()
-            setResponse(data.response || data.error)
-        } catch (error: any) {
-            setResponse(`Error: ${error.message}`)
-        }
-        setLoading(false)
-    }
-
-    return (
-        <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gray-50">
-            <div className="max-w-2xl w-full bg-white p-8 rounded-xl shadow-lg">
-                <h1 className="text-3xl font-bold text-blue-700 mb-2">HEC ODL Orchestrator</h1>
-                <p className="text-gray-600 mb-6">AI Assistant with automatic Grok → Gemini → Ollama failover.</p>
-
-                <div className="flex gap-2">
-                    <input
-                        type="text"
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        placeholder="Ask about ODL policy or application status..."
-                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        onKeyDown={(e) => e.key === 'Enter' && handleAsk()}
-                    />
-                    <button
-                        onClick={handleAsk}
-                        disabled={loading}
-                        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-400 transition"
-                    >
-                        {loading ? 'Thinking...' : 'Ask'}
-                    </button>
-                </div>
-
-                {response && (
-                    <div className="mt-6 p-4 bg-gray-100 rounded-lg border border-gray-200">
-                        <p className="whitespace-pre-wrap text-gray-800">{response}</p>
-                    </div>
-                )}
-            </div>
-        </main>
-    )
+  return <main className="min-h-screen bg-slate-50 text-slate-900">
+    <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5"><div className="text-xl font-bold tracking-tight text-blue-800">HEC <span className="text-slate-700">ODL Portal</span></div><div className="flex gap-3"><Link href="/login" className="btn-secondary">Sign in</Link><Link href="/signup" className="btn-primary">Create account</Link></div></header>
+    <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1.15fr_.85fr] lg:items-center"><div><p className="eyebrow">QUALITY ASSURANCE DIVISION · ODL SECTION</p><h1 className="mt-4 max-w-3xl text-5xl font-bold leading-tight tracking-tight text-slate-950">A complete workspace for ODL NOC applications.</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">Submit the Model Application Dossier, manage evidence, review cases, coordinate Expert Panels, record visits, issue decisions and track three-year confirmation milestones.</p><div className="mt-8 flex flex-wrap gap-3"><Link href="/signup" className="btn-primary">Register your HEI</Link><Link href="/llm" className="btn-secondary">Open policy assistant</Link></div></div><div className="rounded-3xl bg-blue-900 p-7 text-white shadow-2xl shadow-blue-900/20"><p className="text-sm font-semibold text-blue-200">APPLICATION LIFECYCLE</p><div className="mt-6 space-y-4">{stages.map((stage, i) => <div key={stage} className="flex items-center gap-4 rounded-xl bg-white/10 p-4"><span className="grid h-8 w-8 place-items-center rounded-full bg-blue-400 font-bold text-blue-950">{i + 1}</span><span className="font-medium">{stage}</span></div>)}</div></div></section>
+    <section className="border-y border-slate-200 bg-white"><div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 md:grid-cols-3"><Feature title="Controlled dossier" text="Parameter-wise claims, evidence, remarks and versioned submissions." /><Feature title="Role-based review" text="Dedicated HEI, QAD, Expert Panel and decision-maker workspaces." /><Feature title="AI, with safeguards" text="RAG policy support with local Ollama-first failover; rules remain deterministic." /></div></section>
+  </main>
 }
+function Feature({ title, text }: { title: string; text: string }) { return <div><h2 className="font-semibold text-slate-900">{title}</h2><p className="mt-2 leading-6 text-slate-600">{text}</p></div> }
