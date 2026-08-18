@@ -1,20 +1,20 @@
-<div align="center">
+﻿<div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a2e,50:16213e,100:0f3460&height=200&section=header&text=HEC%20ODL%20Application%20Orchestrator&fontSize=32&fontColor=e94560&animation=fadeIn&fontAlignY=38&desc=Intelligent%20workflow%20automation%20for%20ODL%20approvals%20and%20review&descAlignY=58&descSize=16&descColor=a8b2d8" alt="HEC ODL Application Orchestrator" width="100%" />
-
-<br/>
-
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=E94560&center=true&vCenter=true&width=700&lines=AI-Powered+ODL+Review+Platform;Full-Stack+Next.js+14+Application;Multi-Model+AI+with+RAG+Support;Role-Based+Workflow+Orchestration;Built+for+HEC+Pakistan)](https://git.io/typing-svg)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a2e,40:16213e,80:0f3460,100:e94560&height=280&section=header&text=HEC%20ODL%20Application%20Orchestrator&fontSize=36&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Intelligent%20Workflow%20Automation%20for%20ODL%20Approvals%20and%20Review&descAlignY=58&descSize=17&descColor=a8b2d8" width="100%"/>
 
 <br/>
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=E94560&center=true&vCenter=true&width=750&lines=AI-Powered+ODL+Review+Platform;Full-Stack+Next.js+14+Application;Multi-Model+AI+with+RAG+Support;Role-Based+Workflow+Orchestration;Built+for+HEC+Pakistan" alt="Typing SVG animation"/>
+
+<br/><br/>
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
-[![Auth0](https://img.shields.io/badge/Auth0-Secure-EB5424?style=for-the-badge&logo=auth0&logoColor=white)](https://auth0.com/)
-[![LangChain](https://img.shields.io/badge/LangChain-AI-1C3C3C?style=for-the-badge&logo=chainlink&logoColor=white)](https://langchain.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-Auth+DB-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
 [![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io/)
+[![LangChain](https://img.shields.io/badge/LangChain-AI-1C3C3C?style=for-the-badge&logo=chainlink&logoColor=white)](https://langchain.com/)
+[![Gemini](https://img.shields.io/badge/Gemini-AI-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-FFD43B?style=for-the-badge&logo=opensourceinitiative&logoColor=black)](LICENSE)
 
 <br/>
@@ -22,6 +22,11 @@
 [![GitHub stars](https://img.shields.io/github/stars/AbdulAzeemHashmi/hec-odl-application-orchestrator?style=social)](https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/AbdulAzeemHashmi/hec-odl-application-orchestrator?style=social)](https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator/network/members)
 [![GitHub issues](https://img.shields.io/github/issues/AbdulAzeemHashmi/hec-odl-application-orchestrator?color=red)](https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/AbdulAzeemHashmi/hec-odl-application-orchestrator?color=e94560)](https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator/commits/main)
+
+<br/>
+
+> 🏛️ **HEC ODL Application Orchestrator** is a modern, AI-assisted platform that digitizes and modernizes the Open Distance Learning approval lifecycle in Pakistan. It connects HEI applicants, QAD officers, expert panels, and administrators into one unified, auditable workflow powered by multi-model AI and retrieval-augmented policy guidance.
 
 </div>
 
@@ -31,21 +36,21 @@
 
 <div align="center">
 
-| Section | Link |
-|:-------:|:----:|
-| 🌟 Overview | [What is this?](#-project-overview) |
-| 💡 Why It Matters | [The problem we solve](#-why-this-project-matters) |
-| 🚀 Core Capabilities | [Key features](#-core-capabilities) |
-| 🧠 Architecture | [System design](#-architecture-at-a-glance) |
-| 🛠️ Tech Stack | [Technologies used](#-tech-stack) |
-| 📁 Project Structure | [Folder layout](#-project-structure) |
-| ⚙️ Setup | [Getting started](#-setup-instructions) |
-| 🔐 Environment | [Env variables](#-environment-notes) |
-| 👥 Roles | [User workflows](#-user-roles-and-workflows) |
-| 🗺️ Roadmap | [Future plans](#-recommended-roadmap) |
-| 🤝 Contributing | [How to contribute](#-contributing) |
-| 📄 License | [License info](#-license) |
-| 📬 Contact | [Get in touch](#-contact) |
+| # | Section |
+|:--|:--------|
+| 01 | [🌟 Project Overview](#-project-overview) |
+| 02 | [💡 Why This Project Matters](#-why-this-project-matters) |
+| 03 | [🚀 Core Capabilities](#-core-capabilities) |
+| 04 | [🏗️ Architecture at a Glance](#️-architecture-at-a-glance) |
+| 05 | [🛠️ Tech Stack](#️-tech-stack) |
+| 06 | [📁 Project Structure](#-project-structure) |
+| 07 | [⚙️ Setup Instructions](#️-setup-instructions) |
+| 08 | [🔑 Environment Variables](#-environment-variables) |
+| 09 | [👥 User Roles and Workflows](#-user-roles-and-workflows) |
+| 10 | [🗺️ Recommended Roadmap](#️-recommended-roadmap) |
+| 11 | [🤝 Contributing](#-contributing) |
+| 12 | [📄 License](#-license) |
+| 13 | [📬 Contact](#-contact) |
 
 </div>
 
@@ -94,7 +99,7 @@ The traditional ODL application process is often **manual**, **fragmented**, and
 <tr>
 <td align="center" width="33%">
 
-### 📄 Digital Submissions
+### 📂 Digital Submissions
 Structured digital dossier submissions replacing paper-heavy processes
 
 </td>
@@ -106,7 +111,7 @@ AI-powered policy review and intelligent suggestion generation
 </td>
 <td align="center" width="33%">
 
-### 🧭 SOP Enforcement
+### 📋 SOP Enforcement
 Workflow enforcement aligned with official HEC Standard Operating Procedures
 
 </td>
@@ -120,14 +125,14 @@ Real-time role-specific dashboards for full process visibility
 </td>
 <td align="center" width="33%">
 
-### 📝 Audit Trail
+### 🔍 Audit Trail
 Complete decision tracking and auditability at every stage
 
 </td>
 <td align="center" width="33%">
 
-### 🔒 Secure Access
-Role-based authentication and authorization for all user types
+### 🔐 Secure Access
+Supabase role-based authentication and authorization for all user types
 
 </td>
 </tr>
@@ -143,23 +148,25 @@ Role-based authentication and authorization for all user types
 
 The app includes a **multi-model AI routing layer** that can switch between providers when one fails. This keeps the review system operational and resilient under varying API availability.
 
-- Primary: **Google Gemini**
-- Secondary: **xAI Grok**
-- Fallback: **Ollama** (local model)
+- Primary: **Google Gemini** (`lib/ai/clients/gemini.ts`)
+- Secondary: **xAI Grok** (`lib/ai/clients/grok.ts`)
+- Fallback: **Ollama** (local model) (`lib/ai/clients/ollama.ts`)
+- Failover orchestration: `lib/ai/router/failover.ts`
 
 Each model client is independently configured with shared interfaces for clean interoperability.
 
 </details>
 
 <details>
-<summary><b>🔍 2. RAG Policy Assistant</b></summary>
+<summary><b>📚 2. RAG Policy Assistant</b></summary>
 <br/>
 
 Policy documents are **ingested**, **embedded**, and **retrieved** for fast, context-aware assistance during review and AI answer generation.
 
 - Uses `pgvector` on Supabase for vector storage
-- Embedding pipeline via LangChain
+- Embedding pipeline via LangChain (`lib/ai/rag/embeddings.ts`, `pipeline.ts`)
 - Policy seeding via `/scripts/seed-policies.ts`
+- Retrieval: `lib/ai/rag/retriever.ts`
 - API endpoints: `/api/rag/ingest` and `/api/rag/search`
 
 </details>
@@ -168,13 +175,14 @@ Policy documents are **ingested**, **embedded**, and **retrieved** for fast, con
 <summary><b>🔄 3. Stateful Application Workflow</b></summary>
 <br/>
 
-The app organizes the lifecycle through defined stages and route-based review logic:
+The app organizes the lifecycle through defined stages and route-based review logic using a state machine (`lib/workflow/machine.ts`):
 
-1. **Submission** by HEI
-2. **Initial Scrutiny** by QAD
-3. **Return or Forward** to Panel
-4. **Expert Evaluation** and site visit
-5. **Final Decision** with audit record
+1. 📤 **Submission** by HEI via `/hei/applications/new`
+2. 🔍 **Initial Scrutiny** by QAD via `/qad/scrutiny/[id]`
+3. 🔀 **Return or Forward** to Panel
+4. 🏛️ **Expert Evaluation** and site visit via `/visits` and `/panel`
+5. ✅ **Final Decision** with audit record via `/decisions`
+6. ✔️ **Compliance check** via `/compliance`
 
 </details>
 
@@ -184,69 +192,63 @@ The app organizes the lifecycle through defined stages and route-based review lo
 
 Different user personas work in dedicated areas:
 
-- **HEI Portal**: Submit applications, track status
-- **QAD Portal**: Scrutinize dossiers, route applications
-- **Panel Portal**: Evaluate, validate compliance
-- **Admin Portal**: Manage system, oversee workflows
+- 🏫 **HEI Portal** (`/hei`): Submit applications, track status, view dossiers
+- 🔎 **QAD Portal** (`/qad`): Scrutinize dossiers, route applications, run AI scrutiny
+- 🏛️ **Panel Portal** (`/panel`): Evaluate, validate compliance, site visits
+- ⚙️ **Admin Portal** (`/admin`): Manage system, oversee workflows, LLM config
+- 🤖 **LLM Dashboard** (`/llm`): Test and configure AI model routing
 
 </details>
 
 <details>
-<summary><b>📂 5. Digital Dossier Handling</b></summary>
+<summary><b>📝 5. Digital Dossier Handling</b></summary>
 <br/>
 
-Replaces the spreadsheet-heavy process with a **structured, form-driven experience**. Forms are split into logical sections (Part A, Part B) and validated using **Zod schemas** on both client and server.
+Replaces the spreadsheet-heavy process with a **structured, form-driven experience**. Forms are split into logical sections (Part A, Part B) and validated using **Zod schemas** on both client and server (`lib/validations/schemas.ts`).
+
+</details>
+
+<details>
+<summary><b>💬 6. AI Chat API</b></summary>
+<br/>
+
+A streaming chat endpoint at `/api/chat` backed by LangChain chains (`lib/ai/chains/chat.ts`) routes queries through the available AI models with prompt templates (`lib/ai/prompts/templates.ts`) and uses RAG context when available.
 
 </details>
 
 ---
 
-## 🧠 Architecture at a Glance
+## 🏗️ Architecture at a Glance
 
 <div align="center">
 
-```
-  +---------------------+     +---------------------+     +---------------------+
-  |   HEI Dashboard     |     |   Next.js App       |     |   AI Router         |
-  |   Applicant Portal  | --> |   App Router (14)   | --> |   Gemini            |
-  |   React + Tailwind  |     |   API Routes        |     |   Grok              |
-  +---------------------+     +---------------------+     |   Ollama (local)    |
-            |                           |                  +---------------------+
-            |                           |                           |
-            |                           v                           v
-            |               +---------------------+     +---------------------+
-            |               |   RAG Pipeline      |     |   Policy Embeddings |
-            |               |   Retriever         | <-- |   pgvector search   |
-            |               |   Prompt Templates  |     |   Supabase storage  |
-            |               +---------------------+     +---------------------+
-            v
-  +---------------------+     +---------------------+     +---------------------+
-  |   Supabase DB       | <-> |   Prisma ORM        |     |   Supabase Auth     |
-  |   PostgreSQL        |     |   Schema + Queries  |     |   Login + Sessions  |
-  |   pgvector          |     |   Type-safe access  |     |   Role claims       |
-  +---------------------+     +---------------------+     +---------------------+
+```mermaid
+flowchart TD
+    A[🏫 HEI Applicant] -->|Submit Dossier| B[📋 Application DB via Prisma]
+    B --> C[🔎 QAD Officer]
+    C -->|Run AI Scrutiny| D{🤖 AI Router}
+    D -->|Primary| E[✨ Gemini]
+    D -->|Secondary| F[⚡ xAI Grok]
+    D -->|Fallback| G[🦙 Ollama Local]
+    E & F & G -->|Policy RAG| H[📚 pgvector Supabase]
+    H -->|Contextual Result| C
+    C -->|Forward| I[🏛️ Expert Panel]
+    I -->|Site Visit + Eval| J[✅ Final Decision]
+    J --> K[📊 Audit Trail]
+
+    style A fill:#e94560,stroke:#fff,color:#fff
+    style C fill:#0f3460,stroke:#fff,color:#fff
+    style D fill:#6366f1,stroke:#fff,color:#fff
+    style E fill:#4285F4,stroke:#fff,color:#fff
+    style F fill:#1a1a2e,stroke:#fff,color:#fff
+    style G fill:#14532d,stroke:#fff,color:#fff
+    style H fill:#3ECF8E,stroke:#fff,color:#fff
+    style I fill:#16213e,stroke:#fff,color:#fff
+    style J fill:#22c55e,stroke:#fff,color:#fff
+    style K fill:#FBBC05,stroke:#333,color:#333
 ```
 
 </div>
-
-### 🔀 AI Failover Flow
-
-```
-Request arrives
-     |
-     v
-[Try Gemini] --> success? --> return result
-     |
-   fail
-     |
-     v
-[Try Grok]   --> success? --> return result
-     |
-   fail
-     |
-     v
-[Try Ollama] --> return result (local fallback)
-```
 
 ---
 
@@ -254,20 +256,33 @@ Request arrives
 
 <div align="center">
 
-| Layer | Technology | Purpose |
-|:-----:|:----------:|:-------:|
-| 🖥️ Frontend | Next.js 14, React 18, TypeScript 5 | Core UI framework |
-| 🎨 Styling | Tailwind CSS, CVA, clsx, tailwind-merge | Design system |
-| 🔧 Backend | Next.js API Routes | Server-side logic |
-| 🗄️ Database | Supabase PostgreSQL + pgvector | Data + vector storage |
-| 🔗 ORM | Prisma 5 | Type-safe DB access |
-| 🔐 Auth | Supabase Auth (`@supabase/supabase-js`) | Free secure authentication |
-| 🤖 AI Models | Google Gemini, xAI Grok, Ollama | Multi-model AI routing |
-| 🧠 AI Framework | LangChain, LangChain Community | Chains and RAG pipeline |
-| 📦 AI SDK | Vercel AI SDK | Streaming AI responses |
-| ✅ Validation | Zod | Schema validation |
-| 🚀 Hosting | Vercel (recommended) | Deployment target |
-| 🔧 Dev Tools | ESLint, PostCSS | Code quality |
+| Technology | Purpose | Details |
+|:-----------|:--------|:--------|
+| ⚡ **Next.js 14** (App Router) | Full stack framework and routing | Server components, API routes, layouts |
+| 🔷 **TypeScript 5** | Type safety across the entire codebase | Strict mode enabled |
+| 💅 **Tailwind CSS v3** | Styling and design system | With `tailwind-merge` and `clsx` |
+| 🗄️ **Supabase** | Authentication, PostgreSQL DB, pgvector | Login, signup, row-level security |
+| 🔗 **Prisma ORM v5** | Database schema management and client | Schema at `prisma/schema.prisma` |
+| 🤖 **Google Gemini** | Primary AI model for scrutiny and chat | `@google/generative-ai` |
+| ⚡ **xAI Grok** | Secondary AI model (failover) | `@langchain/xai` |
+| 🦙 **Ollama** | Local fallback AI model | `@langchain/ollama` |
+| 🔗 **LangChain** | AI chain orchestration and RAG pipeline | `langchain`, `@langchain/core`, `@langchain/community` |
+| 📦 **Zod v3** | Schema validation for forms and API | Client and server side |
+| 🎙️ **Vercel AI SDK** | Streaming AI responses | `ai` package |
+
+<br/>
+
+![Next.js](https://skillicons.dev/icons?i=nextjs)
+&nbsp;
+![TypeScript](https://skillicons.dev/icons?i=typescript)
+&nbsp;
+![Tailwind](https://skillicons.dev/icons?i=tailwind)
+&nbsp;
+![Supabase](https://skillicons.dev/icons?i=supabase)
+&nbsp;
+![Prisma](https://skillicons.dev/icons?i=prisma)
+&nbsp;
+![Vercel](https://skillicons.dev/icons?i=vercel)
 
 </div>
 
@@ -280,135 +295,110 @@ hec-odl-application-orchestrator/
 |
 +-- app/
 |   +-- (auth)/
-|   |   +-- login/
-|   |   |   +-- page.tsx             # Login page
-|   |   +-- signup/
-|   |       +-- page.tsx             # Signup page
+|   |   +-- login/page.tsx            # Supabase login page
+|   |   +-- signup/page.tsx           # Supabase signup page
+|   |
 |   +-- (dashboard)/
-|   |   +-- admin/
-|   |   |   +-- page.tsx             # Admin control panel
-|   |   +-- compliance/
-|   |   |   +-- page.tsx             # Compliance view
-|   |   +-- decisions/
-|   |   |   +-- page.tsx             # Decision tracking
-|   |   +-- hei/
+|   |   +-- hei/                      # HEI portal
+|   |   |   +-- page.tsx              # HEI dashboard
 |   |   |   +-- applications/
-|   |   |   |   +-- [id]/
-|   |   |   |   |   +-- page.tsx     # Single application view
-|   |   |   |   +-- new/
-|   |   |   |   |   +-- page.tsx     # New application form
-|   |   |   |   +-- page.tsx         # Applications list
-|   |   |   +-- page.tsx             # HEI dashboard
-|   |   +-- llm/
-|   |   |   +-- page.tsx             # AI/LLM diagnostics
-|   |   +-- panel/
-|   |   |   +-- page.tsx             # Expert panel portal
-|   |   +-- qad/
-|   |   |   +-- page.tsx             # QAD dashboard
-|   |   |   +-- scrutiny/
-|   |   |       +-- [id]/
-|   |   |           +-- page.tsx     # Scrutiny detail view
-|   |   +-- visits/
-|   |       +-- page.tsx             # Site visit management
+|   |   |       +-- page.tsx          # List applications
+|   |   |       +-- new/page.tsx      # Submit new dossier
+|   |   |       +-- [id]/page.tsx     # View single application
+|   |   +-- qad/                      # QAD officer portal
+|   |   |   +-- page.tsx              # QAD dashboard
+|   |   |   +-- scrutiny/[id]/page.tsx  # AI scrutiny workflow
+|   |   +-- panel/page.tsx            # Expert panel portal
+|   |   +-- admin/page.tsx            # Admin portal
+|   |   +-- llm/page.tsx              # LLM model config dashboard
+|   |   +-- visits/page.tsx           # Site visits management
+|   |   +-- decisions/page.tsx        # Final decisions
+|   |   +-- compliance/page.tsx       # Compliance checks
+|   |
 |   +-- api/
-|   |   +-- applications/
-|   |   |   +-- route.ts             # CRUD for applications
-|   |   |   +-- [id]/
-|   |   |       +-- route.ts         # Single application API
-|   |   |       +-- scrutinize/
-|   |   |           +-- route.ts     # AI scrutiny trigger
-|   |   +-- auth/
-|   |   |   +-- [auth0]/
-|   |   |       +-- route.ts         # Auth0 callback handler
-|   |   +-- chat/
-|   |   |   +-- route.ts             # AI chat endpoint
-|   |   +-- rag/
-|   |       +-- ingest/
-|   |       |   +-- route.ts         # Document ingestion
-|   |       +-- search/
-|   |           +-- route.ts         # Vector search
-|   +-- globals.css                  # Global styles
-|   +-- layout.tsx                   # Root layout
-|   +-- page.tsx                     # Landing page
+|       +-- applications/
+|       |   +-- route.ts              # GET all / POST new application
+|       |   +-- [id]/route.ts         # GET / PATCH single application
+|       |   +-- [id]/scrutinize/route.ts  # POST AI scrutiny trigger
+|       +-- auth/                     # Supabase auth callback handler
+|       +-- chat/route.ts             # Streaming AI chat endpoint
+|       +-- rag/
+|           +-- ingest/route.ts       # POST: ingest policy docs
+|           +-- search/route.ts       # POST: semantic search
 |
-+-- components/
-|   +-- chat/
-|   |   +-- ChatWidget.tsx           # AI chat UI widget
-|   +-- forms/
-|   |   +-- PartA.tsx                # Dossier form Part A
-|   |   +-- PartB.tsx                # Dossier form Part B
-|   +-- shared/
-|   |   +-- DashboardBits.tsx        # Reusable dashboard blocks
-|   |   +-- Navbar.tsx               # Top navigation bar
-|   |   +-- PortalShell.tsx          # Portal layout wrapper
-|   +-- ui/
-|       +-- Button.tsx               # Base button component
++-- components/                       # Shared UI components
 |
 +-- lib/
 |   +-- ai/
-|   |   +-- chains/
-|   |   |   +-- chat.ts              # Chat AI chain
-|   |   |   +-- scrutiny.ts          # Scrutiny AI chain
+|   |   +-- chains/chat.ts            # LangChain chat chain
 |   |   +-- clients/
-|   |   |   +-- base.ts              # Base AI client interface
-|   |   |   +-- gemini.ts            # Google Gemini client
+|   |   |   +-- gemini.ts             # Google Gemini client
 |   |   |   +-- grok.ts              # xAI Grok client
-|   |   |   +-- ollama.ts            # Ollama local client
-|   |   +-- config.ts                # AI configuration
-|   |   +-- prompts/
-|   |   |   +-- templates.ts         # Prompt templates
+|   |   |   +-- ollama.ts            # Local Ollama client
+|   |   +-- prompts/templates.ts      # System and user prompt templates
 |   |   +-- rag/
-|   |   |   +-- embeddings.ts        # Embedding generation
-|   |   |   +-- pipeline.ts          # RAG pipeline
-|   |   |   +-- retriever.ts         # Document retriever
+|   |   |   +-- embeddings.ts         # Embedding generation
+|   |   |   +-- pipeline.ts           # Ingestion pipeline
+|   |   |   +-- retriever.ts          # Vector retrieval
 |   |   +-- router/
-|   |       +-- failover.ts          # AI failover router
-|   +-- auth/
-|   |   +-- access.ts                # Access control helpers
-|   |   +-- auth0.ts                 # Auth0 client setup
-|   |   +-- config.ts                # Auth configuration
-|   +-- db/
-|   |   +-- prisma.ts                # Prisma client singleton
-|   +-- utils/
-|   |   +-- helpers.ts               # Utility functions
-|   +-- validations/
-|   |   +-- schemas.ts               # Zod validation schemas
+|   |   |   +-- failover.ts           # Multi-model failover router
+|   |   +-- config.ts                 # AI model configuration
+|   |   +-- scrutiny.ts               # Scrutiny workflow logic
+|   +-- auth/supabase.ts              # Supabase client and auth helpers
+|   +-- db/prisma.ts                  # Prisma client singleton
+|   +-- utils/helpers.ts              # Shared utility functions
+|   +-- validations/schemas.ts        # Zod validation schemas
 |   +-- workflow/
-|       +-- machine.ts               # Workflow state machine
-|       +-- scrutiny.ts              # Scrutiny workflow logic
+|       +-- machine.ts                # Workflow state machine
+|       +-- scrutiny.ts               # Scrutiny workflow logic
 |
 +-- prisma/
-|   +-- schema.prisma                # Database schema
+|   +-- schema.prisma                 # Database schema (Prisma)
 |
 +-- scripts/
-|   +-- seed-policies.ts             # Policy document seeder
+|   +-- seed-policies.ts              # Policy document seeder for RAG
 |
 +-- supabase/
-|   +-- schema.sql                   # Raw SQL schema (pgvector)
+|   +-- schema.sql                    # Raw SQL schema (pgvector extension)
 |
 +-- types/
-|   +-- index.ts                     # Shared TypeScript types
+|   +-- index.ts                      # Shared TypeScript types
 |
-+-- .env.example                     # Environment variable template
-+-- next.config.js                   # Next.js configuration
-+-- tailwind.config.js               # Tailwind configuration
-+-- tsconfig.json                    # TypeScript configuration
-+-- package.json                     # Dependencies and scripts
-+-- LICENSE                          # MIT License
++-- .env.example                      # Environment variable template
++-- next.config.js                    # Next.js configuration
++-- tailwind.config.js                # Tailwind configuration
++-- tsconfig.json                     # TypeScript configuration
++-- package.json                      # Dependencies and scripts
++-- LICENSE                           # MIT License
 ```
 
 ---
 
 ## ⚙️ Setup Instructions
 
-### 🔁 Step 1: Clone the Repository
+### ✅ Prerequisites
+
+- 🟢 Node.js v18 or later
+- 📦 npm
+- 🗄️ A free Supabase project at [supabase.com](https://supabase.com) (with pgvector enabled)
+- 🔑 A Google Gemini API key at [aistudio.google.com](https://aistudio.google.com)
+- ⚡ An xAI API key at [x.ai](https://x.ai) (optional, used as AI failover)
+- 🦙 Ollama installed locally (optional, used as final fallback)
+
+<details open>
+<summary><b>1️⃣ Clone the Repository</b></summary>
+<br/>
 
 ```bash
 git clone https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator.git
 cd hec-odl-application-orchestrator
 ```
 
-### 📦 Step 2: Install Dependencies
+</details>
+
+<details open>
+<summary><b>2️⃣ Install Dependencies</b></summary>
+<br/>
 
 ```bash
 npm install
@@ -416,15 +406,100 @@ npm install
 
 > Prisma client is generated automatically via the `postinstall` script.
 
-### 🔐 Step 3: Configure Environment Variables
+</details>
 
-Copy the example file and fill in your values:
+<details open>
+<summary><b>3️⃣ Configure Environment Variables</b></summary>
+<br/>
 
 ```bash
 cp .env.example .env.local
 ```
 
-Then edit `.env.local`:
+Then fill in your values. See the [Environment Variables](#-environment-variables) section below.
+
+</details>
+
+<details open>
+<summary><b>4️⃣ Enable pgvector in Supabase</b></summary>
+<br/>
+
+In your Supabase project SQL editor, run:
+
+```sql
+create extension if not exists vector;
+```
+
+Then run the full schema from `supabase/schema.sql` in the Supabase SQL editor.
+
+</details>
+
+<details open>
+<summary><b>5️⃣ Push the Prisma Schema</b></summary>
+<br/>
+
+```bash
+npx prisma db push
+```
+
+</details>
+
+<details open>
+<summary><b>6️⃣ Seed Policy Documents (Optional)</b></summary>
+<br/>
+
+```bash
+npx ts-node scripts/seed-policies.ts
+```
+
+This ingests HEC ODL policy documents into pgvector for RAG-powered assistance.
+
+</details>
+
+<details open>
+<summary><b>7️⃣ Start the Development Server</b></summary>
+<br/>
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser. 🎉
+
+</details>
+
+### 📜 Available Scripts
+
+<div align="center">
+
+| Script | Command | Description |
+|:-------|:-------:|:------------|
+| 🚀 Dev server | `npm run dev` | Start local development with hot reload |
+| 🏗️ Build | `npm run build` | Production build |
+| ▶️ Start | `npm run start` | Start production server |
+| 🔍 Lint | `npm run lint` | Run ESLint checks |
+| 🔧 DB schema | `npx prisma db push` | Push Prisma schema to database |
+| 🌱 Seed | `npx ts-node scripts/seed-policies.ts` | Seed policy docs for RAG |
+
+</div>
+
+---
+
+## 🔑 Environment Variables
+
+<div align="center">
+
+| Variable | Exposure | Description |
+|:---------|:--------:|:------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | 🌐 Browser safe | Public Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | 🌐 Browser safe | Public anon key for Supabase client SDK |
+| `SUPABASE_SERVICE_ROLE_KEY` | 🔒 Server only | Admin-level Supabase access (never expose) |
+| `DATABASE_URL` | 🔒 Server only | Direct PostgreSQL connection string for Prisma |
+| `GEMINI_API_KEY` | 🔒 Server only | Google Gemini API key, server side only |
+| `XAI_API_KEY` | 🔒 Server only | xAI Grok API key, server side only |
+| `OLLAMA_BASE_URL` | 🔒 Server only | Local Ollama instance URL (default: `http://localhost:11434`) |
+
+</div>
 
 ```env
 # Supabase
@@ -439,63 +514,14 @@ XAI_API_KEY=your_xai_key
 OLLAMA_BASE_URL=http://localhost:11434
 ```
 
-### 🗃️ Step 4: Push Database Schema
-
-```bash
-npx prisma db push
-```
-
-### 🌱 Step 5: Seed Policy Documents (Optional)
-
-```bash
-npx ts-node scripts/seed-policies.ts
-```
-
-### ▶️ Step 6: Start the Development Server
-
-```bash
-npm run dev
-```
-
-Then open your browser at:
-
-```
-http://localhost:3000
-```
-
-### 📦 Available Scripts
-
-| Script | Command | Description |
-|:------:|:-------:|:-----------:|
-| Dev server | `npm run dev` | Start local development |
-| Build | `npm run build` | Production build |
-| Start | `npm run start` | Start production server |
-| Lint | `npm run lint` | Run ESLint checks |
-
----
-
-## 🔐 Environment Notes
-
-> Keep these values **strictly private** and never commit them to version control.
-
-| Variable | Exposure | Notes |
-|:--------:|:--------:|:-----:|
-| `AUTH0_SECRET` | Server only | High security, rotate regularly |
-| `AUTH0_CLIENT_SECRET` | Server only | Never expose to browser |
-| `SUPABASE_SERVICE_ROLE_KEY` | Server only | Admin-level Supabase access |
-| `DATABASE_URL` | Server only | Direct DB connection string |
-| `NEXT_PUBLIC_SUPABASE_URL` | Browser safe | Public Supabase project URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Browser safe | Public anon key for client SDK |
-| `GEMINI_API_KEY` | Server only | Store on server, never in frontend |
-| `XAI_API_KEY` | Server only | Store on server, never in frontend |
-| `OLLAMA_BASE_URL` | Server only | Local Ollama instance URL |
+> ⚠️ **Never commit your `.env.local` file.** It is already excluded via `.gitignore`.
 
 **Security checklist:**
 
 - [ ] `.env.local` is listed in `.gitignore`
 - [ ] No secrets are committed to Git history
 - [ ] All AI keys are loaded via server-side environment only
-- [ ] Supabase service role key is kept private
+- [ ] Supabase service role key is kept strictly private
 
 ---
 
@@ -504,40 +530,44 @@ http://localhost:3000
 <div align="center">
 
 ```
-                        +-------------------+
-                        |   Supabase Login  |
-                        +-------------------+
-                                 |
-           +---------------------+---------------------+
-           |                     |                     |
-     +-----v-----+         +-----v-----+         +-----v-----+
-     |    HEI    |         |    QAD    |         |   Panel   |
-     +-----------+         +-----------+         +-----------+
-     | Submit    |         | Review    |         | Evaluate  |
-     | dossier   |         | scrutiny  |         | sites     |
-     | Track     |         | Route     |         | Validate  |
-     | status    |         | Return    |         | Decide    |
-     +-----------+         +-----------+         +-----------+
-           |                     |                     |
-           +---------------------+---------------------+
-                                 |
-                        +--------v--------+
-                        |     Admin       |
-                        +-----------------+
-                        | System config   |
-                        | Oversight       |
-                        | User management |
-                        +-----------------+
+                    +-------------------+
+                    |  Supabase Login   |
+                    +-------------------+
+                             |
+         +-------------------+-------------------+
+         |                   |                   |
+   +-----v-----+       +-----v-----+       +-----v-----+
+   |    HEI    |       |    QAD    |       |   Panel   |
+   +-----------+       +-----------+       +-----------+
+   | Submit    |       | Review    |       | Evaluate  |
+   | dossier   |       | scrutiny  |       | sites     |
+   | Track     |       | Route     |       | Validate  |
+   | status    |       | Return    |       | Decide    |
+   +-----------+       +-----------+       +-----------+
+         |                   |                   |
+         +-------------------+-------------------+
+                             |
+                    +--------v--------+
+                    |     Admin       |
+                    +-----------------+
+                    | System config   |
+                    | Oversight       |
+                    | User management |
+                    +-----------------+
 ```
 
 </div>
 
-| 👤 Role | 🎯 Purpose | 🖥️ Portal |
-|:-------:|:----------:|:--------:|
-| 🏫 HEI | Apply for ODL approval, submit and track dossiers | `/hei` |
-| 🏛️ QAD | Review applications, run AI scrutiny, route for panel | `/qad` |
-| 👨‍💼 Panel | Assess submissions, validate compliance, issue verdicts | `/panel` |
-| ⚙️ Admin | Manage system settings, workflows, users, and oversight | `/admin` |
+<div align="center">
+
+| Role | Purpose | Portal |
+|:-----|:--------|:------:|
+| 🏫 **HEI** | Apply for ODL approval, submit and track dossiers | `/hei` |
+| 🔎 **QAD** | Review applications, run AI scrutiny, route for panel | `/qad` |
+| 🏛️ **Panel** | Assess submissions, validate compliance, issue verdicts | `/panel` |
+| ⚙️ **Admin** | Manage system settings, workflows, users, and oversight | `/admin` |
+
+</div>
 
 ---
 
@@ -558,15 +588,15 @@ Phase 1 (Current)          Phase 2 (Near Term)        Phase 3 (Future)
 </div>
 
 | Status | Feature |
-|:------:|:-------:|
-| 🔲 Planned | 📱 Improved mobile dashboard usability |
-| 🔲 Planned | 🔔 Alerts and notification system |
-| 🔲 Planned | 📈 Analytics and reporting views |
-| 🔲 Planned | 🌍 Urdu language support |
-| 🔲 Planned | 🧪 Expanded automated testing coverage |
-| 🔲 Planned | 🛡️ Stronger compliance and audit controls |
-| 🔲 Planned | 🔗 Email notification integration |
-| 🔲 Planned | 📤 Document export (PDF/Excel) |
+|:------:|:--------|
+| 📅 Planned | 📱 Improved mobile dashboard usability |
+| 📅 Planned | 🔔 Alerts and notification system |
+| 📅 Planned | 📊 Analytics and reporting views |
+| 📅 Planned | 🌐 Urdu language support |
+| 📅 Planned | 🧪 Expanded automated testing coverage |
+| 📅 Planned | 🛡️ Stronger compliance and audit controls |
+| 📅 Planned | 📧 Email notification integration |
+| 📅 Planned | 📄 Document export (PDF/Excel) |
 
 ---
 
@@ -595,11 +625,11 @@ Contributions are very welcome! Here is how to get started:
 
 **Guidelines:**
 
-- 🧹 Keep code clean and typed
-- ✅ Run `npm run lint` before submitting
+- ✅ Keep code clean and typed
+- 🔍 Run `npm run lint` before submitting
 - 📝 Write clear commit messages
-- 🔁 Keep PRs focused and small
-- 💬 Reference issues when applicable
+- 🎯 Keep PRs focused and small
+- 🔗 Reference issues when applicable
 
 ---
 
@@ -627,7 +657,7 @@ See the [LICENSE](LICENSE) file for full details.
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f3460,50:16213e,100:1a1a2e&height=120&section=footer&animation=fadeIn" alt="footer" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f3460,50:16213e,100:1a1a2e&height=130&section=footer&animation=fadeIn" alt="footer" width="100%"/>
 
 ### 🌟 If this project helps your work or research, a star would be appreciated!
 
