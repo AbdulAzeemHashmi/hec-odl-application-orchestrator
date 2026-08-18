@@ -4,7 +4,7 @@
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=E94560&center=true&vCenter=true&width=750&lines=AI-Powered+ODL+Review+Platform;Full-Stack+Next.js+14+Application;Multi-Model+AI+with+RAG+Support;Role-Based+Workflow+Orchestration;Built+for+HEC+Pakistan" alt="Typing SVG animation"/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=E94560&center=true&vCenter=true&width=750&lines=AI+Powered+ODL+Review+Platform;Full+Stack+Next.js+14+Application;Multi+Model+AI+with+RAG+Support;Role+Based+Workflow+Orchestration;Built+for+HEC+Pakistan" alt="Typing SVG animation"/>
 
 <br/><br/>
 
@@ -26,7 +26,7 @@
 
 <br/>
 
-> 🏛️ **HEC ODL Application Orchestrator** is a modern, AI-assisted platform that digitizes and modernizes the Open Distance Learning approval lifecycle in Pakistan. It connects HEI applicants, QAD officers, expert panels, and administrators into one unified, auditable workflow powered by multi-model AI and retrieval-augmented policy guidance.
+> 🏛️ **HEC ODL Application Orchestrator** is a modern, AI assisted platform that digitizes and modernizes the Open Distance Learning approval lifecycle in Pakistan. It connects HEI applicants, QAD officers, expert panels, and administrators into one unified, auditable workflow powered by multi model AI and retrieval augmented policy guidance.
 
 </div>
 
@@ -48,9 +48,10 @@
 | 08 | [🔑 Environment Variables](#-environment-variables) |
 | 09 | [👥 User Roles and Workflows](#-user-roles-and-workflows) |
 | 10 | [🗺️ Recommended Roadmap](#️-recommended-roadmap) |
-| 11 | [🤝 Contributing](#-contributing) |
-| 12 | [📄 License](#-license) |
-| 13 | [📬 Contact](#-contact) |
+| 11 | [⚠️ Known Limitations](#️-known-limitations) |
+| 12 | [🤝 Contributing](#-contributing) |
+| 13 | [📄 License](#-license) |
+| 14 | [📬 Contact](#-contact) |
 
 </div>
 
@@ -60,11 +61,11 @@
 
 <div align="center">
 
-> **A modern, AI-assisted application orchestration system built to digitize and modernize the ODL review lifecycle in Pakistan.**
+> **A modern, AI assisted application orchestration system built to digitize and modernize the ODL review lifecycle in Pakistan.**
 
 </div>
 
-This platform connects **HEI applicants**, **QAD officers**, **expert panels**, and **administrators** into a single, unified digital process. It reduces delays, improves transparency, and supports intelligent decision-making through policy-grounded AI assistance.
+This platform connects **HEI applicants**, **QAD officers**, **expert panels**, and **administrators** into a single, unified digital process. It reduces delays, improves transparency, and supports intelligent decision making through policy grounded AI assistance.
 
 <div align="center">
 
@@ -100,13 +101,13 @@ The traditional ODL application process is often **manual**, **fragmented**, and
 <td align="center" width="33%">
 
 ### 📂 Digital Submissions
-Structured digital dossier submissions replacing paper-heavy processes
+Structured digital dossier submissions replacing paper heavy processes
 
 </td>
 <td align="center" width="33%">
 
 ### 🤖 AI Scrutiny
-AI-powered policy review and intelligent suggestion generation
+AI powered policy review and intelligent suggestion generation
 
 </td>
 <td align="center" width="33%">
@@ -120,7 +121,7 @@ Workflow enforcement aligned with official HEC Standard Operating Procedures
 <td align="center" width="33%">
 
 ### 📊 Dashboard Visibility
-Real-time role-specific dashboards for full process visibility
+Real time role specific dashboards for full process visibility
 
 </td>
 <td align="center" width="33%">
@@ -132,7 +133,7 @@ Complete decision tracking and auditability at every stage
 <td align="center" width="33%">
 
 ### 🔐 Secure Access
-Supabase role-based authentication and authorization for all user types
+Supabase role based authentication and authorization for all user types
 
 </td>
 </tr>
@@ -143,10 +144,10 @@ Supabase role-based authentication and authorization for all user types
 ## 🚀 Core Capabilities
 
 <details>
-<summary><b>🤖 1. AI-Powered Review Support</b></summary>
+<summary><b>🤖 1. AI Powered Review Support</b></summary>
 <br/>
 
-The app includes a **multi-model AI routing layer** that can switch between providers when one fails. This keeps the review system operational and resilient under varying API availability.
+The app includes a **multi model AI routing layer** that can switch between providers when one fails. This keeps the review system operational and resilient under varying API availability.
 
 - Primary: **Google Gemini** (`lib/ai/clients/gemini.ts`)
 - Secondary: **xAI Grok** (`lib/ai/clients/grok.ts`)
@@ -161,7 +162,7 @@ Each model client is independently configured with shared interfaces for clean i
 <summary><b>📚 2. RAG Policy Assistant</b></summary>
 <br/>
 
-Policy documents are **ingested**, **embedded**, and **retrieved** for fast, context-aware assistance during review and AI answer generation.
+Policy documents are **ingested**, **embedded**, and **retrieved** for fast, context aware assistance during review and AI answer generation.
 
 - Uses `pgvector` on Supabase for vector storage
 - Embedding pipeline via LangChain (`lib/ai/rag/embeddings.ts`, `pipeline.ts`)
@@ -175,7 +176,7 @@ Policy documents are **ingested**, **embedded**, and **retrieved** for fast, con
 <summary><b>🔄 3. Stateful Application Workflow</b></summary>
 <br/>
 
-The app organizes the lifecycle through defined stages and route-based review logic using a state machine (`lib/workflow/machine.ts`):
+The app organizes the lifecycle through defined stages and route based review logic using a state machine (`lib/workflow/machine.ts`):
 
 1. 📤 **Submission** by HEI via `/hei/applications/new`
 2. 🔍 **Initial Scrutiny** by QAD via `/qad/scrutiny/[id]`
@@ -187,7 +188,7 @@ The app organizes the lifecycle through defined stages and route-based review lo
 </details>
 
 <details>
-<summary><b>👥 4. Role-Based Portals</b></summary>
+<summary><b>👥 4. Role Based Portals</b></summary>
 <br/>
 
 Different user personas work in dedicated areas:
@@ -204,7 +205,7 @@ Different user personas work in dedicated areas:
 <summary><b>📝 5. Digital Dossier Handling</b></summary>
 <br/>
 
-Replaces the spreadsheet-heavy process with a **structured, form-driven experience**. Forms are split into logical sections (Part A, Part B) and validated using **Zod schemas** on both client and server (`lib/validations/schemas.ts`).
+Replaces the spreadsheet heavy process with a **structured, form driven experience**. Forms are split into logical sections (Part A, Part B) and validated using **Zod schemas** on both client and server (`lib/validations/schemas.ts`).
 
 </details>
 
@@ -261,7 +262,7 @@ flowchart TD
 | ⚡ **Next.js 14** (App Router) | Full stack framework and routing | Server components, API routes, layouts |
 | 🔷 **TypeScript 5** | Type safety across the entire codebase | Strict mode enabled |
 | 💅 **Tailwind CSS v3** | Styling and design system | With `tailwind-merge` and `clsx` |
-| 🗄️ **Supabase** | Authentication, PostgreSQL DB, pgvector | Login, signup, row-level security |
+| 🗄️ **Supabase** | Authentication, PostgreSQL DB, pgvector | Login, signup, row level security |
 | 🔗 **Prisma ORM v5** | Database schema management and client | Schema at `prisma/schema.prisma` |
 | 🤖 **Google Gemini** | Primary AI model for scrutiny and chat | `@google/generative-ai` |
 | ⚡ **xAI Grok** | Secondary AI model (failover) | `@langchain/xai` |
@@ -341,7 +342,7 @@ hec-odl-application-orchestrator/
 |   |   |   +-- pipeline.ts           # Ingestion pipeline
 |   |   |   +-- retriever.ts          # Vector retrieval
 |   |   +-- router/
-|   |   |   +-- failover.ts           # Multi-model failover router
+|   |   |   +-- failover.ts           # Multi model failover router
 |   |   +-- config.ts                 # AI model configuration
 |   |   +-- scrutiny.ts               # Scrutiny workflow logic
 |   +-- auth/supabase.ts              # Supabase client and auth helpers
@@ -452,7 +453,7 @@ npx prisma db push
 npx ts-node scripts/seed-policies.ts
 ```
 
-This ingests HEC ODL policy documents into pgvector for RAG-powered assistance.
+This ingests HEC ODL policy documents into pgvector for RAG powered assistance.
 
 </details>
 
@@ -493,7 +494,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser. 🎉
 |:---------|:--------:|:------------|
 | `NEXT_PUBLIC_SUPABASE_URL` | 🌐 Browser safe | Public Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | 🌐 Browser safe | Public anon key for Supabase client SDK |
-| `SUPABASE_SERVICE_ROLE_KEY` | 🔒 Server only | Admin-level Supabase access (never expose) |
+| `SUPABASE_SERVICE_ROLE_KEY` | 🔒 Server only | Admin level Supabase access (never expose) |
 | `DATABASE_URL` | 🔒 Server only | Direct PostgreSQL connection string for Prisma |
 | `GEMINI_API_KEY` | 🔒 Server only | Google Gemini API key, server side only |
 | `XAI_API_KEY` | 🔒 Server only | xAI Grok API key, server side only |
@@ -520,7 +521,7 @@ OLLAMA_BASE_URL=http://localhost:11434
 
 - [ ] `.env.local` is listed in `.gitignore`
 - [ ] No secrets are committed to Git history
-- [ ] All AI keys are loaded via server-side environment only
+- [ ] All AI keys are loaded via server side environment only
 - [ ] Supabase service role key is kept strictly private
 
 ---
@@ -597,6 +598,75 @@ Phase 1 (Current)          Phase 2 (Near Term)        Phase 3 (Future)
 | 📅 Planned | 🛡️ Stronger compliance and audit controls |
 | 📅 Planned | 📧 Email notification integration |
 | 📅 Planned | 📄 Document export (PDF/Excel) |
+
+---
+
+## ⚠️ Known Limitations
+
+<div align="center">
+
+> Being transparent about the current state of the project helps set the right expectations for contributors and adopters.
+
+</div>
+
+<table align="center">
+<tr>
+<td align="center" width="50%">
+
+### 🧪 Testing Coverage
+No automated test suite yet. Manual testing only during development.
+
+</td>
+<td align="center" width="50%">
+
+### 📱 Mobile Experience
+Dashboards are not yet fully optimized for small screens.
+
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+
+### 🦙 Fallback Dependency
+The Ollama fallback requires a local install, so production deployments without it may lose AI scrutiny if Gemini and Grok both fail.
+
+</td>
+<td align="center" width="50%">
+
+### 🔔 No Notifications
+There is currently no email or in app alert system for status changes.
+
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+
+### 🌐 Single Language
+The interface is English only, with Urdu support planned for a later phase.
+
+</td>
+<td align="center" width="50%">
+
+### 📄 No Export Tools
+Applications, decisions, and audit trails cannot yet be exported to PDF or Excel.
+
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+
+### 💰 No Usage Monitoring
+There is no built in tracking of AI provider costs or rate limit usage.
+
+</td>
+<td align="center" width="50%">
+
+### 👤 Single Maintainer
+The project is currently maintained by one developer, so response times and long term support may vary.
+
+</td>
+</tr>
+</table>
 
 ---
 
