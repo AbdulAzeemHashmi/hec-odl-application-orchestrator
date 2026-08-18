@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/db/prisma'
-import { getSession } from '@auth0/nextjs-auth0'
+import { getRequestUser } from '@/lib/auth/supabase'
 import { calculateScrutiny, DossierParameter } from '@/lib/workflow/scrutiny'
 import { isCaseManager } from '@/lib/auth/access'
 
@@ -8,8 +8,8 @@ export async function POST(
     request: Request,
     { params }: { params: { id: string } }
 ) {
-    const session = await getSession()
-    if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    const user = await getRequestUser(request)
+    if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
     const application = await prisma.application.findUnique({
         where: { id: params.id },
@@ -18,7 +18,7 @@ export async function POST(
     if (!application) {
         return NextResponse.json({ error: 'Application not found' }, { status: 404 })
     }
-    if (!isCaseManager(session.user)) {
+    if (!isCaseManager(user)) {
         return NextResponse.json({ error: 'Only QAD case managers may run scrutiny.' }, { status: 403 })
     }
 

@@ -1,13 +1,11 @@
-import { getSession } from '@auth0/nextjs-auth0'
-import { redirect } from 'next/navigation'
+'use client'
 import Link from 'next/link'
-import { isAuth0Configured } from '@/lib/auth/config'
+import { useRouter } from 'next/navigation'
+import { FormEvent, useState } from 'react'
+import { createBrowserAuthClient, isSupabaseAuthConfigured } from '@/lib/auth/supabase'
 
-export default async function LoginPage({ searchParams }: { searchParams: { error?: string } }) {
-    if (isAuth0Configured()) {
-        const session = await getSession()
-        if (session) redirect('/hei')
-    }
-    const unavailable = searchParams.error === 'auth_not_configured' || !isAuth0Configured()
-    return <main className="grid min-h-screen place-items-center bg-slate-100 p-6"><section className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl shadow-slate-200"><p className="eyebrow">HEC ODL PORTAL</p><h1 className="mt-2 text-3xl font-bold text-slate-900">Welcome back</h1><p className="mt-3 text-sm leading-6 text-slate-500">Sign in to access your applications and role-based workspace.</p>{unavailable ? <div className="mt-6 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900"><strong>Login is not configured yet.</strong><br />Add real Auth0 credentials to <code>.env.local</code>, then restart the development server. Placeholder values cannot create a login session.</div> : <a href="/api/auth/login" className="btn-primary mt-7 w-full">Sign in securely</a>}<p className="mt-6 text-center text-sm text-slate-500">New to the portal? <Link href="/signup" className="font-semibold text-blue-700">Create an account</Link></p></section></main>
+export default function LoginPage() {
+  const router = useRouter(); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [message, setMessage] = useState(''); const [loading, setLoading] = useState(false); const configured = isSupabaseAuthConfigured()
+  async function signIn(event: FormEvent) { event.preventDefault(); setLoading(true); setMessage(''); try { const { error } = await createBrowserAuthClient().auth.signInWithPassword({ email, password }); if (error) throw error; router.push('/hei'); router.refresh() } catch (error) { setMessage(error instanceof Error ? error.message : 'Unable to sign in.') } finally { setLoading(false) } }
+  return <main className="grid min-h-screen place-items-center bg-slate-100 p-6"><form onSubmit={signIn} className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl shadow-slate-200"><p className="eyebrow">HEC ODL PORTAL</p><h1 className="mt-2 text-3xl font-bold text-slate-900">Welcome back</h1><p className="mt-3 text-sm leading-6 text-slate-500">Sign in with your portal email and password.</p>{!configured ? <div className="mt-6 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">Add <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code> to <code>.env.local</code> to activate Supabase Auth.</div> : <><label className="mt-6 block text-sm font-medium">Email<input required type="email" value={email} onChange={e => setEmail(e.target.value)} className="mt-1 w-full rounded-lg border p-3" /></label><label className="mt-4 block text-sm font-medium">Password<input required minLength={6} type="password" value={password} onChange={e => setPassword(e.target.value)} className="mt-1 w-full rounded-lg border p-3" /></label>{message && <p className="mt-4 text-sm text-red-700">{message}</p>}<button disabled={loading} className="btn-primary mt-6 w-full">{loading ? 'Signing in…' : 'Sign in securely'}</button></>}<p className="mt-6 text-center text-sm text-slate-500">New to the portal? <Link href="/signup" className="font-semibold text-blue-700">Create an account</Link></p></form></main>
 }

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import PartAForm from '@/components/forms/PartA'
 import PartBForm from '@/components/forms/PartB'
 import { Button } from '@/components/ui/Button'
+import { createBrowserAuthClient } from '@/lib/auth/supabase'
 
 export default function NewApplicationPage() {
     const router = useRouter()
@@ -22,9 +23,10 @@ export default function NewApplicationPage() {
         setLoading(true)
 
         try {
+            const { data: { session } } = await createBrowserAuthClient().auth.getSession()
             const response = await fetch('/api/applications', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json', ...(session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {}) },
                 body: JSON.stringify({
                     data: { ...formData.partA, ...data },
                     evidenceUrls: [],
