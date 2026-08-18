@@ -9,4 +9,12 @@ export default function Home() {
     <section className="border-y border-slate-200 bg-white"><div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 md:grid-cols-3"><Feature title="Controlled dossier" text="Parameter-wise claims, evidence, remarks and versioned submissions." /><Feature title="Role-based review" text="Dedicated HEI, QAD, Expert Panel and decision-maker workspaces." /><Feature title="AI, with safeguards" text="RAG policy support with local Ollama-first failover; rules remain deterministic." /></div></section>
   </main>
 }
-function Feature({ title, text }: { title: string; text: string }) { return <div><h2 className="font-semibold text-slate-900">{title}</h2><p className="mt-2 leading-6 text-slate-600">{text}</p></div> }
+function Feature({ title, text }: { title: string; text: string }) {
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-200">
+      <h2 className="font-bold text-slate-900 text-lg">{title}</h2>
+      <p className="mt-2 text-sm leading-6 text-slate-600">{text}</p>
+    </div>
+  )
+}
+

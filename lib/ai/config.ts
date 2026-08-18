@@ -6,4 +6,4 @@ export const aiConfig = {
 
 export const hasGemini = () => Boolean(aiConfig.geminiKey)
 export const hasGrok = () => Boolean(aiConfig.grokKey)
-export const hasOllama = () => process.env.OLLAMA_ENABLED !== 'false'
+export const hasOllama = () => process.env.OLLAMA_ENABLED === 'true'
