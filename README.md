@@ -221,7 +221,7 @@ Replaces the spreadsheet-heavy process with a **structured, form-driven experien
             |               +---------------------+     +---------------------+
             v
   +---------------------+     +---------------------+     +---------------------+
-  |   Supabase DB       | <-> |   Prisma ORM        |     |   Auth0 Security    |
+  |   Supabase DB       | <-> |   Prisma ORM        |     |   Supabase Auth     |
   |   PostgreSQL        |     |   Schema + Queries  |     |   Login + Sessions  |
   |   pgvector          |     |   Type-safe access  |     |   Role claims       |
   +---------------------+     +---------------------+     +---------------------+
@@ -261,7 +261,7 @@ Request arrives
 | 🔧 Backend | Next.js API Routes | Server-side logic |
 | 🗄️ Database | Supabase PostgreSQL + pgvector | Data + vector storage |
 | 🔗 ORM | Prisma 5 | Type-safe DB access |
-| 🔐 Auth | Auth0 (nextjs-auth0 v3) | Secure authentication |
+| 🔐 Auth | Supabase Auth (`@supabase/supabase-js`) | Free secure authentication |
 | 🤖 AI Models | Google Gemini, xAI Grok, Ollama | Multi-model AI routing |
 | 🧠 AI Framework | LangChain, LangChain Community | Chains and RAG pipeline |
 | 📦 AI SDK | Vercel AI SDK | Streaming AI responses |
@@ -433,13 +433,6 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 DATABASE_URL=postgresql://postgres:password@db.your-project.supabase.co:5432/postgres
 
-# Auth0
-AUTH0_SECRET=your_auth0_secret
-AUTH0_BASE_URL=http://localhost:3000
-AUTH0_ISSUER_BASE_URL=https://your-tenant.auth0.com
-AUTH0_CLIENT_ID=your_client_id
-AUTH0_CLIENT_SECRET=your_client_secret
-
 # AI Models
 GEMINI_API_KEY=your_gemini_key
 XAI_API_KEY=your_xai_key
@@ -502,7 +495,7 @@ http://localhost:3000
 - [ ] `.env.local` is listed in `.gitignore`
 - [ ] No secrets are committed to Git history
 - [ ] All AI keys are loaded via server-side environment only
-- [ ] Auth0 secret is rotated in production
+- [ ] Supabase service role key is kept private
 
 ---
 
@@ -512,7 +505,7 @@ http://localhost:3000
 
 ```
                         +-------------------+
-                        |   Auth0 Login     |
+                        |   Supabase Login  |
                         +-------------------+
                                  |
            +---------------------+---------------------+
