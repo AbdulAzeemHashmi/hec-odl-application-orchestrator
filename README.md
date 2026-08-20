@@ -81,19 +81,19 @@ Before this system, the ODL NOC application workflow ran across paper dossiers, 
 
 ## ✨ Key Features
 
-- 📁 **Controlled Dossier** — parameter wise claims, evidence, remarks, and versioned submissions. ✅ Live
-- 👥 **Role Based Workspaces** — dedicated HEI, QAD, Expert Panel, and Decision Maker dashboards. ✅ Live
-- 📱 **Mobile UI/UX Optimization** — slide in drawer, 2x2 metric grids, and touch optimized controls. ✅ Live
-- 🤖 **AI With Safeguards** — multi tier failover across Gemini, Grok, Ollama, and a deterministic engine. ✅ Live
-- 🔐 **Secure Cookie Sessions** — Edge Middleware cookie validation with Supabase Auth integration. ✅ Live
-- 📧 **Password Reset via Email** — complete self service forgot password and reset flows. ✅ Live
-- 🛡️ **Edge Route Protection** — Next.js Edge Middleware guards every private dashboard route. ✅ Live
-- 📊 **Dynamic Metric Cards** — real time database metrics counting statuses across all roles. ✅ Live
-- 🔄 **Audit History Snapshots** — immutable submission versioning stored in `ApplicationVersion`. ✅ Live
-- 📎 **Evidence File Uploads** — inline base64 and multipart upload support for dossier claims. ✅ Live
-- 💬 **Policy Chat Assistant** — LangChain powered RAG pipeline answering HEC ODL policy queries. ✅ Live
-- 📅 **3 Year Milestone Tracker** — tracks confirmation deadlines for approved NOC programs. ✅ Live
-- 🆓 **100% Free Cloud Hosting** — no credit card required, runs entirely on free tier allowances. ✅ Live
+- 📁 **Controlled Dossier** - parameter wise claims, evidence, remarks, and versioned submissions. ✅ Live
+- 👥 **Role Based Workspaces** - dedicated HEI, QAD, Expert Panel, and Decision Maker dashboards. ✅ Live
+- 📱 **Mobile UI/UX Optimization** - slide in drawer, 2x2 metric grids, and touch optimized controls. ✅ Live
+- 🤖 **AI With Safeguards** - multi tier failover across Gemini, Grok, Ollama, and a deterministic engine. ✅ Live
+- 🔐 **Secure Cookie Sessions** - Edge Middleware cookie validation with Supabase Auth integration. ✅ Live
+- 📧 **Password Reset via Email** - complete self service forgot password and reset flows. ✅ Live
+- 🛡️ **Edge Route Protection** - Next.js Edge Middleware guards every private dashboard route. ✅ Live
+- 📊 **Dynamic Metric Cards** - real time database metrics counting statuses across all roles. ✅ Live
+- 🔄 **Audit History Snapshots** - immutable submission versioning stored in `ApplicationVersion`. ✅ Live
+- 📎 **Evidence File Uploads** - inline base64 and multipart upload support for dossier claims. ✅ Live
+- 💬 **Policy Chat Assistant** - LangChain powered RAG pipeline answering HEC ODL policy queries. ✅ Live
+- 📅 **3 Year Milestone Tracker** - tracks confirmation deadlines for approved NOC programs. ✅ Live
+- 🆓 **100% Free Cloud Hosting** - no credit card required, runs entirely on free tier allowances. ✅ Live
 
 > 💡 Tip: this list uses stacked bullets instead of a wide table so it stays readable on a phone screen without side scrolling.
 
@@ -103,11 +103,11 @@ Before this system, the ODL NOC application workflow ran across paper dossiers, 
 
 The application ships a responsive design built for phones, tablets, and desktops:
 
-- 🗂️ **Slide in Navigation Drawer** — an animated mobile drawer opened from the top hamburger button (`☰`), with a backdrop overlay
-- 🔲 **2x2 Mobile Metric Grids** — key metrics show in a balanced two column grid on phones instead of a single cramped column
-- 👆 **Touch Friendly Controls** — full width primary buttons and cleanly stacked form inputs for one thumb use
-- 🔤 **Inter Typography** — Google Fonts Inter with anti aliasing for crisp Retina display readability
-- 📱 **iOS Viewport Optimization** — viewport metadata that stops unwanted auto zoom on form focus
+- 🗂️ **Slide in Navigation Drawer** - an animated mobile drawer opened from the top hamburger button (`☰`), with a backdrop overlay
+- 🔲 **2x2 Mobile Metric Grids** - key metrics show in a balanced two column grid on phones instead of a single cramped column
+- 👆 **Touch Friendly Controls** - full width primary buttons and cleanly stacked form inputs for one thumb use
+- 🔤 **Inter Typography** - Google Fonts Inter with anti aliasing for crisp Retina display readability
+- 📱 **iOS Viewport Optimization** - viewport metadata that stops unwanted auto zoom on form focus
 
 ### 🩹 Fixes applied in this update
 
@@ -224,19 +224,19 @@ Every application is tracked across these five stages with full timestamp logs a
 
 ## 🛠️ Tech Stack
 
-- 🖥️ **Next.js 14.2** — App Router, Server Actions, and API routes
-- 🎨 **Tailwind CSS 3.4** — responsive utility first design system
-- 📝 **TypeScript 5.3** — strict type safety across frontend and backend
-- 🔐 **Supabase Auth 2.43** — JWT session handling and cookie sync
-- 🗃️ **Prisma 5.14** — type safe database queries and migrations
-- 🐘 **PostgreSQL (Supabase)** — relational data persistence
-- 🤖 **LangChain 0.2** — AI router and RAG pipeline management
-- 🧠 **Google Gemini** — primary LLM for policy scrutiny and answering
-- 🧠 **xAI Grok** — secondary cloud AI fallback provider
-- 🧠 **Ollama (LLaMA 3)** — local and tunnel based AI inference
-- 🧠 **Deterministic Engine** — custom, zero cost rule based scrutiny
-- 🌐 **Vercel** — edge network serverless hosting
-- ✅ **Zod 3.22** — input schema validation
+- 🖥️ **Next.js 14.2** - App Router, Server Actions, and API routes
+- 🎨 **Tailwind CSS 3.4** - responsive utility first design system
+- 📝 **TypeScript 5.3** - strict type safety across frontend and backend
+- 🔐 **Supabase Auth 2.43** - JWT session handling and cookie sync
+- 🗃️ **Prisma 5.14** - type safe database queries and migrations
+- 🐘 **PostgreSQL (Supabase)** - relational data persistence
+- 🤖 **LangChain 0.2** - AI router and RAG pipeline management
+- 🧠 **Google Gemini** - primary LLM for policy scrutiny and answering
+- 🧠 **xAI Grok** - secondary cloud AI fallback provider
+- 🧠 **Ollama (LLaMA 3)** - local and tunnel based AI inference
+- 🧠 **Deterministic Engine** - custom, zero cost rule based scrutiny
+- 🌐 **Vercel** - edge network serverless hosting
+- ✅ **Zod 3.22** - input schema validation
 
 ---
 
@@ -244,43 +244,43 @@ Every application is tracked across these five stages with full timestamp logs a
 
 - 📁 `app/`
   - 📁 `(auth)/`
-    - 📄 `login/page.tsx` — login with role selection
-    - 📄 `signup/page.tsx` — account registration for all five roles
-    - 📄 `forgot-password/page.tsx` — password reset request page
-    - 📄 `reset-password/page.tsx` — new password setup page
+    - 📄 `login/page.tsx` - login with role selection
+    - 📄 `signup/page.tsx` - account registration for all five roles
+    - 📄 `forgot-password/page.tsx` - password reset request page
+    - 📄 `reset-password/page.tsx` - new password setup page
   - 📁 `(dashboard)/`
-    - 📁 `hei/` — HEI institutional dashboard
-    - 📁 `qad/` — QAD scrutiny dashboard
-    - 📁 `panel/` — Expert Panel workspace
-    - 📁 `admin/` — administrator control panel
-    - 📁 `decisions/` — decision register workspace
-    - 📁 `compliance/` — compliance and NOC tracking
-    - 📁 `visits/` — onsite visit workspace
-    - 📁 `llm/` — AI policy desk chat
+    - 📁 `hei/` - HEI institutional dashboard
+    - 📁 `qad/` - QAD scrutiny dashboard
+    - 📁 `panel/` - Expert Panel workspace
+    - 📁 `admin/` - administrator control panel
+    - 📁 `decisions/` - decision register workspace
+    - 📁 `compliance/` - compliance and NOC tracking
+    - 📁 `visits/` - onsite visit workspace
+    - 📁 `llm/` - AI policy desk chat
   - 📁 `api/`
-    - 📄 `applications/route.ts` — application CRUD endpoints
-    - 📄 `upload/route.ts` — evidence document upload handler
-    - 📄 `chat/route.ts` — AI policy conversation route
-    - 📄 `rag/ingest/route.ts` — document indexing endpoint
-    - 📄 `rag/search/route.ts` — semantic policy retrieval
-  - 📄 `globals.css` — Inter font imports and base styles
-  - 📄 `page.tsx` — portal landing page
-  - 📄 `layout.tsx` — root layout with viewport settings
+    - 📄 `applications/route.ts` - application CRUD endpoints
+    - 📄 `upload/route.ts` - evidence document upload handler
+    - 📄 `chat/route.ts` - AI policy conversation route
+    - 📄 `rag/ingest/route.ts` - document indexing endpoint
+    - 📄 `rag/search/route.ts` - semantic policy retrieval
+  - 📄 `globals.css` - Inter font imports and base styles
+  - 📄 `page.tsx` - portal landing page
+  - 📄 `layout.tsx` - root layout with viewport settings
 - 📁 `components/shared/`
-  - 📄 `PortalShell.tsx` — responsive layout with mobile drawer
-  - 📄 `DashboardBits.tsx` — responsive metric and empty state cards
-  - 📄 `SignOutButton.tsx` — session termination component
+  - 📄 `PortalShell.tsx` - responsive layout with mobile drawer
+  - 📄 `DashboardBits.tsx` - responsive metric and empty state cards
+  - 📄 `SignOutButton.tsx` - session termination component
 - 📁 `lib/`
-  - 📁 `ai/clients/` — `base.ts`, `gemini.ts`, `xai.ts`, `ollama.ts`, `deterministic.ts`
-  - 📁 `ai/chains/` — `scrutiny.ts`, the scrutiny chain with failover
-  - 📁 `ai/rag/` — `pipeline.ts`, the policy RAG pipeline
-  - 📁 `auth/` — `supabase.ts`, auth client and cookie helpers
-  - 📁 `db/` — `prisma.ts`, the PrismaClient singleton
+  - 📁 `ai/clients/` - `base.ts`, `gemini.ts`, `xai.ts`, `ollama.ts`, `deterministic.ts`
+  - 📁 `ai/chains/` - `scrutiny.ts`, the scrutiny chain with failover
+  - 📁 `ai/rag/` - `pipeline.ts`, the policy RAG pipeline
+  - 📁 `auth/` - `supabase.ts`, auth client and cookie helpers
+  - 📁 `db/` - `prisma.ts`, the PrismaClient singleton
 - 📁 `prisma/`
-  - 📄 `schema.prisma` — database models and relations
-- 📄 `middleware.ts` — edge session validation
-- 📄 `.env.example` — environment variable template
-- 📄 `README.md` — documentation
+  - 📄 `schema.prisma` - database models and relations
+- 📄 `middleware.ts` - edge session validation
+- 📄 `.env.example` - environment variable template
+- 📄 `README.md` - documentation
 
 ---
 
@@ -329,20 +329,20 @@ The platform pairs **Supabase Auth** with **HTTP cookie synchronization**, letti
 
 ### 🔑 Authentication Flows
 
-- 🔑 **Sign In** at `/login` — email and password login with role redirect
-- 📝 **Sign Up** at `/signup` — account creation across all five workspace roles
-- 📧 **Forgot Password** at `/forgot-password` — self service reset trigger
-- 🔄 **Reset Password** at `/reset-password` — secure password update via verified token
-- 🚪 **Sign Out** from any dashboard — cookie clearing and redirect to login
+- 🔑 **Sign In** at `/login` - email and password login with role redirect
+- 📝 **Sign Up** at `/signup` - account creation across all five workspace roles
+- 📧 **Forgot Password** at `/forgot-password` - self service reset trigger
+- 🔄 **Reset Password** at `/reset-password` - secure password update via verified token
+- 🚪 **Sign Out** from any dashboard - cookie clearing and redirect to login
 
 ### 👤 Workspace Roles
 
-- `hei` → `/hei` — Higher Education Institution applicant
-- `qad` → `/qad` — Quality Assurance Division scrutiny officer
-- `panel` → `/panel` — Expert Panel reviewer
-- `admin` → `/admin` — system administrator
-- `decision_maker` → `/decisions` — commission decision authority
-- `compliance` → `/compliance` — compliance and confirmation officer
+- `hei` → `/hei` - Higher Education Institution applicant
+- `qad` → `/qad` - Quality Assurance Division scrutiny officer
+- `panel` → `/panel` - Expert Panel reviewer
+- `admin` → `/admin` - system administrator
+- `decision_maker` → `/decisions` - commission decision authority
+- `compliance` → `/compliance` - compliance and confirmation officer
 
 ---
 
@@ -438,15 +438,15 @@ model ApplicationVersion {
 <summary>🔌 Endpoints (tap to collapse on mobile)</summary>
 <br/>
 
-- **GET** `/api/applications` — list applications for the current user or scope 🔐
-- **POST** `/api/applications` — create a new versioned application dossier 🔐
-- **GET** `/api/applications/[id]` — retrieve an application dossier and its versions 🔐
-- **PATCH** `/api/applications/[id]` — update an application review status 🔐
-- **POST** `/api/applications/[id]/scrutinize` — run AI regulatory scrutiny 🔐
-- **POST** `/api/upload` — upload and store application evidence files 🔐
-- **POST** `/api/chat` — AI policy conversation endpoint 🔐
-- **POST** `/api/rag/ingest` — index policy documents into the vector store 🔐
-- **POST** `/api/rag/search` — run semantic search across the policy bank 🔐
+- **GET** `/api/applications` - list applications for the current user or scope 🔐
+- **POST** `/api/applications` - create a new versioned application dossier 🔐
+- **GET** `/api/applications/[id]` - retrieve an application dossier and its versions 🔐
+- **PATCH** `/api/applications/[id]` - update an application review status 🔐
+- **POST** `/api/applications/[id]/scrutinize` - run AI regulatory scrutiny 🔐
+- **POST** `/api/upload` - upload and store application evidence files 🔐
+- **POST** `/api/chat` - AI policy conversation endpoint 🔐
+- **POST** `/api/rag/ingest` - index policy documents into the vector store 🔐
+- **POST** `/api/rag/search` - run semantic search across the policy bank 🔐
 
 🔐 = authentication required on every route above
 
