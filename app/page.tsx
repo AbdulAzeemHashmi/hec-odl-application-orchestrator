@@ -21,7 +21,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-white via-slate-50 to-slate-100/60">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 pt-8 pb-14 sm:pt-10 sm:pb-16 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
           <div>
             <div className="inline-flex items-center gap-2.5 rounded-full bg-blue-100/90 px-5 py-2 text-sm sm:text-base font-bold tracking-wide text-blue-900 ring-1 ring-inset ring-blue-700/20 shadow-sm uppercase">
               <span className="h-2.5 w-2.5 rounded-full bg-blue-600 animate-pulse" />
