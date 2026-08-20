@@ -28,16 +28,16 @@ export default function Home() {
               Quality Assurance Division · ODL Section
             </div>
 
-            <h1 className="mt-6 max-w-3xl text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-slate-950">
-              A complete workspace for <span className="text-blue-800 underline decoration-blue-300 decoration-wavy decoration-2 underline-offset-8">ODL NOC</span> applications.
+            <h1 className="mt-6 max-w-3xl text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] tracking-tight text-slate-950">
+              A complete workspace for <span className="bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 bg-clip-text text-transparent underline decoration-blue-400 decoration-2 underline-offset-8 whitespace-nowrap">ODL NOC Applications</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 font-normal">
-              Submit the Model Application Dossier, manage evidence, review cases, coordinate Expert Panels, record visits, issue decisions, and track three-year confirmation milestones.
+            <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-slate-600 font-normal">
+              Submit the <strong className="font-semibold text-slate-900">Model Application Dossier</strong>, manage evidence, review cases, coordinate <strong className="font-semibold text-slate-900">Expert Panels</strong>, record visits, issue decisions, and track <strong className="font-semibold text-slate-900">3-year confirmation milestones</strong>.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/signup" className="btn-primary px-7 py-3 text.base font-semibold shadow-lg shadow-blue-800/25 hover:shadow-xl transition-all">
+              <Link href="/signup" className="btn-primary px-7 py-3 text-base font-semibold shadow-lg shadow-blue-800/25 hover:shadow-xl transition-all">
                 Register your HEI
               </Link>
               <Link href="/llm" className="btn-secondary px-7 py-3 text-base font-semibold border-slate-300 hover:bg-slate-100 transition-all">
