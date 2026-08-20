@@ -546,7 +546,7 @@ Phase 1 (Completed)       Phase 2 (Upcoming)         Phase 3 (Future)
 ### Upcoming Milestones
 
 - [ ] 📧 Automated email alerts on status changes
-- [ ] 📄 Digital PDF NOC certificate generator with QR verification
+- [ ] 📄 Digital PDF NOC generator with QR verification
 - [ ] 🔔 Notification center for reviewer updates
 - [ ] 📅 Calendar scheduling for site inspection visits
 - [ ] 📊 Comprehensive QAD analytics dashboard
