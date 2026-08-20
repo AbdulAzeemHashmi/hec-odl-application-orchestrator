@@ -4,17 +4,17 @@ import { FailoverRouter } from '../router/failover'
 import { GeminiClient } from '../clients/gemini'
 import { GrokClient } from '../clients/grok'
 import { OllamaClient } from '../clients/ollama'
+import { DeterministicClient } from '../clients/deterministic'
 import { prisma } from '@/lib/db/prisma'
 import { aiConfig, hasGemini, hasGrok, hasOllama } from '../config'
 
 function createRouter() {
-    // Local Ollama is first to keep the default deployment free. Cloud providers are optional fallbacks.
     const clients = [
         ...(hasOllama() ? [new OllamaClient(aiConfig.ollamaUrl)] : []),
         ...(hasGemini() ? [new GeminiClient(aiConfig.geminiKey!)] : []),
         ...(hasGrok() ? [new GrokClient(aiConfig.grokKey!)] : []),
+        new DeterministicClient(),
     ]
-    if (!clients.length) throw new Error('No AI provider is configured. Start Ollama locally or configure an optional provider.')
     return new FailoverRouter(clients)
 }
 

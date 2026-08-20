@@ -11,6 +11,7 @@ export async function GET(request: Request) {
     const applications = await prisma.application.findMany({
         where: canViewAll ? {} : { heiId: user.id },
         orderBy: { createdAt: 'desc' },
+        include: { versions: { orderBy: { version: 'desc' } } }
     })
 
     return NextResponse.json(applications)
@@ -23,26 +24,41 @@ export async function POST(request: Request) {
     const body = await request.json()
     const { data, evidenceUrls } = body
     const role = (user.user_metadata?.role as string) || 'hei'
+    const userEmail = user.email || `${user.id}@supabase.local`
 
-    await prisma.user.upsert({
-        where: { email: user.email || `${user.id}@supabase.local` },
-        update: { name: user.user_metadata?.full_name || undefined, role },
-        create: {
-            id: user.id,
-            email: user.email || `${user.id}@supabase.local`,
-            name: user.user_metadata?.full_name,
-            role,
-        },
+    // Execute atomic transaction for user upsert + application + initial version audit
+    const result = await prisma.$transaction(async (tx) => {
+        await tx.user.upsert({
+            where: { email: userEmail },
+            update: { name: user.user_metadata?.full_name || undefined, role },
+            create: {
+                id: user.id,
+                email: userEmail,
+                name: user.user_metadata?.full_name,
+                role,
+            },
+        })
+
+        const application = await tx.application.create({
+            data: {
+                heiId: user.id,
+                data: data || {},
+                evidenceUrls: evidenceUrls || [],
+                status: 'SUBMITTED',
+                versions: {
+                    create: {
+                        version: 1,
+                        data: data || {},
+                        evidenceUrls: evidenceUrls || [],
+                        remarks: 'Initial application dossier submission',
+                    }
+                }
+            },
+            include: { versions: true }
+        })
+
+        return application
     })
 
-    const application = await prisma.application.create({
-        data: {
-            heiId: user.id,
-            data: data || {},
-            evidenceUrls: evidenceUrls || [],
-            status: 'SUBMITTED',
-        },
-    })
-
-    return NextResponse.json(application, { status: 201 })
+    return NextResponse.json(result, { status: 201 })
 }

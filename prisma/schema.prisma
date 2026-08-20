@@ -26,8 +26,20 @@ model Application {
   evidenceUrls  Json     // Array of uploaded file URLs
   scrutinyScore Float?
   panelRemarks  String?
+  versions      ApplicationVersion[]
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+}
+
+model ApplicationVersion {
+  id            String      @id @default(cuid())
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  version       Int         @default(1)
+  data          Json
+  evidenceUrls  Json
+  remarks       String?
+  createdAt     DateTime    @default(now())
 }
 
 model Document {

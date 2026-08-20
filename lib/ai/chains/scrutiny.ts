@@ -2,15 +2,29 @@ import { FailoverRouter } from '../router/failover'
 import { GeminiClient } from '../clients/gemini'
 import { GrokClient } from '../clients/grok'
 import { OllamaClient } from '../clients/ollama'
+import { DeterministicClient } from '../clients/deterministic'
+import { AIClient } from '../clients/base'
 
 export class ScrutinyChain {
     private router: FailoverRouter
 
     constructor() {
-        const grok = new GrokClient(process.env.XAI_API_KEY!)
-        const gemini = new GeminiClient(process.env.GEMINI_API_KEY!)
-        const ollama = new OllamaClient(process.env.OLLAMA_BASE_URL)
-        this.router = new FailoverRouter([grok, gemini, ollama])
+        const clients: AIClient[] = []
+
+        if (process.env.GEMINI_API_KEY) {
+            clients.push(new GeminiClient(process.env.GEMINI_API_KEY))
+        }
+        if (process.env.XAI_API_KEY) {
+            clients.push(new GrokClient(process.env.XAI_API_KEY))
+        }
+        if (process.env.OLLAMA_BASE_URL) {
+            clients.push(new OllamaClient(process.env.OLLAMA_BASE_URL))
+        }
+
+        // Always append zero-cost Deterministic Safeguard Engine
+        clients.push(new DeterministicClient())
+
+        this.router = new FailoverRouter(clients)
     }
 
     async analyzeParameter(parameter: string, claim: any): Promise<string> {
