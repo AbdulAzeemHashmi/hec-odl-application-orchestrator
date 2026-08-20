@@ -1,26 +1,29 @@
 <div align="center">
 
-<!-- Animated Header Banner -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3a8a,100:3b82f6&height=200&section=header&text=HEC%20ODL%20Portal&fontSize=56&fontColor=ffffff&fontAlignY=38&desc=ODL%20NOC%20Application%20Orchestrator&descAlignY=60&descSize=20&animation=fadeIn" width="100%" />
 
 <br/>
 
-<!-- Badges Row -->
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-hec--odl--application--orchestrator.vercel.app-0070f3?style=for-the-badge&logo=vercel&logoColor=white)](https://hec-odl-application-orchestrator.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20App-0070f3?style=for-the-badge&logo=vercel&logoColor=white)](https://hec-odl-application-orchestrator.vercel.app/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator)
 [![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-3178c6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-06b6d4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Supabase](https://img.shields.io/badge/Supabase-Auth%20%2B%20DB-3fcf8e?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
-[![Prisma](https://img.shields.io/badge/Prisma-ORM-2d3748?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io/)
-[![LangChain](https://img.shields.io/badge/LangChain-AI%20RAG-1c3c3c?style=for-the-badge&logo=chainlink&logoColor=white)](https://langchain.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
+<details>
+<summary>🎖️ More badges</summary>
 <br/>
 
-> **A complete, role-based digital workspace for HEC Quality Assurance Division ODL NOC Application lifecycle: from initial submission to 3-year confirmation milestone.**
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-3178c6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-06b6d4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-Auth%20+%20DB-3fcf8e?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
+[![Prisma](https://img.shields.io/badge/Prisma-ORM-2d3748?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io/)
+[![LangChain](https://img.shields.io/badge/LangChain-AI%20RAG-1c3c3c?style=for-the-badge&logo=chainlink&logoColor=white)](https://langchain.com/)
+
+</details>
 
 <br/>
+
+> **A complete, role based digital workspace for the HEC Quality Assurance Division ODL NOC Application lifecycle, from initial submission to the 3 year confirmation milestone.**
 
 </div>
 
@@ -30,9 +33,9 @@
 
 - [🌟 Overview](#-overview)
 - [✨ Key Features](#-key-features)
-- [📱 Mobile-First UI/UX](#-mobile-first-uiux)
+- [📱 Mobile First UI/UX](#-mobile-first-uiux)
 - [🏛️ System Architecture](#-system-architecture)
-- [👥 Role-Based Workspaces](#-role-based-workspaces)
+- [👥 Role Based Workspaces](#-role-based-workspaces)
 - [🤖 AI Engine and Failover Pipeline](#-ai-engine-and-failover-pipeline)
 - [🗂️ Application Lifecycle](#-application-lifecycle)
 - [🛠️ Tech Stack](#-tech-stack)
@@ -52,122 +55,96 @@
 
 ## 🌟 Overview
 
-The **HEC ODL Application Orchestrator** is a full-stack, production-grade cloud platform engineered for Pakistan **Higher Education Commission (HEC)** Quality Assurance Division, ODL Section. It completely digitizes, coordinates, and tracks every stage of an **Open Distance Learning (ODL) No Objection Certificate (NOC)** application.
+The **HEC ODL Application Orchestrator** is a full stack, production grade cloud platform built for the Pakistan **Higher Education Commission (HEC)** Quality Assurance Division, ODL Section. It digitizes, coordinates, and tracks every stage of an **Open Distance Learning (ODL) No Objection Certificate (NOC)** application.
 
-```
-📨 HEI Submits Application
-          |
-          v
-🔍 QAD Reviews & Scrutinizes
-          |
-          v
-👨‍⚖️ Expert Panel Evaluates
-          |
-          v
-🏫 Site Visit & Report
-          |
-          v
-📋 Compliance Verification
-          |
-          v
-✅ Decision Issued
-          |
-          v
-📅 3-Year Confirmation Tracked
+```mermaid
+flowchart TD
+    A[📨 HEI Submits Application] --> B[🔍 QAD Reviews and Scrutinizes]
+    B --> C[👨‍⚖️ Expert Panel Evaluates]
+    C --> D[🏫 Site Visit and Report]
+    D --> E[📋 Compliance Verification]
+    E --> F[✅ Decision Issued]
+    F --> G[📅 3 Year Confirmation Tracked]
 ```
 
 ### 🎯 Why This Portal Exists
 
-Prior to this system, the entire ODL NOC application workflow was conducted across paper dossiers, postal mail, and disjointed email threads. The HEC ODL Portal replaces manual bottlenecks with:
+Before this system, the ODL NOC application workflow ran across paper dossiers, postal mail, and scattered email threads. The HEC ODL Portal replaces those manual bottlenecks with:
 
-- **Structured digital dossiers** for every institutional applicant
-- **Automated AI-powered policy scrutiny** of submitted criteria
-- **Dedicated workspaces** tailored to each stakeholder role
-- **Full audit trails** with versioned submission snapshots
-- **Zero-cost cloud architecture** running on Vercel and Supabase free tiers
+- 🗂️ Structured digital dossiers for every institutional applicant
+- 🤖 Automated AI powered policy scrutiny of submitted criteria
+- 👥 Dedicated workspaces tailored to each stakeholder role
+- 🧾 Full audit trails with versioned submission snapshots
+- 💸 Zero cost cloud architecture running on Vercel and Supabase free tiers
 
 ---
 
 ## ✨ Key Features
 
-<div align="center">
+- 📁 **Controlled Dossier** — parameter wise claims, evidence, remarks, and versioned submissions. ✅ Live
+- 👥 **Role Based Workspaces** — dedicated HEI, QAD, Expert Panel, and Decision Maker dashboards. ✅ Live
+- 📱 **Mobile UI/UX Optimization** — slide in drawer, 2x2 metric grids, and touch optimized controls. ✅ Live
+- 🤖 **AI With Safeguards** — multi tier failover across Gemini, Grok, Ollama, and a deterministic engine. ✅ Live
+- 🔐 **Secure Cookie Sessions** — Edge Middleware cookie validation with Supabase Auth integration. ✅ Live
+- 📧 **Password Reset via Email** — complete self service forgot password and reset flows. ✅ Live
+- 🛡️ **Edge Route Protection** — Next.js Edge Middleware guards every private dashboard route. ✅ Live
+- 📊 **Dynamic Metric Cards** — real time database metrics counting statuses across all roles. ✅ Live
+- 🔄 **Audit History Snapshots** — immutable submission versioning stored in `ApplicationVersion`. ✅ Live
+- 📎 **Evidence File Uploads** — inline base64 and multipart upload support for dossier claims. ✅ Live
+- 💬 **Policy Chat Assistant** — LangChain powered RAG pipeline answering HEC ODL policy queries. ✅ Live
+- 📅 **3 Year Milestone Tracker** — tracks confirmation deadlines for approved NOC programs. ✅ Live
+- 🆓 **100% Free Cloud Hosting** — no credit card required, runs entirely on free tier allowances. ✅ Live
 
-| Feature | Description | Status |
-|:-------:|:------------|:------:|
-| 📁 **Controlled Dossier** | Parameter-wise claims, evidence, remarks and versioned submissions | ✅ Live |
-| 👥 **Role-Based Workspaces** | Dedicated HEI, QAD, Expert Panel and Decision-Maker dashboards | ✅ Live |
-| 📱 **Mobile UI/UX Optimization** | Slide-in drawer, 2x2 metric grids, and touch-optimized controls | ✅ Live |
-| 🤖 **AI with Safeguards** | Multi-tier failover: Gemini -> Grok -> Ollama -> Deterministic Engine | ✅ Live |
-| 🔐 **Secure Cookie Sessions** | Edge Middleware cookie validation with Supabase Auth integration | ✅ Live |
-| 📧 **Password Reset via Email** | Complete self-service forgot password and reset flows | ✅ Live |
-| 🛡️ **Edge Route Protection** | Next.js Edge Middleware safeguards all private dashboard routes | ✅ Live |
-| 📊 **Dynamic Metric Cards** | Real-time database metrics counting statuses across all roles | ✅ Live |
-| 🔄 **Audit History Snapshots** | Immutable submission versioning stored in `ApplicationVersion` | ✅ Live |
-| 📎 **Evidence File Uploads** | Inline base64 and multipart upload support for dossier claims | ✅ Live |
-| 💬 **Policy Chat Assistant** | LangChain-powered RAG pipeline answering HEC ODL policy queries | ✅ Live |
-| 📅 **3-Year Milestone Tracker** | Tracks confirmation deadlines for approved NOC programs | ✅ Live |
-| 🆓 **100% Free Cloud Hosting** | Zero credit card required, runs entirely on free tier allowances | ✅ Live |
-
-</div>
+> 💡 Tip: this list uses stacked bullets instead of a wide table so it stays readable on a phone screen without side scrolling.
 
 ---
 
-## 📱 Mobile-First UI/UX
+## 📱 Mobile First UI/UX
 
-The application features a responsive design built specifically for mobile phones, tablets, and desktops:
+The application ships a responsive design built for phones, tablets, and desktops:
 
-- **Slide-in Navigation Drawer**: An animated mobile navigation drawer accessible via the top hamburger button (`☰`) with a backdrop overlay.
-- **2x2 Mobile Metric Grids**: Key performance metrics display in a balanced 2-column grid on mobile phones instead of an awkward single column.
-- **Touch-Friendly Controls**: Full-width primary CTA buttons and cleanly stacked form inputs designed for one-thumb interaction.
-- **Inter Typography**: Loaded with Google Fonts Inter and anti-aliasing for readability on mobile Retina displays.
-- **iOS Viewport Optimization**: Configured viewport metadata prevents unwanted auto-zoom triggers during form input focus.
+- 🗂️ **Slide in Navigation Drawer** — an animated mobile drawer opened from the top hamburger button (`☰`), with a backdrop overlay
+- 🔲 **2x2 Mobile Metric Grids** — key metrics show in a balanced two column grid on phones instead of a single cramped column
+- 👆 **Touch Friendly Controls** — full width primary buttons and cleanly stacked form inputs for one thumb use
+- 🔤 **Inter Typography** — Google Fonts Inter with anti aliasing for crisp Retina display readability
+- 📱 **iOS Viewport Optimization** — viewport metadata that stops unwanted auto zoom on form focus
+
+### 🩹 Fixes applied in this update
+
+- Every ASCII box diagram in this README has been replaced with a **Mermaid diagram**, which GitHub renders as a scalable SVG that fits any screen width
+- Wide multi column tables were rebuilt as **stacked emoji bullet lists** so nothing gets cut off sideways
+- The badge row and deep reference tables were moved into **collapsible sections**, keeping the first mobile scroll short
+- The nested project folder tree became an **indented emoji list** instead of fixed width ASCII spacing
 
 ---
 
 ## 🏛️ System Architecture
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│                      VERCEL EDGE NETWORK                     │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │              Next.js 14 App Router                     │  │
-│  │                                                        │  │
-│  │  ┌──────────────┐  ┌───────────────┐  ┌─────────────┐  │  │
-│  │  │  Auth Pages  │  │  Dashboards   │  │  API Routes │  │  │
-│  │  │  /login      │  │  /hei  /qad   │  │  /api/...   │  │  │
-│  │  │  /signup     │  │  /panel/admin │  │             │  │  │
-│  │  │  /forgot-pwd │  │  /decisions   │  │             │  │  │
-│  │  │  /reset-pwd  │  │  /visits      │  │             │  │  │
-│  │  └──────────────┘  └───────────────┘  └─────────────┘  │  │
-│  │                                                        │  │
-│  │  ┌────────────────────┐   ┌─────────────────────────┐  │  │
-│  │  │  Edge Middleware   │   │  AI / RAG Pipeline      │  │  │
-│  │  │  Session Cookies   │   │  Gemini -> Grok ->      │  │  │
-│  │  │  Route Protection  │   │  Ollama -> Deterministic│  │  │
-│  │  └────────────────────┘   └─────────────────────────┘  │  │
-│  └────────────────────────────────────────────────────────┘  │
-└──────────────────────────────────────────────────────────────┘
-                           |              |
-                    ┌──────┘              └──────┐
-                    v                            v
-        ┌─────────────────────┐    ┌──────────────────────────┐
-        │   SUPABASE CLOUD    │    │   PRISMA ORM (Postgres)  │
-        │                     │    │                          │
-        │  Auth (JWT Tokens)  │    │  Applications            │
-        │  User Profiles      │    │  ApplicationVersions     │
-        │  Realtime Events    │    │  Users / Roles           │
-        └─────────────────────┘    └──────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph Vercel["🌐 Vercel Edge Network"]
+        subgraph NextApp["⚡ Next.js 14 App Router"]
+            Auth["🔑 Auth Pages<br/>login, signup<br/>forgot and reset password"]
+            Dash["📊 Dashboards<br/>hei, qad, panel<br/>admin, decisions, visits"]
+            API["🔌 API Routes<br/>api slash..."]
+            Mid["🛡️ Edge Middleware<br/>session cookies<br/>route protection"]
+            AI["🤖 AI and RAG Pipeline<br/>Gemini then Grok<br/>then Ollama then Deterministic"]
+        end
+    end
+    Supabase[("☁️ Supabase Cloud<br/>Auth JWT tokens<br/>user profiles<br/>realtime events")]
+    Prisma[("🗄️ Prisma ORM Postgres<br/>applications<br/>application versions<br/>users and roles")]
+    NextApp --> Supabase
+    NextApp --> Prisma
 ```
 
 ---
 
-## 👥 Role-Based Workspaces
+## 👥 Role Based Workspaces
 
-The platform provides dedicated workspaces for each actor in the ODL lifecycle:
+The platform gives each actor in the ODL lifecycle its own dedicated workspace.
 
 ### 🏫 HEI (Higher Education Institution)
-> Route: `/hei`
+📍 Route: `/hei`
 
 - Create and assemble the Model Application Dossier
 - Upload evidence and remarks for each parameter
@@ -175,7 +152,7 @@ The platform provides dedicated workspaces for each actor in the ODL lifecycle:
 - Access version history of submitted dossiers
 
 ### 🔍 QAD (Quality Assurance Division)
-> Route: `/qad`
+📍 Route: `/qad`
 
 - Review incoming institutional applications
 - Trigger AI policy scrutiny and completeness scoring
@@ -183,23 +160,23 @@ The platform provides dedicated workspaces for each actor in the ODL lifecycle:
 - Issue formal deficiency notices and routing decisions
 
 ### 👨‍⚖️ Expert Panel
-> Route: `/panel`
+📍 Route: `/panel`
 
 - Access assigned dossiers and uploaded evidence
 - Review institutional claims against HEC standards
-- Draft and submit First and Final evaluation reports
-- Coordinate findings directly with QAD desk officers
+- Draft and submit first and final evaluation reports
+- Coordinate findings directly with the QAD desk officer
 
 ### ⚖️ Decision Maker
-> Route: `/decisions`
+📍 Route: `/decisions`
 
 - Review completed evaluation reports and visit summaries
-- Issue formal NOC decisions (Approve, Reject, or Conditional)
+- Issue formal NOC decisions: approve, reject, or conditional
 - Generate official institutional NOC letters
 - Track historical approval registers
 
 ### 🔧 System Administrator
-> Route: `/admin`
+📍 Route: `/admin`
 
 - Manage user accounts and role permissions
 - Maintain the ODL Toolkit parameter bank
@@ -210,40 +187,21 @@ The platform provides dedicated workspaces for each actor in the ODL lifecycle:
 
 ## 🤖 AI Engine and Failover Pipeline
 
-The portal utilizes a multi-tier AI failover system that delivers zero runtime errors at $0 operational cost:
+A multi tier AI failover system delivers zero runtime errors at zero operational cost.
 
-```
-User Query / Application Scrutiny Request
-              |
-              v
-   ┌─────────────────────┐
-   │  1. Google Gemini   │  (Free tier: 1500 requests/day)
-   │     API Key         │
-   └──────────┬──────────┘
-              | fails or unavailable
-              v
-   ┌─────────────────────┐
-   │  2. xAI Grok        │  (Free tier API)
-   │     API Key         │
-   └──────────┬──────────┘
-              | fails or unavailable
-              v
-   ┌─────────────────────┐
-   │  3. Ollama Local    │  (Local server or Cloudflare Tunnel)
-   │     (LLaMA 3)       │
-   └──────────┬──────────┘
-              | not available
-              v
-   ┌─────────────────────┐
-   │  4. Deterministic   │  (ALWAYS active, $0 cost)
-   │     Rules Engine    │  Evaluates HEC regulatory parameters
-   └─────────────────────┘   locally with zero API calls
+```mermaid
+flowchart TD
+    Q["🧑‍💻 User Query or Scrutiny Request"] --> G["1️⃣ Google Gemini API Key<br/>free tier, 1500 requests per day"]
+    G -- fails or unavailable --> X["2️⃣ xAI Grok API Key<br/>free tier API"]
+    X -- fails or unavailable --> O["3️⃣ Ollama Local, LLaMA 3<br/>local server or Cloudflare Tunnel"]
+    O -- not available --> D["4️⃣ Deterministic Rules Engine<br/>always active, zero cost<br/>evaluates HEC parameters locally"]
 ```
 
-The **Deterministic Rules Engine** (`lib/ai/clients/deterministic.ts`) provides a complete safety guarantee, evaluating dossiers deterministically against HEC regulations even if all cloud AI keys are omitted.
+The **Deterministic Rules Engine** (`lib/ai/clients/deterministic.ts`) is the safety net. It evaluates dossiers against HEC regulations even if every cloud AI key is left blank.
 
-### RAG Policy Assistant
-- Ingests approved HEC ODL policy documents via `/api/rag/ingest`
+### 💬 RAG Policy Assistant
+
+- Ingests approved HEC ODL policy documents through `/api/rag/ingest`
 - Performs semantic retrieval for contextual policy answers
 - Available inside the policy workspace at `/llm`
 
@@ -251,124 +209,96 @@ The **Deterministic Rules Engine** (`lib/ai/clients/deterministic.ts`) provides 
 
 ## 🗂️ Application Lifecycle
 
-```
- STAGE 1          STAGE 2          STAGE 3         STAGE 4         STAGE 5
-+----------+     +----------+     +----------+    +----------+    +----------+
-|  Submit  | --> |   QAD    | --> |  Expert  | -> |  Visit   | -> | Decision |
-|  Dossier |     | Scrutiny |     |  Panel   |    |  Report  |    |  Issued  |
-+----------+     +----------+     +----------+    +----------+    +----------+
-                                                                       |
-                                                                       v
-                                                              +------------------+
-                                                              | 3-Year Milestone |
-                                                              | Confirmation     |
-                                                              | Tracking         |
-                                                              +------------------+
+```mermaid
+flowchart LR
+    S1["1️⃣ Submit Dossier"] --> S2["2️⃣ QAD Scrutiny"]
+    S2 --> S3["3️⃣ Expert Panel"]
+    S3 --> S4["4️⃣ Visit Report"]
+    S4 --> S5["5️⃣ Decision Issued"]
+    S5 --> M["📅 3 Year Milestone Confirmation Tracking"]
 ```
 
-Every application is tracked across these 5 stages with full timestamp logs and versioned snapshot records.
+Every application is tracked across these five stages with full timestamp logs and versioned snapshot records.
 
 ---
 
 ## 🛠️ Tech Stack
 
-<div align="center">
-
-| Category | Technology | Version | Purpose |
-|:--------:|:----------:|:-------:|:--------|
-| 🖥️ **Framework** | Next.js | 14.2 | App Router, Server Actions, API routes |
-| 🎨 **Styling** | Tailwind CSS | 3.4 | Responsive utility-first design system |
-| 📝 **Language** | TypeScript | 5.3 | Strict type safety across frontend and backend |
-| 🔐 **Authentication** | Supabase Auth | 2.43 | JWT session handling and cookie sync |
-| 🗃️ **ORM** | Prisma | 5.14 | Type-safe database queries and migrations |
-| 🐘 **Database** | PostgreSQL | Supabase | Relational data persistence |
-| 🤖 **Orchestration** | LangChain | 0.2 | AI router and RAG pipeline management |
-| 🧠 **Primary LLM** | Google Gemini | 0.2 | Policy scrutiny and query answering |
-| 🧠 **Secondary LLM** | xAI Grok | 0.0.1 | Cloud AI fallback provider |
-| 🧠 **Open-Source LLM** | Ollama (LLaMA 3) | Local | Local and tunnel AI inference |
-| 🧠 **Offline Engine** | Deterministic Engine | Custom | $0 rule-based regulatory scrutiny |
-| 🌐 **Hosting** | Vercel | Latest | Edge network serverless hosting |
-| ✅ **Validation** | Zod | 3.22 | Input schema validation |
-
-</div>
+- 🖥️ **Next.js 14.2** — App Router, Server Actions, and API routes
+- 🎨 **Tailwind CSS 3.4** — responsive utility first design system
+- 📝 **TypeScript 5.3** — strict type safety across frontend and backend
+- 🔐 **Supabase Auth 2.43** — JWT session handling and cookie sync
+- 🗃️ **Prisma 5.14** — type safe database queries and migrations
+- 🐘 **PostgreSQL (Supabase)** — relational data persistence
+- 🤖 **LangChain 0.2** — AI router and RAG pipeline management
+- 🧠 **Google Gemini** — primary LLM for policy scrutiny and answering
+- 🧠 **xAI Grok** — secondary cloud AI fallback provider
+- 🧠 **Ollama (LLaMA 3)** — local and tunnel based AI inference
+- 🧠 **Deterministic Engine** — custom, zero cost rule based scrutiny
+- 🌐 **Vercel** — edge network serverless hosting
+- ✅ **Zod 3.22** — input schema validation
 
 ---
 
 ## 📁 Project Structure
 
-```
-hec-odl-application-orchestrator/
-├── 📁 app/
-│   ├── 📁 (auth)/
-│   │   ├── 📄 login/page.tsx          # Login with role selection
-│   │   ├── 📄 signup/page.tsx         # Account registration (all 5 roles)
-│   │   ├── 📄 forgot-password/page.tsx # Password reset request page
-│   │   └── 📄 reset-password/page.tsx  # New password setup page
-│   ├── 📁 (dashboard)/
-│   │   ├── 📁 hei/                    # HEI institutional dashboard
-│   │   ├── 📁 qad/                    # QAD scrutiny dashboard
-│   │   ├── 📁 panel/                  # Expert Panel workspace
-│   │   ├── 📁 admin/                  # Administrator control panel
-│   │   ├── 📁 decisions/              # Decision register workspace
-│   │   ├── 📁 compliance/             # Compliance and NOC tracking
-│   │   ├── 📁 visits/                 # Onsite visit workspace
-│   │   └── 📁 llm/                    # AI Policy Desk chat
-│   ├── 📁 api/
-│   │   ├── 📄 applications/route.ts   # Application CRUD endpoints
-│   │   ├── 📄 upload/route.ts         # Evidence document upload handler
-│   │   ├── 📄 chat/route.ts           # AI policy conversation route
-│   │   ├── 📄 rag/ingest/route.ts     # Document indexing endpoint
-│   │   └── 📄 rag/search/route.ts     # Semantic policy retrieval
-│   ├── 📄 globals.css                 # Inter font imports and base styles
-│   ├── 📄 page.tsx                    # Portal landing page
-│   └── 📄 layout.tsx                  # Root layout with viewport settings
-├── 📁 components/
-│   └── 📁 shared/
-│       ├── 📄 PortalShell.tsx          # Responsive layout with mobile drawer
-│       ├── 📄 DashboardBits.tsx        # Responsive metric and empty state cards
-│       └── 📄 SignOutButton.tsx        # Session termination component
-├── 📁 lib/
-│   ├── 📁 ai/
-│   │   ├── 📁 clients/
-│   │   │   ├── 📄 base.ts             # AI client interface
-│   │   │   ├── 📄 gemini.ts           # Google Gemini connector
-│   │   │   ├── 📄 xai.ts              # xAI Grok connector
-│   │   │   ├── 📄 ollama.ts           # Ollama client connector
-│   │   │   └── 📄 deterministic.ts    # $0 offline rule evaluator
-│   │   ├── 📁 chains/
-│   │   │   └── 📄 scrutiny.ts         # Scrutiny chain with failover
-│   │   └── 📁 rag/
-│   │       └── 📄 pipeline.ts         # Policy RAG pipeline
-│   ├── 📁 auth/
-│   │   └── 📄 supabase.ts             # Auth client and cookie helpers
-│   └── 📁 db/
-│       └── 📄 prisma.ts               # PrismaClient singleton
-├── 📁 prisma/
-│   └── 📄 schema.prisma               # Database models and relations
-├── 📄 middleware.ts                   # Edge session validation
-├── 📄 .env.example                    # Environment variable template
-└── 📄 README.md                       # Documentation
-```
+- 📁 `app/`
+  - 📁 `(auth)/`
+    - 📄 `login/page.tsx` — login with role selection
+    - 📄 `signup/page.tsx` — account registration for all five roles
+    - 📄 `forgot-password/page.tsx` — password reset request page
+    - 📄 `reset-password/page.tsx` — new password setup page
+  - 📁 `(dashboard)/`
+    - 📁 `hei/` — HEI institutional dashboard
+    - 📁 `qad/` — QAD scrutiny dashboard
+    - 📁 `panel/` — Expert Panel workspace
+    - 📁 `admin/` — administrator control panel
+    - 📁 `decisions/` — decision register workspace
+    - 📁 `compliance/` — compliance and NOC tracking
+    - 📁 `visits/` — onsite visit workspace
+    - 📁 `llm/` — AI policy desk chat
+  - 📁 `api/`
+    - 📄 `applications/route.ts` — application CRUD endpoints
+    - 📄 `upload/route.ts` — evidence document upload handler
+    - 📄 `chat/route.ts` — AI policy conversation route
+    - 📄 `rag/ingest/route.ts` — document indexing endpoint
+    - 📄 `rag/search/route.ts` — semantic policy retrieval
+  - 📄 `globals.css` — Inter font imports and base styles
+  - 📄 `page.tsx` — portal landing page
+  - 📄 `layout.tsx` — root layout with viewport settings
+- 📁 `components/shared/`
+  - 📄 `PortalShell.tsx` — responsive layout with mobile drawer
+  - 📄 `DashboardBits.tsx` — responsive metric and empty state cards
+  - 📄 `SignOutButton.tsx` — session termination component
+- 📁 `lib/`
+  - 📁 `ai/clients/` — `base.ts`, `gemini.ts`, `xai.ts`, `ollama.ts`, `deterministic.ts`
+  - 📁 `ai/chains/` — `scrutiny.ts`, the scrutiny chain with failover
+  - 📁 `ai/rag/` — `pipeline.ts`, the policy RAG pipeline
+  - 📁 `auth/` — `supabase.ts`, auth client and cookie helpers
+  - 📁 `db/` — `prisma.ts`, the PrismaClient singleton
+- 📁 `prisma/`
+  - 📄 `schema.prisma` — database models and relations
+- 📄 `middleware.ts` — edge session validation
+- 📄 `.env.example` — environment variable template
+- 📄 `README.md` — documentation
 
 ---
 
 ## 🚀 Quick Start
 
-### Prerequisites
+### ✅ Prerequisites
 
-Ensure you have the following installed locally:
+- **Node.js** 18 or newer, from [nodejs.org](https://nodejs.org/)
+- **Git**, from [git-scm.com](https://git-scm.com/)
+- **Supabase account**, free at [supabase.com](https://supabase.com/)
 
-- **Node.js** 18 or newer ([nodejs.org](https://nodejs.org/))
-- **Git** ([git-scm.com](https://git-scm.com/))
-- **Supabase account** (free at [supabase.com](https://supabase.com/))
-
-### Installation Steps
+### 🛠️ Installation Steps
 
 ```bash
 # 1. Clone the repository
 git clone https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator.git
 
-# 2. Navigate to the project directory
+# 2. Move into the project directory
 cd hec-odl-application-orchestrator
 
 # 3. Install dependencies
@@ -377,120 +307,118 @@ npm install
 # 4. Create your local environment file
 cp .env.example .env.local
 
-# 5. Populate your database and API keys in .env.local
+# 5. Fill in your database and API keys in .env.local
 
 # 6. Generate the Prisma database client
 npx prisma generate
 
-# 7. Push database schema to Supabase PostgreSQL
+# 7. Push the database schema to Supabase PostgreSQL
 npx prisma db push
 
 # 8. Start the development server
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+Visit [http://localhost:3000](http://localhost:3000) to view the application.
 
 ---
 
 ## 🔐 Authentication and User Roles
 
-The platform pairs **Supabase Auth** with **HTTP Cookie synchronization** to allow Next.js Edge Middleware to enforce authentication before page delivery.
+The platform pairs **Supabase Auth** with **HTTP cookie synchronization**, letting Next.js Edge Middleware enforce authentication before any page is delivered.
 
-### Authentication Endpoints
+### 🔑 Authentication Flows
 
-| Flow | URL | Description |
-|:-----|:----|:------------|
-| 🔑 Sign In | `/login` | Email and password login with role redirect |
-| 📝 Sign Up | `/signup` | Account creation across all 5 workspace roles |
-| 📧 Forgot Password | `/forgot-password` | Self-service password reset trigger |
-| 🔄 Reset Password | `/reset-password` | Secure password update via verified token |
-| 🚪 Sign Out | Any dashboard | Cookie clearing and redirect to login |
+- 🔑 **Sign In** at `/login` — email and password login with role redirect
+- 📝 **Sign Up** at `/signup` — account creation across all five workspace roles
+- 📧 **Forgot Password** at `/forgot-password` — self service reset trigger
+- 🔄 **Reset Password** at `/reset-password` — secure password update via verified token
+- 🚪 **Sign Out** from any dashboard — cookie clearing and redirect to login
 
-### Workspace Roles
+### 👤 Workspace Roles
 
-| Role Key | Target Route | Scope |
-|:---------|:-------------|:------|
-| `hei` | `/hei` | Higher Education Institution applicant |
-| `qad` | `/qad` | Quality Assurance Division scrutiny officer |
-| `panel` | `/panel` | Expert Panel reviewer |
-| `admin` | `/admin` | System administrator |
-| `decision_maker` | `/decisions` | Commission decision authority |
-| `compliance` | `/compliance` | Compliance and confirmation officer |
+- `hei` → `/hei` — Higher Education Institution applicant
+- `qad` → `/qad` — Quality Assurance Division scrutiny officer
+- `panel` → `/panel` — Expert Panel reviewer
+- `admin` → `/admin` — system administrator
+- `decision_maker` → `/decisions` — commission decision authority
+- `compliance` → `/compliance` — compliance and confirmation officer
 
 ---
 
 ## 🌐 Free Deployment on Vercel
 
 The live application is hosted at:
-**[https://hec-odl-application-orchestrator.vercel.app/](https://hec-odl-application-orchestrator.vercel.app/)**
+**[hec-odl-application-orchestrator.vercel.app](https://hec-odl-application-orchestrator.vercel.app/)**
 
-### Deployment Steps:
+### 🚀 Deployment Steps
 
 1. Fork or push your changes to your GitHub repository
 2. Open [vercel.com/new](https://vercel.com/new) and select your repository
 3. Set your environment variables in the Vercel dashboard
 4. Click **Deploy**
 
-> The build will compile cleanly across all 23 Next.js routes with zero errors.
+> ✅ The build compiles cleanly across all 23 Next.js routes with zero errors.
 
 ---
 
 ## ⚙️ Environment Variables
 
-Configure these keys in your `.env.local` file or Vercel Environment Variables console:
-
 ```env
-# ─── Supabase Configuration ─────────────────────────────────────
+# Supabase configuration
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 
-# ─── Database URL (Remote PostgreSQL via Supabase) ──────────────
+# Database URL, remote PostgreSQL via Supabase
 DATABASE_URL=postgresql://postgres:password@db.your-project.supabase.co:5432/postgres
 
-# ─── AI API Keys (Optional; Failover handles missing keys) ──────
+# AI API keys, optional since failover handles missing keys
 GEMINI_API_KEY=your_gemini_key
 XAI_API_KEY=your_xai_key
 OLLAMA_BASE_URL=http://localhost:11434
 ```
 
-### Key Reference Table
+<details>
+<summary>📋 Key reference table</summary>
+<br/>
 
-| Variable Name | Provider | Cost |
-|:--------------|:---------|:-----|
-| `NEXT_PUBLIC_SUPABASE_URL` | [Supabase](https://supabase.com/) | Free |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | [Supabase](https://supabase.com/) | Free |
-| `SUPABASE_SERVICE_ROLE_KEY` | [Supabase](https://supabase.com/) | Free |
-| `DATABASE_URL` | [Supabase](https://supabase.com/) (Database tab) | Free |
-| `GEMINI_API_KEY` | [Google AI Studio](https://aistudio.google.com/) | Free |
-| `XAI_API_KEY` | [xAI Console](https://console.x.ai/) | Free tier |
-| `OLLAMA_BASE_URL` | Local machine or Cloudflare Tunnel | Free |
+| Variable | Provider |
+|:---|:---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase, free |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase, free |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase, free |
+| `DATABASE_URL` | Supabase database tab, free |
+| `GEMINI_API_KEY` | Google AI Studio, free |
+| `XAI_API_KEY` | xAI Console, free tier |
+| `OLLAMA_BASE_URL` | Local machine or Cloudflare Tunnel, free |
+
+</details>
 
 ---
 
 ## 🗃️ Database Schema
 
-The core relational models defined in **Prisma ORM**:
+Core relational models defined in **Prisma ORM**:
 
 ```prisma
 model User {
-  id          String        @id @default(uuid())
-  email       String        @unique
-  role        String
+  id           String        @id @default(uuid())
+  email        String        @unique
+  role         String
   applications Application[]
-  createdAt   DateTime      @default(now())
+  createdAt    DateTime      @default(now())
 }
 
 model Application {
-  id          String               @id @default(uuid())
-  userId      String
-  user        User                 @relation(fields: [userId], references: [id])
-  status      String               @default("submitted")
-  data        Json
-  versions    ApplicationVersion[]
-  createdAt   DateTime             @default(now())
-  updatedAt   DateTime             @updatedAt
+  id        String               @id @default(uuid())
+  userId    String
+  user      User                 @relation(fields: [userId], references: [id])
+  status    String               @default("submitted")
+  data      Json
+  versions  ApplicationVersion[]
+  createdAt DateTime             @default(now())
+  updatedAt DateTime             @updatedAt
 }
 
 model ApplicationVersion {
@@ -506,44 +434,65 @@ model ApplicationVersion {
 
 ## 📡 API Reference
 
-| Method | Endpoint | Description | Auth Required |
-|:------:|:---------|:------------|:-------------:|
-| `GET` | `/api/applications` | List applications for current user or scope | Yes |
-| `POST` | `/api/applications` | Create new versioned application dossier | Yes |
-| `GET` | `/api/applications/[id]` | Retrieve application dossier and versions | Yes |
-| `PATCH` | `/api/applications/[id]` | Update application review status | Yes |
-| `POST` | `/api/applications/[id]/scrutinize` | Execute AI regulatory scrutiny | Yes |
-| `POST` | `/api/upload` | Upload and store application evidence files | Yes |
-| `POST` | `/api/chat` | AI policy conversation endpoint | Yes |
-| `POST` | `/api/rag/ingest` | Index policy documents into vector store | Yes |
-| `POST` | `/api/rag/search` | Execute semantic search across policy bank | Yes |
+<details open>
+<summary>🔌 Endpoints (tap to collapse on mobile)</summary>
+<br/>
+
+- **GET** `/api/applications` — list applications for the current user or scope 🔐
+- **POST** `/api/applications` — create a new versioned application dossier 🔐
+- **GET** `/api/applications/[id]` — retrieve an application dossier and its versions 🔐
+- **PATCH** `/api/applications/[id]` — update an application review status 🔐
+- **POST** `/api/applications/[id]/scrutinize` — run AI regulatory scrutiny 🔐
+- **POST** `/api/upload` — upload and store application evidence files 🔐
+- **POST** `/api/chat` — AI policy conversation endpoint 🔐
+- **POST** `/api/rag/ingest` — index policy documents into the vector store 🔐
+- **POST** `/api/rag/search` — run semantic search across the policy bank 🔐
+
+🔐 = authentication required on every route above
+
+</details>
 
 ---
 
 ## 🛡️ Security and Safeguards
 
-- **Next.js Edge Middleware** intercepts all protected dashboard routes (`/hei`, `/qad`, `/panel`, `/admin`, `/decisions`, `/compliance`, `/visits`) before rendering.
-- **HTTP Session Cookies** (`sb-access-token`, `hec-session-token`) prevent client-side token exposure.
-- **Database Row Level Security (RLS)** isolates institutional dossiers from unauthorized access.
-- **Zod Schema Validation** verifies request payloads on every API route.
-- **Transactional Consistency** executes dossier creation and version logging inside atomic `prisma.$transaction()` blocks.
+- 🛡️ **Next.js Edge Middleware** intercepts every protected dashboard route (`/hei`, `/qad`, `/panel`, `/admin`, `/decisions`, `/compliance`, `/visits`) before rendering
+- 🍪 **HTTP session cookies** (`sb-access-token`, `hec-session-token`) keep tokens out of client side exposure
+- 🔒 **Database Row Level Security (RLS)** isolates institutional dossiers from unauthorized access
+- ✅ **Zod schema validation** checks every request payload on every API route
+- 🔁 **Transactional consistency** runs dossier creation and version logging inside atomic `prisma.$transaction()` blocks
 
 ---
 
 ## 🗺️ Roadmap
 
-```
-Phase 1 (Completed)       Phase 2 (Upcoming)         Phase 3 (Future)
-+-----------------+       +-----------------+         +-----------------+
-| Core Dossier    |       | Automated Email |         | Mobile App      |
-| Role Dashboards |  -->  | PDF NOC Letters |  -->    | Offline Mode    |
-| AI Scrutiny     |       | Calendar Sync   |         | Biometrics      |
-| Mobile UI/UX    |       | Full-Text Search|         | Bulk Import     |
-| Cookie Auth     |       | Analytics Desk  |         | Multi-Language  |
-+-----------------+       +-----------------+         +-----------------+
+```mermaid
+flowchart LR
+    subgraph P1["✅ Phase 1, Completed"]
+        p1a[Core Dossier]
+        p1b[Role Dashboards]
+        p1c[AI Scrutiny]
+        p1d[Mobile UI/UX]
+        p1e[Cookie Auth]
+    end
+    subgraph P2["🔜 Phase 2, Upcoming"]
+        p2a[Automated Email]
+        p2b[PDF NOC Letters]
+        p2c[Calendar Sync]
+        p2d[Full Text Search]
+        p2e[Analytics Desk]
+    end
+    subgraph P3["🔮 Phase 3, Future"]
+        p3a[Mobile App]
+        p3b[Offline Mode]
+        p3c[Biometrics]
+        p3d[Bulk Import]
+        p3e[Multi Language]
+    end
+    P1 --> P2 --> P3
 ```
 
-### Upcoming Milestones
+### 🎯 Upcoming Milestones
 
 - [ ] 📧 Automated email alerts on status changes
 - [ ] 📄 Digital PDF NOC generator with QR verification
@@ -551,7 +500,7 @@ Phase 1 (Completed)       Phase 2 (Upcoming)         Phase 3 (Future)
 - [ ] 📅 Calendar scheduling for site inspection visits
 - [ ] 📊 Comprehensive QAD analytics dashboard
 - [ ] 📱 Progressive Web App (PWA) offline support
-- [ ] 🌐 Multilingual support (English and Urdu)
+- [ ] 🌐 Multilingual support, English and Urdu
 
 ---
 
@@ -559,11 +508,11 @@ Phase 1 (Completed)       Phase 2 (Upcoming)         Phase 3 (Future)
 
 Contributions to improve the HEC ODL Application Orchestrator are welcome:
 
-1. **Fork** the repository
-2. **Create** a branch: `git checkout -b feature/your-feature-name`
-3. **Commit** your changes: `git commit -m "feat: add your feature"`
-4. **Push** to the branch: `git push origin feature/your-feature-name`
-5. **Open** a Pull Request
+1. 🍴 **Fork** the repository
+2. 🌿 **Create** a branch: `git checkout -b feature/your-feature-name`
+3. 💾 **Commit** your changes: `git commit -m "feat: add your feature"`
+4. 🚀 **Push** to the branch: `git push origin feature/your-feature-name`
+5. 🔀 **Open** a Pull Request
 
 ---
 
@@ -575,10 +524,9 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 <div align="center">
 
-<!-- Footer Wave -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:3b82f6,100:1e3a8a&height=120&section=footer" width="100%" />
 
-**Built for Pakistan Higher Education Commission**
+**Built for Pakistan Higher Education Commission** 🇵🇰
 
 [![GitHub Stars](https://img.shields.io/github/stars/AbdulAzeemHashmi/hec-odl-application-orchestrator?style=social)](https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator)
 [![GitHub Forks](https://img.shields.io/github/forks/AbdulAzeemHashmi/hec-odl-application-orchestrator?style=social)](https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator)
