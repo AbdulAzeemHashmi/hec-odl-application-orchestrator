@@ -7,14 +7,17 @@ export default function Home() {
     <main className="min-h-screen bg-slate-50 text-slate-900">
       {/* Navigation Header */}
       <header className="border-b border-slate-200/80 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="text-xl font-extrabold tracking-tight text-blue-900 flex items-center gap-2">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
+          <div className="text-lg sm:text-xl font-extrabold tracking-tight text-blue-900 flex items-center gap-2">
             <span className="grid h-8 w-8 place-items-center rounded-lg bg-blue-800 font-bold text-white text-sm">ODL</span>
             HEC <span className="text-slate-700 font-semibold">Portal</span>
           </div>
-          <div className="flex gap-3">
-            <Link href="/login" className="btn-secondary px-5 py-2 text-sm font-semibold">Sign in</Link>
-            <Link href="/signup" className="btn-primary px-5 py-2 text-sm font-semibold shadow-md shadow-blue-700/20">Create account</Link>
+          <div className="flex gap-2 sm:gap-3">
+            <Link href="/login" className="btn-secondary px-3 py-2 text-xs sm:px-5 sm:text-sm font-semibold">Sign in</Link>
+            <Link href="/signup" className="btn-primary px-3 py-2 text-xs sm:px-5 sm:text-sm font-semibold shadow-md shadow-blue-700/20">
+              <span className="hidden sm:inline">Create account</span>
+              <span className="sm:hidden">Register</span>
+            </Link>
           </div>
         </div>
       </header>
@@ -23,9 +26,9 @@ export default function Home() {
       <section className="bg-gradient-to-b from-white via-slate-50 to-slate-100/60">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 pt-8 pb-14 sm:pt-10 sm:pb-16 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
           <div>
-            <div className="inline-flex items-center gap-2.5 rounded-full bg-blue-100/90 px-5 py-2 text-sm sm:text-base font-bold tracking-wide text-blue-900 ring-1 ring-inset ring-blue-700/20 shadow-sm uppercase">
-              <span className="h-2.5 w-2.5 rounded-full bg-blue-600 animate-pulse" />
-              Quality Assurance Division · ODL Section
+            <div className="inline-flex items-center gap-2 rounded-full bg-blue-100/90 px-3 py-1.5 text-xs sm:px-5 sm:py-2 sm:text-sm font-bold tracking-wide text-blue-900 ring-1 ring-inset ring-blue-700/20 shadow-sm uppercase max-w-full">
+              <span className="h-2 w-2 flex-shrink-0 rounded-full bg-blue-600 animate-pulse" />
+              <span className="truncate">Quality Assurance Division · ODL Section</span>
             </div>
 
             <h1 className="mt-6 max-w-3xl text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug tracking-tight text-slate-900">
@@ -36,17 +39,17 @@ export default function Home() {
               Submit the Model Application Dossier, manage evidence, review cases, coordinate Expert Panels, record visits, issue decisions, and track 3-year confirmation milestones.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/signup" className="btn-primary px-7 py-3 text-base font-semibold shadow-lg shadow-blue-800/25 hover:shadow-xl transition-all">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <Link href="/signup" className="btn-primary w-full justify-center py-3 text-sm font-semibold shadow-lg shadow-blue-800/25 hover:shadow-xl transition-all sm:w-auto sm:px-7 sm:text-base">
                 Register your HEI
               </Link>
-              <Link href="/llm" className="btn-secondary px-7 py-3 text-base font-semibold border-slate-300 hover:bg-slate-100 transition-all">
+              <Link href="/llm" className="btn-secondary w-full justify-center py-3 text-sm font-semibold border-slate-300 hover:bg-slate-100 transition-all sm:w-auto sm:px-7 sm:text-base">
                 Open policy assistant
               </Link>
             </div>
           </div>
 
-          <div className="rounded-3xl bg-gradient-to-br from-blue-900 via-blue-950 to-slate-900 p-8 text-white shadow-2xl shadow-blue-950/30 border border-blue-800/50">
+          <div className="rounded-3xl bg-gradient-to-br from-blue-900 via-blue-950 to-slate-900 p-5 sm:p-8 text-white shadow-2xl shadow-blue-950/30 border border-blue-800/50">
             <div className="flex items-center justify-between">
               <p className="text-xs font-bold uppercase tracking-widest text-blue-300">APPLICATION LIFECYCLE</p>
               <span className="rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-200">5 Stages</span>
