@@ -23,16 +23,16 @@ export default function Home() {
       <section className="bg-gradient-to-b from-white via-slate-50 to-slate-100/60">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-blue-100/90 px-4 py-1.5 text-xs font-bold tracking-wider text-blue-900 ring-1 ring-inset ring-blue-700/20 shadow-sm uppercase">
-              <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 rounded-full bg-blue-100/90 px-5 py-2 text-sm sm:text-base font-bold tracking-wide text-blue-900 ring-1 ring-inset ring-blue-700/20 shadow-sm uppercase">
+              <span className="h-2.5 w-2.5 rounded-full bg-blue-600 animate-pulse" />
               Quality Assurance Division · ODL Section
             </div>
 
-            <h1 className="mt-6 max-w-3xl text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.18] tracking-tight text-slate-900">
+            <h1 className="mt-6 max-w-3xl text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug tracking-tight text-slate-900">
               A complete workspace for <span className="bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 bg-clip-text text-transparent">ODL NOC Applications</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-slate-600 font-normal">
+            <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-600 font-normal">
               Submit the Model Application Dossier, manage evidence, review cases, coordinate Expert Panels, record visits, issue decisions, and track 3-year confirmation milestones.
             </p>
 
