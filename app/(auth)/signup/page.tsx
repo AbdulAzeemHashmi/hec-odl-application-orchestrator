@@ -8,7 +8,7 @@ export default function SignupPage() {
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [role, setRole] = useState<'hei' | 'qad' | 'panel'>('hei')
+  const [role, setRole] = useState<'hei' | 'qad' | 'panel' | 'admin'>('hei')
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
   const configured = isSupabaseAuthConfigured()
@@ -16,6 +16,7 @@ export default function SignupPage() {
   function redirectForRole(targetRole: string) {
     if (targetRole === 'qad') router.push('/qad')
     else if (targetRole === 'panel') router.push('/panel')
+    else if (targetRole === 'admin') router.push('/admin')
     else router.push('/hei')
     router.refresh()
   }
@@ -117,6 +118,7 @@ export default function SignupPage() {
             <option value="hei">HEI Institutional Applicant</option>
             <option value="qad">QAD Scrutiny Officer</option>
             <option value="panel">Expert Panel Member</option>
+            <option value="admin">System Administrator</option>
           </select>
         </label>
 
