@@ -109,13 +109,6 @@ The application ships a responsive design built for phones, tablets, and desktop
 - 🔤 **Inter Typography** - Google Fonts Inter with anti aliasing for crisp Retina display readability
 - 📱 **iOS Viewport Optimization** - viewport metadata that stops unwanted auto zoom on form focus
 
-### 🩹 Fixes applied in this update
-
-- Every ASCII box diagram in this README has been replaced with a **Mermaid diagram**, which GitHub renders as a scalable SVG that fits any screen width
-- Wide multi column tables were rebuilt as **stacked emoji bullet lists** so nothing gets cut off sideways
-- The badge row and deep reference tables were moved into **collapsible sections**, keeping the first mobile scroll short
-- The nested project folder tree became an **indented emoji list** instead of fixed width ASCII spacing
-
 ---
 
 ## 🏛️ System Architecture
