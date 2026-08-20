@@ -27,7 +27,7 @@ export default async function QadDashboard() {
 
     return (
         <PortalShell title="QAD scrutiny desk" subtitle="Manage incoming cases, completeness decisions, deficiency notices and panel formation.">
-            <div className="grid gap-4 md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
                 <Metric label="Received" value={received.toString()} note="Awaiting initial scrutiny" />
                 <Metric label="Due in 7 days" value={dueSoon.toString()} note="30-day scrutiny target" />
                 <Metric label="Deficiency returns" value={deficiencyReturns.toString()} note="Awaiting HEI response" />

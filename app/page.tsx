@@ -70,7 +70,7 @@ export default function Home() {
 
       {/* Middle Feature Section (Rich Silver Theme) */}
       <section className="border-y border-slate-300/90 bg-gradient-to-r from-slate-200 via-zinc-300 to-slate-200 text-slate-900 shadow-inner">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-5 px-4 py-10 sm:px-6 sm:py-14 md:gap-8 md:grid-cols-3">
           <Feature
             icon="📋"
             title="Controlled dossier"
@@ -94,7 +94,7 @@ export default function Home() {
 
 function Feature({ icon, title, text }: { icon: string; title: string; text: string }) {
   return (
-    <div className="rounded-2xl border border-slate-300 bg-white p-7 shadow-lg hover:shadow-2xl hover:border-blue-500 hover:-translate-y-1 transition-all duration-300">
+    <div className="rounded-2xl border border-slate-300 bg-white p-5 sm:p-7 shadow-lg hover:shadow-2xl hover:border-blue-500 hover:-translate-y-1 transition-all duration-300">
       <div className="flex items-center gap-3">
         <span className="grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-xl shadow-inner border border-blue-100">{icon}</span>
         <h2 className="font-extrabold text-slate-950 text-xl">{title}</h2>

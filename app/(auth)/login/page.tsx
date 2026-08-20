@@ -54,10 +54,10 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="grid min-h-screen place-items-center bg-slate-100 p-6">
-      <form onSubmit={signIn} className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl shadow-slate-200">
+    <main className="grid min-h-screen place-items-center bg-slate-100 p-4 sm:p-6">
+      <form onSubmit={signIn} className="w-full max-w-md rounded-2xl bg-white p-5 sm:p-8 shadow-xl shadow-slate-200">
         <p className="eyebrow">HEC ODL PORTAL</p>
-        <h1 className="mt-2 text-3xl font-bold text-slate-900">Welcome back</h1>
+        <h1 className="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Welcome back</h1>
         <p className="mt-3 text-sm leading-6 text-slate-500">Sign in with your portal email and password.</p>
 
         {!configured && (
@@ -91,13 +91,13 @@ export default function LoginPage() {
           />
         </label>
 
-        <div className="mt-2 flex items-center justify-between text-xs">
-          <label className="flex items-center gap-2 text-slate-600">
+        <div className="mt-3 space-y-2">
+          <label className="flex items-center gap-2 text-xs text-slate-600">
             Role:
             <select
               value={role}
               onChange={e => setRole(e.target.value as any)}
-              className="rounded border border-slate-300 p-1 text-slate-800 bg-slate-50 font-medium"
+              className="flex-1 rounded border border-slate-300 p-1.5 text-xs text-slate-800 bg-slate-50 font-medium"
             >
               <option value="hei">HEI Institutional User</option>
               <option value="qad">QAD Scrutiny Officer</option>
@@ -105,9 +105,11 @@ export default function LoginPage() {
               <option value="admin">System Administrator</option>
             </select>
           </label>
-          <Link href="/forgot-password" className="font-semibold text-blue-700 hover:underline">
-            Forgot password?
-          </Link>
+          <div className="text-right">
+            <Link href="/forgot-password" className="text-xs font-semibold text-blue-700 hover:underline">
+              Forgot password?
+            </Link>
+          </div>
         </div>
 
         {message && <p className="mt-4 text-sm font-medium text-blue-800 bg-blue-50 p-3 rounded-lg border border-blue-200">{message}</p>}

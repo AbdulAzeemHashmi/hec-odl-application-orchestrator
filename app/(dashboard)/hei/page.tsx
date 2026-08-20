@@ -30,7 +30,7 @@ export default async function HeiDashboard() {
 
     return (
         <PortalShell title="HEI workspace" subtitle="Track every ODL NOC application and action due from your institution.">
-            <div className="grid gap-4 md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
                 <Metric label="Drafts" value={drafts.toString()} note="Continue completing dossier" />
                 <Metric label="Under review" value={underReview.toString()} note="QAD or panel assessment" />
                 <Metric label="Action required" value={actionRequired.toString()} note="Deficiencies and responses" />
