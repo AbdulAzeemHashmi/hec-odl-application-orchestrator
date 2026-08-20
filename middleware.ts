@@ -11,12 +11,12 @@ export function middleware(request: NextRequest) {
     const isProtected = PROTECTED_PREFIXES.some(prefix => pathname.startsWith(prefix))
 
     if (isProtected) {
-        // Retrieve Supabase or application authorization tokens/cookies
+        // Retrieve session token from HTTP cookies or authorization header
         const token = request.cookies.get('sb-access-token')?.value || 
+                      request.cookies.get('hec-session-token')?.value ||
                       request.headers.get('authorization')
 
         // If no active session token found and path is protected, redirect to login
-        // Allow local development pass-through if explicitly flagged
         const isBypass = process.env.NODE_ENV === 'development' && request.nextUrl.searchParams.get('auth') === 'guest'
         
         if (!token && !isBypass) {
