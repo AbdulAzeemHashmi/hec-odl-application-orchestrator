@@ -43,7 +43,6 @@
 ## 📋 Table of Contents
 
 - [🌟 Overview](#-overview)
-- [🖼️ Screenshots and Demo](#-screenshots-and-demo)
 - [✨ Key Features](#-key-features)
 - [📱 Mobile First UI/UX](#-mobile-first-uiux)
 - [🏛️ System Architecture](#-system-architecture)
@@ -95,21 +94,7 @@ Before this system, the ODL NOC application workflow ran across paper dossiers, 
 
 ---
 
-## 🖼️ Screenshots and Demo
-
-<div align="center">
-
-| 🏫 HEI Dashboard | 🔍 QAD Review Desk |
-|:---:|:---:|
-| <img src="https://placehold.co/480x300/1e3a8a/ffffff?text=HEI+Dashboard+Screenshot" alt="Screenshot placeholder for the HEI dashboard" width="100%"/> | <img src="https://placehold.co/480x300/3b82f6/ffffff?text=QAD+Review+Screenshot" alt="Screenshot placeholder for the QAD review desk" width="100%"/> |
-
-| 👨‍⚖️ Expert Panel Workspace | ⚖️ Decision Register |
-|:---:|:---:|
-| <img src="https://placehold.co/480x300/1e40af/ffffff?text=Expert+Panel+Screenshot" alt="Screenshot placeholder for the Expert Panel workspace" width="100%"/> | <img src="https://placehold.co/480x300/2563eb/ffffff?text=Decision+Register+Screenshot" alt="Screenshot placeholder for the Decision Maker register" width="100%"/> |
-
-</div>
-
-> 📸 The four tiles above are placeholders. Swap each `placehold.co` link for a real screenshot or a short screen recording GIF once the dashboards are captured, the same markdown table layout will keep working on both desktop and mobile.
+> 🔴 **See it live**: the portal is deployed and running at [hec-odl-application-orchestrator.vercel.app](https://hec-odl-application-orchestrator.vercel.app/), open it directly on desktop or mobile to explore the real dashboards instead of static screenshots.
 
 ---
 
@@ -151,7 +136,7 @@ The application ships a responsive design built for phones, tablets, and desktop
 - Wide multi column tables were rebuilt as **stacked emoji bullet lists** so nothing gets cut off sideways
 - The badge row and deep reference tables were moved into **collapsible sections**, keeping the first mobile scroll short
 - The nested project folder tree became an **indented emoji list** instead of fixed width ASCII spacing
-- A **Screenshots and Demo** section, **status badges**, **image alt text**, and a **FAQ** were added to close the gaps found in the previous draft
+- **Status badges**, **image alt text**, and a **FAQ** were added to close the gaps found in the previous draft, and a direct link to the live Vercel app replaces static screenshots
 
 ---
 
