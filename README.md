@@ -61,7 +61,6 @@
 - [❓ FAQ](#-faq)
 - [🗺️ Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
-- [⭐ Star History](#-star-history)
 - [📄 License](#-license)
 
 ---
@@ -124,11 +123,13 @@ Before this system, the ODL NOC application workflow ran across paper dossiers, 
 
 The application ships a responsive design built for phones, tablets, and desktops:
 
-- 🗂️ **Slide in Navigation Drawer** - an animated mobile drawer opened from the top hamburger button (`☰`), with a backdrop overlay
-- 🔲 **2x2 Mobile Metric Grids** - key metrics show in a balanced two column grid on phones instead of a single cramped column
-- 👆 **Touch Friendly Controls** - full width primary buttons and cleanly stacked form inputs for one thumb use
-- 🔤 **Inter Typography** - Google Fonts Inter with anti aliasing for crisp Retina display readability
-- 📱 **iOS Viewport Optimization** - viewport metadata that stops unwanted auto zoom on form focus
+| Feature | Description |
+|:---|:---|
+| 🗂️ **Slide in Navigation Drawer** | An animated mobile drawer opened from the top hamburger button (`☰`), with a backdrop overlay |
+| 🔲 **2x2 Mobile Metric Grids** | Key metrics show in a balanced two column grid on phones instead of a single cramped column |
+| 👆 **Touch Friendly Controls** | Full width primary buttons and cleanly stacked form inputs for one thumb use |
+| 🔤 **Inter Typography** | Google Fonts Inter with anti aliasing for crisp Retina display readability |
+| 📱 **iOS Viewport Optimization** | Viewport metadata that stops unwanted auto zoom on form focus |
 
 ### 🩹 Fixes applied in this update
 
@@ -246,19 +247,21 @@ Every application is tracked across these five stages with full timestamp logs a
 
 ## 🛠️ Tech Stack
 
-- 🖥️ **Next.js 14.2** - App Router, Server Actions, and API routes
-- 🎨 **Tailwind CSS 3.4** - responsive utility first design system
-- 📝 **TypeScript 5.3** - strict type safety across frontend and backend
-- 🔐 **Supabase Auth 2.43** - JWT session handling and cookie sync
-- 🗃️ **Prisma 5.14** - type safe database queries and migrations
-- 🐘 **PostgreSQL (Supabase)** - relational data persistence
-- 🤖 **LangChain 0.2** - AI router and RAG pipeline management
-- 🧠 **Google Gemini** - primary LLM for policy scrutiny and answering
-- 🧠 **xAI Grok** - secondary cloud AI fallback provider
-- 🧠 **Ollama (LLaMA 3)** - local and tunnel based AI inference
-- 🧠 **Deterministic Engine** - custom, zero cost rule based scrutiny
-- 🌐 **Vercel** - edge network serverless hosting
-- ✅ **Zod 3.22** - input schema validation
+| Technology | Purpose |
+|:---|:---|
+| 🖥️ **Next.js 14.2** | App Router, Server Actions, and API routes |
+| 🎨 **Tailwind CSS 3.4** | Responsive utility first design system |
+| 📝 **TypeScript 5.3** | Strict type safety across frontend and backend |
+| 🔐 **Supabase Auth 2.43** | JWT session handling and cookie sync |
+| 🗃️ **Prisma 5.14** | Type safe database queries and migrations |
+| 🐘 **PostgreSQL (Supabase)** | Relational data persistence |
+| 🤖 **LangChain 0.2** | AI router and RAG pipeline management |
+| 🧠 **Google Gemini** | Primary LLM for policy scrutiny and answering |
+| 🧠 **xAI Grok** | Secondary cloud AI fallback provider |
+| 🧠 **Ollama (LLaMA 3)** | Local and tunnel based AI inference |
+| 🧠 **Deterministic Engine** | Custom, zero cost rule based scrutiny |
+| 🌐 **Vercel** | Edge network serverless hosting |
+| ✅ **Zod 3.22** | Input schema validation |
 
 ---
 
@@ -460,15 +463,17 @@ model ApplicationVersion {
 <summary>🔌 Endpoints (tap to collapse on mobile)</summary>
 <br/>
 
-- **GET** `/api/applications` - list applications for the current user or scope 🔐
-- **POST** `/api/applications` - create a new versioned application dossier 🔐
-- **GET** `/api/applications/[id]` - retrieve an application dossier and its versions 🔐
-- **PATCH** `/api/applications/[id]` - update an application review status 🔐
-- **POST** `/api/applications/[id]/scrutinize` - run AI regulatory scrutiny 🔐
-- **POST** `/api/upload` - upload and store application evidence files 🔐
-- **POST** `/api/chat` - AI policy conversation endpoint 🔐
-- **POST** `/api/rag/ingest` - index policy documents into the vector store 🔐
-- **POST** `/api/rag/search` - run semantic search across the policy bank 🔐
+| Method | Endpoint | Description | Auth |
+|:---|:---|:---|:---:|
+| GET | `/api/applications` | List applications for the current user or scope | 🔐 |
+| POST | `/api/applications` | Create a new versioned application dossier | 🔐 |
+| GET | `/api/applications/[id]` | Retrieve an application dossier and its versions | 🔐 |
+| PATCH | `/api/applications/[id]` | Update an application review status | 🔐 |
+| POST | `/api/applications/[id]/scrutinize` | Run AI regulatory scrutiny | 🔐 |
+| POST | `/api/upload` | Upload and store application evidence files | 🔐 |
+| POST | `/api/chat` | AI policy conversation endpoint | 🔐 |
+| POST | `/api/rag/ingest` | Index policy documents into the vector store | 🔐 |
+| POST | `/api/rag/search` | Run semantic search across the policy bank | 🔐 |
 
 🔐 = authentication required on every route above
 
@@ -573,18 +578,6 @@ Contributions to improve the HEC ODL Application Orchestrator are welcome:
 Please keep discussions respectful and constructive, treat this as the project's Code of Conduct until a dedicated `CODE_OF_CONDUCT.md` is added. Bug reports and feature ideas are equally welcome as GitHub Issues.
 
 > ⭐ If this project saves you time, consider starring the repository, it helps other institutions discover the portal too.
-
----
-
-## ⭐ Star History
-
-<div align="center">
-
-<a href="https://star-history.com/#AbdulAzeemHashmi/hec-odl-application-orchestrator&Date">
-  <img src="https://api.star-history.com/svg?repos=AbdulAzeemHashmi/hec-odl-application-orchestrator&type=Date" alt="Star history chart for the HEC ODL Application Orchestrator repository" width="100%"/>
-</a>
-
-</div>
 
 ---
 
