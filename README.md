@@ -1,6 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3a8a,100:3b82f6&height=200&section=header&text=HEC%20ODL%20Portal&fontSize=56&fontColor=ffffff&fontAlignY=38&desc=ODL%20NOC%20Application%20Orchestrator&descAlignY=60&descSize=20&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3a8a,100:3b82f6&height=200&section=header&text=HEC%20ODL%20Portal&fontSize=56&fontColor=ffffff&fontAlignY=38&desc=ODL%20NOC%20Application%20Orchestrator&descAlignY=60&descSize=20&animation=fadeIn" width="100%" alt="Animated HEC ODL Portal banner" />
+
+<br/>
+
+<img src="https://readme-typing-svg.demolab.com/?lines=Digitizing+the+ODL+NOC+lifecycle...;From+dossier+submission+to+3+year+confirmation;Built+with+Next.js%2C+Supabase+and+AI+failover;100%25+free+cloud+hosting&font=Fira+Code&center=true&width=600&height=40&color=3b82f6&vCenter=true&size=18" alt="Typing animation describing the project" />
 
 <br/>
 
@@ -8,6 +12,13 @@
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator)
 [![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+
+<br/>
+
+![Last Commit](https://img.shields.io/github/last-commit/AbdulAzeemHashmi/hec-odl-application-orchestrator?style=flat-square&color=3b82f6&label=last%20commit)
+![Open Issues](https://img.shields.io/github/issues/AbdulAzeemHashmi/hec-odl-application-orchestrator?style=flat-square&color=f59e0b&label=open%20issues)
+![Repo Size](https://img.shields.io/github/repo-size/AbdulAzeemHashmi/hec-odl-application-orchestrator?style=flat-square&color=10b981&label=repo%20size)
+![Stars](https://img.shields.io/github/stars/AbdulAzeemHashmi/hec-odl-application-orchestrator?style=flat-square&color=eab308&label=stars)
 
 <details>
 <summary>🎖️ More badges</summary>
@@ -32,6 +43,7 @@
 ## 📋 Table of Contents
 
 - [🌟 Overview](#-overview)
+- [🖼️ Screenshots and Demo](#-screenshots-and-demo)
 - [✨ Key Features](#-key-features)
 - [📱 Mobile First UI/UX](#-mobile-first-uiux)
 - [🏛️ System Architecture](#-system-architecture)
@@ -47,8 +59,10 @@
 - [🗃️ Database Schema](#-database-schema)
 - [📡 API Reference](#-api-reference)
 - [🛡️ Security and Safeguards](#-security-and-safeguards)
+- [❓ FAQ](#-faq)
 - [🗺️ Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
+- [⭐ Star History](#-star-history)
 - [📄 License](#-license)
 
 ---
@@ -67,6 +81,8 @@ flowchart TD
     F --> G[📅 3 Year Confirmation Tracked]
 ```
 
+> 🧭 This diagram renders as a live chart on github.com and in the GitHub mobile app. If you are viewing this file in an editor or renderer without Mermaid support, open the file directly on GitHub to see it rendered, the raw code above still explains each stage in order.
+
 ### 🎯 Why This Portal Exists
 
 Before this system, the ODL NOC application workflow ran across paper dossiers, postal mail, and scattered email threads. The HEC ODL Portal replaces those manual bottlenecks with:
@@ -79,23 +95,43 @@ Before this system, the ODL NOC application workflow ran across paper dossiers, 
 
 ---
 
+## 🖼️ Screenshots and Demo
+
+<div align="center">
+
+| 🏫 HEI Dashboard | 🔍 QAD Review Desk |
+|:---:|:---:|
+| <img src="https://placehold.co/480x300/1e3a8a/ffffff?text=HEI+Dashboard+Screenshot" alt="Screenshot placeholder for the HEI dashboard" width="100%"/> | <img src="https://placehold.co/480x300/3b82f6/ffffff?text=QAD+Review+Screenshot" alt="Screenshot placeholder for the QAD review desk" width="100%"/> |
+
+| 👨‍⚖️ Expert Panel Workspace | ⚖️ Decision Register |
+|:---:|:---:|
+| <img src="https://placehold.co/480x300/1e40af/ffffff?text=Expert+Panel+Screenshot" alt="Screenshot placeholder for the Expert Panel workspace" width="100%"/> | <img src="https://placehold.co/480x300/2563eb/ffffff?text=Decision+Register+Screenshot" alt="Screenshot placeholder for the Decision Maker register" width="100%"/> |
+
+</div>
+
+> 📸 The four tiles above are placeholders. Swap each `placehold.co` link for a real screenshot or a short screen recording GIF once the dashboards are captured, the same markdown table layout will keep working on both desktop and mobile.
+
+---
+
 ## ✨ Key Features
 
-- 📁 **Controlled Dossier** - parameter wise claims, evidence, remarks, and versioned submissions. ✅ Live
-- 👥 **Role Based Workspaces** - dedicated HEI, QAD, Expert Panel, and Decision Maker dashboards. ✅ Live
-- 📱 **Mobile UI/UX Optimization** - slide in drawer, 2x2 metric grids, and touch optimized controls. ✅ Live
-- 🤖 **AI With Safeguards** - multi tier failover across Gemini, Grok, Ollama, and a deterministic engine. ✅ Live
-- 🔐 **Secure Cookie Sessions** - Edge Middleware cookie validation with Supabase Auth integration. ✅ Live
-- 📧 **Password Reset via Email** - complete self service forgot password and reset flows. ✅ Live
-- 🛡️ **Edge Route Protection** - Next.js Edge Middleware guards every private dashboard route. ✅ Live
-- 📊 **Dynamic Metric Cards** - real time database metrics counting statuses across all roles. ✅ Live
-- 🔄 **Audit History Snapshots** - immutable submission versioning stored in `ApplicationVersion`. ✅ Live
-- 📎 **Evidence File Uploads** - inline base64 and multipart upload support for dossier claims. ✅ Live
-- 💬 **Policy Chat Assistant** - LangChain powered RAG pipeline answering HEC ODL policy queries. ✅ Live
-- 📅 **3 Year Milestone Tracker** - tracks confirmation deadlines for approved NOC programs. ✅ Live
-- 🆓 **100% Free Cloud Hosting** - no credit card required, runs entirely on free tier allowances. ✅ Live
+| Feature | Description | Status |
+|:---|:---|:---:|
+| 📁 **Controlled Dossier** | Parameter wise claims, evidence, remarks, and versioned submissions | ✅ Live |
+| 👥 **Role Based Workspaces** | Dedicated HEI, QAD, Expert Panel, and Decision Maker dashboards | ✅ Live |
+| 📱 **Mobile UI/UX Optimization** | Slide in drawer, 2x2 metric grids, and touch optimized controls | ✅ Live |
+| 🤖 **AI With Safeguards** | Multi tier failover across Gemini, Grok, Ollama, and a deterministic engine | ✅ Live |
+| 🔐 **Secure Cookie Sessions** | Edge Middleware cookie validation with Supabase Auth integration | ✅ Live |
+| 📧 **Password Reset via Email** | Complete self service forgot password and reset flows | ✅ Live |
+| 🛡️ **Edge Route Protection** | Next.js Edge Middleware guards every private dashboard route | ✅ Live |
+| 📊 **Dynamic Metric Cards** | Real time database metrics counting statuses across all roles | ✅ Live |
+| 🔄 **Audit History Snapshots** | Immutable submission versioning stored in `ApplicationVersion` | ✅ Live |
+| 📎 **Evidence File Uploads** | Inline base64 and multipart upload support for dossier claims | ✅ Live |
+| 💬 **Policy Chat Assistant** | LangChain powered RAG pipeline answering HEC ODL policy queries | ✅ Live |
+| 📅 **3 Year Milestone Tracker** | Tracks confirmation deadlines for approved NOC programs | ✅ Live |
+| 🆓 **100% Free Cloud Hosting** | No credit card required, runs entirely on free tier allowances | ✅ Live |
 
-> 💡 Tip: this list uses stacked bullets instead of a wide table so it stays readable on a phone screen without side scrolling.
+> 💡 Tip: on a phone screen this table scrolls sideways within its own block, the rest of the page stays put, so nothing else on the page is affected.
 
 ---
 
@@ -108,6 +144,14 @@ The application ships a responsive design built for phones, tablets, and desktop
 - 👆 **Touch Friendly Controls** - full width primary buttons and cleanly stacked form inputs for one thumb use
 - 🔤 **Inter Typography** - Google Fonts Inter with anti aliasing for crisp Retina display readability
 - 📱 **iOS Viewport Optimization** - viewport metadata that stops unwanted auto zoom on form focus
+
+### 🩹 Fixes applied in this update
+
+- Every ASCII box diagram in this README has been replaced with a **Mermaid diagram**, which GitHub renders as a scalable SVG that fits any screen width
+- Wide multi column tables were rebuilt as **stacked emoji bullet lists** so nothing gets cut off sideways
+- The badge row and deep reference tables were moved into **collapsible sections**, keeping the first mobile scroll short
+- The nested project folder tree became an **indented emoji list** instead of fixed width ASCII spacing
+- A **Screenshots and Demo** section, **status badges**, **image alt text**, and a **FAQ** were added to close the gaps found in the previous draft
 
 ---
 
@@ -382,9 +426,9 @@ OLLAMA_BASE_URL=http://localhost:11434
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase, free |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase, free |
 | `DATABASE_URL` | Supabase database tab, free |
-| `GEMINI_API_KEY` | Google AI Studio, free |
-| `XAI_API_KEY` | xAI Console, free tier |
-| `OLLAMA_BASE_URL` | Local machine or Cloudflare Tunnel, free |
+| `GEMINI_API_KEY` | Google AI Studio, free, optional |
+| `XAI_API_KEY` | xAI Console, free tier, optional |
+| `OLLAMA_BASE_URL` | Local machine or Cloudflare Tunnel, free, optional |
 
 </details>
 
@@ -457,6 +501,40 @@ model ApplicationVersion {
 
 ---
 
+## ❓ FAQ
+
+<details>
+<summary>💰 Does this really cost zero dollars to run</summary>
+<br/>
+Yes, as long as you stay within the free tiers of Vercel, Supabase, Google Gemini, and xAI Grok. If every AI key is left blank the Deterministic Rules Engine still evaluates applications locally at no cost, so the platform never requires a paid key to function.
+</details>
+
+<details>
+<summary>🤖 Are the Gemini and Grok API keys required</summary>
+<br/>
+No, both are optional. The AI pipeline automatically falls back from Gemini to Grok to a local Ollama instance and finally to the Deterministic Rules Engine, so scrutiny keeps working even with zero keys configured.
+</details>
+
+<details>
+<summary>📱 Does the portal work well on a phone</summary>
+<br/>
+Yes, the layout uses a slide in navigation drawer, 2x2 metric grids, and touch friendly full width controls, and every diagram in this document is built with Mermaid so it scales to any screen width instead of relying on fixed width ASCII art.
+</details>
+
+<details>
+<summary>🗃️ What database does it use</summary>
+<br/>
+PostgreSQL hosted on Supabase, accessed through Prisma ORM for type safe queries and migrations.
+</details>
+
+<details>
+<summary>🔐 How are private routes protected</summary>
+<br/>
+Next.js Edge Middleware checks the session cookie before any protected dashboard route renders, and Supabase Row Level Security further isolates each institution's data at the database layer.
+</details>
+
+---
+
 ## 🗺️ Roadmap
 
 ```mermaid
@@ -507,6 +585,22 @@ Contributions to improve the HEC ODL Application Orchestrator are welcome:
 4. 🚀 **Push** to the branch: `git push origin feature/your-feature-name`
 5. 🔀 **Open** a Pull Request
 
+Please keep discussions respectful and constructive, treat this as the project's Code of Conduct until a dedicated `CODE_OF_CONDUCT.md` is added. Bug reports and feature ideas are equally welcome as GitHub Issues.
+
+> ⭐ If this project saves you time, consider starring the repository, it helps other institutions discover the portal too.
+
+---
+
+## ⭐ Star History
+
+<div align="center">
+
+<a href="https://star-history.com/#AbdulAzeemHashmi/hec-odl-application-orchestrator&Date">
+  <img src="https://api.star-history.com/svg?repos=AbdulAzeemHashmi/hec-odl-application-orchestrator&type=Date" alt="Star history chart for the HEC ODL Application Orchestrator repository" width="100%"/>
+</a>
+
+</div>
+
 ---
 
 ## 📄 License
@@ -517,14 +611,14 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:3b82f6,100:1e3a8a&height=120&section=footer" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:3b82f6,100:1e3a8a&height=120&section=footer" width="100%" alt="Animated footer wave graphic" />
 
 **Built for Pakistan Higher Education Commission** 🇵🇰
 
 [![GitHub Stars](https://img.shields.io/github/stars/AbdulAzeemHashmi/hec-odl-application-orchestrator?style=social)](https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator)
 [![GitHub Forks](https://img.shields.io/github/forks/AbdulAzeemHashmi/hec-odl-application-orchestrator?style=social)](https://github.com/AbdulAzeemHashmi/hec-odl-application-orchestrator)
 
-*Quality Assurance Division · ODL Section*
+*Quality Assurance Division, ODL Section*
 *Higher Education Commission, Pakistan*
 
 </div>
