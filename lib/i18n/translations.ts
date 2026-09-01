@@ -254,7 +254,43 @@ export const translations: Record<string, string> = {
   'Zero paid API requirement: Ollama-first local AI execution.': 'صفر لاگت: بغیر کسی معاوضے کے اولاما لوکل ماڈل پر عملدرآمد۔',
   'Gemini and Grok are optional fallbacks.': 'جیمنائی اور گروک اختیاری فال بیک ہیں۔',
   'AI cannot make an official scrutiny or decision outcome.': 'اے آئی کوئی سرکاری جانچ یا حتمی فیصلہ نہیں کر سکتا۔',
-  'Policy Response:': 'پالیسی کا جواب:'
+  'Policy Response:': 'پالیسی کا جواب:',
+
+  // New Application Form - Stepper & Page
+  'New ODL NOC Application': 'نئی او ڈی ایل این او سی درخواست',
+  'Complete both parts of the Model Application Dossier. All fields are required.': 'ماڈل درخواست ڈوزیئر کے دونوں حصے مکمل کریں۔ تمام خانے پُر کرنا لازمی ہے۔',
+  '1. Institutional': '۱. ادارہ جاتی',
+  '2. Program': '۲. پروگرام',
+  'Part A: Institutional Readiness': 'حصہ الف: ادارہ جاتی تیاری',
+  'Part B: Program Readiness': 'حصہ ب: پروگرام کی تیاری',
+  'Continue to Part B': 'حصہ ب کی طرف جاری رکھیں',
+  'Back to Part A': 'حصہ الف پر واپس جائیں',
+  'Submit Application': 'درخواست جمع کروائیں',
+  'Submitting...': 'جمع ہو رہی ہے...',
+  'Failed to create application': 'درخواست بنانے میں ناکامی ہوئی',
+  'An error occurred': 'ایک خرابی پیش آئی',
+
+  // Part A Fields
+  'Institutional Readiness': 'ادارہ جاتی تیاری',
+  'Organizational Readiness': 'تنظیمی تیاری',
+  'Describe organizational structure, ODL office, dedicated staff, and management hierarchy responsible for ODL program delivery.': 'تنظیمی ڈھانچہ، او ڈی ایل دفتر، مخصوص عملہ، اور او ڈی ایل پروگرام کی فراہمی کے لیے ذمہ دار انتظامی درجہ بندی بیان کریں۔',
+  'HR Readiness': 'انسانی وسائل کی تیاری',
+  'List qualified teaching staff, instructional designers, content developers, tutors, and student support personnel with their qualifications.': 'قابل اساتذہ، انسٹرکشنل ڈیزائنرز، مواد تیار کرنے والے، ٹیوٹرز اور طلباء معاونت کا عملہ ان کی قابلیت کے ساتھ درج کریں۔',
+  'Technological Readiness': 'تکنیکی تیاری',
+  'Describe ICT infrastructure, Learning Management System (LMS), software, hardware, internet connectivity, and digital support systems in place.': 'آئی سی ٹی انفراسٹرکچر، لرننگ مینجمنٹ سسٹم (LMS)، سافٹ ویئر، ہارڈ ویئر، انٹرنیٹ کنیکٹیویٹی، اور موجود ڈیجیٹل معاون نظام بیان کریں۔',
+  'Assessment & Evaluation': 'جانچ اور تشخیص',
+  'Describe examination systems, question bank management, online proctoring arrangements, result mechanisms, and academic integrity policies.': 'امتحانی نظام، سوالیہ بینک مینجمنٹ، آن لائن نگرانی کا انتظام، نتائج کے طریقہ کار، اور علمی دیانت کی پالیسیاں بیان کریں۔',
+
+  // Part B Fields
+  'Program Readiness': 'پروگرام کی تیاری',
+  'Statutory Approvals': 'قانونی منظوریاں',
+  'Provide details of Board of Studies, Academic Council, Syndicate approvals, and any other statutory or regulatory clearances obtained for the ODL program.': 'او ڈی ایل پروگرام کے لیے بورڈ آف اسٹڈیز، اکیڈمک کونسل، سنڈیکیٹ کی منظوریوں اور دیگر قانونی یا ریگولیٹری کلیئرنسز کی تفصیل فراہم کریں۔',
+  'Aims & Goals': 'مقاصد اور اہداف',
+  'State the program aims, learning outcomes, alignment with HEC ODL policy objectives, and national development priorities.': 'پروگرام کے مقاصد، سیکھنے کے نتائج، ایچ ای سی او ڈی ایل پالیسی کے اہداف سے ہم آہنگی، اور قومی ترقی کی ترجیحات بیان کریں۔',
+  'Learner Profiling': 'سیکھنے والوں کا تجزیہ',
+  'Describe the target demographics, admission criteria, SWOT analysis of prospective learner cohorts, and diversity and inclusion provisions.': 'ہدف آبادی، داخلے کے معیار، ممکنہ طلباء کا SWOT تجزیہ، اور تنوع و شمولیت کے انتظامات بیان کریں۔',
+  'Learning Resources (OER, Library, Labs)': 'تعلیمی وسائل (OER، لائبریری، لیبز)',
+  'Detail the Open Educational Resources (OER) available, library access arrangements, laboratory facilities, digital content repositories, and virtual lab provisions.': 'دستیاب اوپن ایجوکیشنل ریسورسز (OER)، لائبریری تک رسائی کے انتظامات، لیبارٹری کی سہولیات، ڈیجیٹل مواد کے ذخائر، اور ورچوئل لیب کے انتظامات تفصیل سے بیان کریں۔'
 }
 
 export function translate(key: string, language: 'en' | 'ur'): string {

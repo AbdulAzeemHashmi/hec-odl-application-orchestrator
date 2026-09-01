@@ -2,97 +2,131 @@
 
 import { useState } from 'react'
 import { Button } from '../ui/Button'
+import { useLocale } from '@/components/shared/LocaleProvider'
 
 interface PartBData {
-    approvals: string
-    aims: string
-    learners: string
-    resources: string
+  approvals: string
+  aims: string
+  learners: string
+  resources: string
 }
 
 interface PartBProps {
-    onSubmit: (data: any) => void
-    loading: boolean
-    onBack: () => void
+  onSubmit: (data: any) => void
+  loading: boolean
+  onBack: () => void
 }
 
 export default function PartBForm({ onSubmit, loading, onBack }: PartBProps) {
-    const [data, setData] = useState<PartBData>({
-        approvals: '',
-        aims: '',
-        learners: '',
-        resources: '',
-    })
+  const { t, isRtl } = useLocale()
+  const [data, setData] = useState<PartBData>({
+    approvals: '',
+    aims: '',
+    learners: '',
+    resources: '',
+  })
 
-    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setData({ ...data, [e.target.name]: e.target.value })
-    }
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setData({ ...data, [e.target.name]: e.target.value })
+  }
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
-        onSubmit(data)
-    }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    onSubmit(data)
+  }
 
-    return (
-        <form onSubmit={handleSubmit} className="space-y-6">
-            <h2 className="text-xl font-semibold">Program Readiness</h2>
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6" dir={isRtl ? 'rtl' : 'ltr'}>
+      <div className="pb-2 border-b border-slate-200">
+        <h2 className="text-xl font-bold text-slate-900">{t('Program Readiness')}</h2>
+        <p className="mt-1 text-sm text-slate-500">
+          {isRtl
+            ? 'پروگرام کی تیاری کے تمام پہلو تفصیل سے بیان کریں'
+            : 'Describe all aspects of program readiness in detail'}
+        </p>
+      </div>
 
-            <div>
-                <label className="block font-medium mb-1">Statutory Approvals</label>
-                <textarea
-                    name="approvals"
-                    value={data.approvals}
-                    onChange={handleChange}
-                    placeholder="Board of Studies, Academic Council approvals, etc."
-                    className="w-full p-3 border border-gray-300 rounded-lg"
-                    rows={3}
-                />
-            </div>
+      {/* Statutory Approvals */}
+      <div className="space-y-1.5">
+        <label className="block text-sm font-semibold text-slate-700">
+          {t('Statutory Approvals')}
+          <span className="text-red-500 ms-1">*</span>
+        </label>
+        <textarea
+          required
+          name="approvals"
+          value={data.approvals}
+          onChange={handleChange}
+          placeholder={t('Provide details of Board of Studies, Academic Council, Syndicate approvals, and any other statutory or regulatory clearances obtained for the ODL program.')}
+          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          rows={4}
+        />
+      </div>
 
-            <div>
-                <label className="block font-medium mb-1">Aims & Goals</label>
-                <textarea
-                    name="aims"
-                    value={data.aims}
-                    onChange={handleChange}
-                    placeholder="Program aims, alignment with HEC policy, etc."
-                    className="w-full p-3 border border-gray-300 rounded-lg"
-                    rows={3}
-                />
-            </div>
+      {/* Aims & Goals */}
+      <div className="space-y-1.5">
+        <label className="block text-sm font-semibold text-slate-700">
+          {t('Aims & Goals')}
+          <span className="text-red-500 ms-1">*</span>
+        </label>
+        <textarea
+          required
+          name="aims"
+          value={data.aims}
+          onChange={handleChange}
+          placeholder={t('State the program aims, learning outcomes, alignment with HEC ODL policy objectives, and national development priorities.')}
+          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          rows={4}
+        />
+      </div>
 
-            <div>
-                <label className="block font-medium mb-1">Learner Profiling</label>
-                <textarea
-                    name="learners"
-                    value={data.learners}
-                    onChange={handleChange}
-                    placeholder="Target demographics, SWOT analysis, etc."
-                    className="w-full p-3 border border-gray-300 rounded-lg"
-                    rows={3}
-                />
-            </div>
+      {/* Learner Profiling */}
+      <div className="space-y-1.5">
+        <label className="block text-sm font-semibold text-slate-700">
+          {t('Learner Profiling')}
+          <span className="text-red-500 ms-1">*</span>
+        </label>
+        <textarea
+          required
+          name="learners"
+          value={data.learners}
+          onChange={handleChange}
+          placeholder={t('Describe the target demographics, admission criteria, SWOT analysis of prospective learner cohorts, and diversity and inclusion provisions.')}
+          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          rows={4}
+        />
+      </div>
 
-            <div>
-                <label className="block font-medium mb-1">Learning Resources (OER, Library, Labs)</label>
-                <textarea
-                    name="resources"
-                    value={data.resources}
-                    onChange={handleChange}
-                    placeholder="Open Educational Resources, library access, lab facilities, etc."
-                    className="w-full p-3 border border-gray-300 rounded-lg"
-                    rows={3}
-                />
-            </div>
+      {/* Learning Resources */}
+      <div className="space-y-1.5">
+        <label className="block text-sm font-semibold text-slate-700">
+          {t('Learning Resources (OER, Library, Labs)')}
+          <span className="text-red-500 ms-1">*</span>
+        </label>
+        <textarea
+          required
+          name="resources"
+          value={data.resources}
+          onChange={handleChange}
+          placeholder={t('Detail the Open Educational Resources (OER) available, library access arrangements, laboratory facilities, digital content repositories, and virtual lab provisions.')}
+          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          rows={4}
+        />
+      </div>
 
-            <div className="flex gap-4">
-                <Button type="button" variant="outline" onClick={onBack}>
-                    ← Back
-                </Button>
-                <Button type="submit" variant="default" disabled={loading} className="flex-1">
-                    {loading ? 'Submitting...' : 'Submit Application'}
-                </Button>
-            </div>
-        </form>
-    )
+      <div className={`flex gap-4 ${isRtl ? 'flex-row-reverse' : ''}`}>
+        <Button type="button" variant="outline" onClick={onBack} className="font-semibold">
+          {isRtl ? '\u2192' : '\u2190'} {t('Back to Part A')}
+        </Button>
+        <Button
+          type="submit"
+          variant="default"
+          disabled={loading}
+          className="flex-1 font-semibold shadow-md"
+        >
+          {loading ? t('Submitting...') : t('Submit Application')}
+        </Button>
+      </div>
+    </form>
+  )
 }
