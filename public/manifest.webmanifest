@@ -1,0 +1,9 @@
+{
+  "name": "HEC ODL Portal",
+  "short_name": "HEC ODL",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f1f5f9",
+  "theme_color": "#1d4ed8",
+  "description": "HEC ODL application case management portal"
+}

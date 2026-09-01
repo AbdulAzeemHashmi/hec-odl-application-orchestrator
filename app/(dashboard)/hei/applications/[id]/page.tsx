@@ -2,6 +2,7 @@
 
 import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import NocCertificate from '@/components/shared/NocCertificate'
 
 interface Application {
     id: string
@@ -41,6 +42,7 @@ export default function ApplicationDetailPage() {
                 <h2 className="font-semibold">Dossier Data</h2>
                 <pre className="whitespace-pre-wrap text-sm">{JSON.stringify(app.data, null, 2)}</pre>
             </div>
+            {app.status === 'APPROVED' && <NocCertificate id={app.id} institution={app.data?.institutionName || app.data?.heiName} />}
         </main>
     )
 }

@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import SignOutButton from './SignOutButton'
+import NotificationCenter from './NotificationCenter'
+import LanguageToggle from './LanguageToggle'
 
 const nav = [
   ['Overview', '/hei'],
@@ -137,6 +139,8 @@ export default function PortalShell({
               <span className="hidden sm:inline">New application</span>
               <span className="sm:hidden">+ New</span>
             </Link>
+            <LanguageToggle />
+            <NotificationCenter />
           </div>
         </header>
 

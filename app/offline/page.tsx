@@ -1,0 +1,1 @@
+export default function OfflinePage() { return <main className="grid min-h-screen place-items-center bg-slate-100 p-6 text-center"><div><h1 className="text-2xl font-bold text-slate-900">You’re offline</h1><p className="mt-2 text-slate-600">Reconnect to load your protected case records. Previously opened public pages may remain available.</p></div></main> }

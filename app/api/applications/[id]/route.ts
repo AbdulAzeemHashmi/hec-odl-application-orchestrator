@@ -39,10 +39,29 @@ export async function PATCH(
         return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
     const body = await request.json()
-    const application = await prisma.application.update({
-        where: { id: params.id },
-        // Do not allow clients to reassign ownership or overwrite immutable identifiers.
-        data: { data: body.data, evidenceUrls: body.evidenceUrls, status: body.status },
+    const manager = isCaseManager(user)
+    // HEIs may edit their dossier, but never advance a workflow status themselves.
+    const nextStatus = manager && typeof body.status === 'string' ? body.status : existing.status
+    const application = await prisma.$transaction(async (tx) => {
+        const updated = await tx.application.update({
+            where: { id: params.id },
+            data: {
+                ...(body.data !== undefined ? { data: body.data } : {}),
+                ...(body.evidenceUrls !== undefined ? { evidenceUrls: body.evidenceUrls } : {}),
+                status: nextStatus,
+            },
+        })
+        if (manager && nextStatus !== existing.status) {
+            await tx.notification.create({
+                data: {
+                    userId: existing.heiId,
+                    title: 'Application status updated',
+                    message: `Your application ${existing.id.slice(0, 8)} is now ${nextStatus.replaceAll('_', ' ')}.`,
+                    href: `/hei/applications/${existing.id}`,
+                },
+            })
+        }
+        return updated
     })
 
     return NextResponse.json(application)
