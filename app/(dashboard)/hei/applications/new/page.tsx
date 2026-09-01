@@ -6,6 +6,7 @@ import PartAForm from '@/components/forms/PartA'
 import PartBForm from '@/components/forms/PartB'
 import { createBrowserAuthClient } from '@/lib/auth/supabase'
 import { useLocale } from '@/components/shared/LocaleProvider'
+import LanguageToggle from '@/components/shared/LanguageToggle'
 
 export default function NewApplicationPage() {
   const router = useRouter()
@@ -54,12 +55,19 @@ export default function NewApplicationPage() {
 
         {/* Page Header */}
         <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">
-            {t('New ODL NOC Application')}
-          </h1>
-          <p className="mt-2 text-sm text-slate-500 leading-relaxed">
-            {t('Complete both parts of the Model Application Dossier. All fields are required.')}
-          </p>
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">
+                {t('New ODL NOC Application')}
+              </h1>
+              <p className="mt-2 text-sm text-slate-500 leading-relaxed">
+                {t('Complete both parts of the Model Application Dossier. All fields are required.')}
+              </p>
+            </div>
+            <div className="flex-shrink-0 pt-1">
+              <LanguageToggle />
+            </div>
+          </div>
         </div>
 
         {/* Step Indicator */}
