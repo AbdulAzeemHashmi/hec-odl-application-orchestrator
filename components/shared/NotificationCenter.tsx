@@ -9,7 +9,7 @@ export default function NotificationCenter() {
   const [items, setItems] = useState<Notification[]>([])
   const [open, setOpen] = useState(false)
 
-  useEffect(() => { fetch('/api/notifications').then(r => r.ok ? r.json() : []).then(setItems).catch(() => {}) }, [])
+  useEffect(() => { const load = () => fetch('/api/notifications').then(r => r.ok ? r.json() : []).then(setItems).catch(() => {}); load(); const timer = window.setInterval(load, 30000); return () => window.clearInterval(timer) }, [])
   const unread = items.filter(item => !item.readAt).length
   async function markAllRead() {
     await fetch('/api/notifications', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ all: true }) })

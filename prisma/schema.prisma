@@ -14,6 +14,7 @@ model User {
   role          String   @default("hei") // hei, qad, expert, admin
   applications  Application[]
   notifications Notification[]
+  issuedCertificates NocCertificate[] @relation("CertificateIssuer")
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 }
@@ -41,8 +42,44 @@ model Application {
   scrutinyScore Float?
   panelRemarks  String?
   versions      ApplicationVersion[]
+  visits        Visit[]
+  certificates  NocCertificate[]
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+}
+
+model Visit {
+  id            String   @id @default(cuid())
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  scheduledFor  DateTime
+  venue         String
+  attendees     Json
+  status        String   @default("SCHEDULED") // SCHEDULED, COMPLETED, CANCELLED
+  notes         String?
+  createdById   String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([applicationId, scheduledFor])
+  @@index([scheduledFor, status])
+}
+
+model NocCertificate {
+  id               String   @id @default(cuid())
+  applicationId    String
+  application      Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  certificateNo    String   @unique
+  verificationCode String   @unique
+  snapshot         Json
+  issuedById       String
+  issuedBy         User     @relation("CertificateIssuer", fields: [issuedById], references: [id])
+  issuedAt         DateTime @default(now())
+  expiresAt        DateTime?
+  revokedAt        DateTime?
+  revokeReason     String?
+
+  @@index([applicationId, issuedAt])
 }
 
 model ApplicationVersion {

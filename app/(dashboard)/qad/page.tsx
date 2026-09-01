@@ -12,21 +12,23 @@ export default async function QadDashboard() {
     const statusCounts: Record<string, number> = {}
 
     try {
-        const counts = await prisma.application.groupBy({
+        const [counts, activeCases] = await Promise.all([prisma.application.groupBy({
             by: ['status'],
             _count: { status: true }
-        })
+        }), prisma.application.findMany({ where: { status: 'UNDER_SCRUTINY' }, select: { createdAt: true } })])
 
         counts.forEach(item => {
             const cnt = item._count.status
             total += cnt
             statusCounts[item.status] = cnt
             if (item.status === 'SUBMITTED') received += cnt
-            else if (item.status === 'UNDER_SCRUTINY') dueSoon += cnt
+            else if (item.status === 'UNDER_SCRUTINY') panelApproval += 0
             else if (item.status === 'RETURNED') deficiencyReturns += cnt
             else if (item.status === 'PANEL_REVIEW') panelApproval += cnt
             else if (item.status === 'APPROVED') approved += cnt
         })
+        const sevenDays = 7 * 24 * 60 * 60 * 1000
+        dueSoon = activeCases.filter(item => { const remaining = new Date(item.createdAt).getTime() + 30 * 24 * 60 * 60 * 1000 - Date.now(); return remaining >= 0 && remaining <= sevenDays }).length
     } catch {
         // Fallback for build
     }

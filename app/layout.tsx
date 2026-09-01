@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import { LocaleProvider } from '@/components/shared/LocaleProvider'
 
 export const metadata: Metadata = {
   title: 'HEC ODL Application Orchestrator',
@@ -17,7 +18,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}<script dangerouslySetInnerHTML={{ __html: "if ('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))" }} /></body>
+      <body><LocaleProvider>{children}</LocaleProvider><script dangerouslySetInnerHTML={{ __html: "if ('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))" }} /></body>
     </html>
   )
 }

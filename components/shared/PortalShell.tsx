@@ -5,6 +5,7 @@ import { useState } from 'react'
 import SignOutButton from './SignOutButton'
 import NotificationCenter from './NotificationCenter'
 import LanguageToggle from './LanguageToggle'
+import { useLocale } from './LocaleProvider'
 
 const nav = [
   ['Overview', '/hei'],
@@ -29,6 +30,7 @@ export default function PortalShell({
 }) {
   const path = usePathname()
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const { isRtl, t } = useLocale()
 
   const navLinks = nav.map(([label, href]) => (
     <Link
@@ -41,7 +43,7 @@ export default function PortalShell({
           : 'text-slate-300 hover:bg-slate-800 hover:text-white'
       }`}
     >
-      {label}
+      {t(label)}
     </Link>
   ))
 
@@ -58,12 +60,12 @@ export default function PortalShell({
       )}
 
       {/* Desktop Sidebar (always visible on lg+) */}
-      <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col bg-slate-950 p-5 text-slate-300 lg:flex">
+      <aside className={`fixed inset-y-0 z-40 hidden w-64 flex-col bg-slate-950 p-5 text-slate-300 lg:flex ${isRtl ? 'right-0' : 'left-0'}`}>
         <Link href="/" className="block px-3 py-3 text-lg font-bold text-white">
           HEC ODL <span className="text-blue-400">Portal</span>
         </Link>
         <p className="px-3 pb-6 text-xs uppercase tracking-widest text-slate-500">
-          Case management
+          {t('Case management')}
         </p>
         <nav className="flex-1 space-y-1 overflow-y-auto">{navLinks}</nav>
         <div className="mt-auto pt-6 px-1">
@@ -73,8 +75,8 @@ export default function PortalShell({
 
       {/* Mobile Slide-in Drawer */}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex w-72 flex-col bg-slate-950 p-5 text-slate-300 shadow-2xl transition-transform duration-300 ease-in-out lg:hidden ${
-          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed inset-y-0 z-40 flex w-72 flex-col bg-slate-950 p-5 text-slate-300 shadow-2xl transition-transform duration-300 ease-in-out lg:hidden ${isRtl ? 'right-0' : 'left-0'} ${
+          sidebarOpen ? 'translate-x-0' : isRtl ? 'translate-x-full' : '-translate-x-full'
         }`}
       >
         <div className="flex items-center justify-between mb-2">
@@ -96,7 +98,7 @@ export default function PortalShell({
           </button>
         </div>
         <p className="px-3 pb-4 text-xs uppercase tracking-widest text-slate-500">
-          Case management
+          {t('Case management')}
         </p>
         <nav className="flex-1 space-y-1 overflow-y-auto">{navLinks}</nav>
         <div className="mt-auto pt-6 px-1">
@@ -105,7 +107,7 @@ export default function PortalShell({
       </aside>
 
       {/* Main Content Area */}
-      <div className="lg:pl-64">
+      <div className={isRtl ? 'lg:pr-64' : 'lg:pl-64'}>
 
         {/* Top Header */}
         <header className="sticky top-0 z-20 border-b border-slate-200 bg-white px-4 py-4 sm:px-6">
@@ -124,10 +126,10 @@ export default function PortalShell({
 
             {/* Title block */}
             <div className="min-w-0 flex-1">
-              <p className="eyebrow truncate">HEC ODL APPLICATION SYSTEM</p>
-              <h1 className="mt-0.5 truncate text-lg font-bold text-slate-900 sm:text-2xl">{title}</h1>
+              <p className="eyebrow truncate">{t('HEC ODL APPLICATION SYSTEM')}</p>
+              <h1 className="mt-0.5 truncate text-lg font-bold text-slate-900 sm:text-2xl">{t(title)}</h1>
               {subtitle && (
-                <p className="mt-0.5 hidden text-sm text-slate-500 sm:block">{subtitle}</p>
+                <p className="mt-0.5 hidden text-sm text-slate-500 sm:block">{t(subtitle)}</p>
               )}
             </div>
 
@@ -136,7 +138,7 @@ export default function PortalShell({
               href="/hei/applications/new"
               className="btn-primary flex-shrink-0 text-xs sm:text-sm"
             >
-              <span className="hidden sm:inline">New application</span>
+              <span className="hidden sm:inline">{t('New application')}</span>
               <span className="sm:hidden">+ New</span>
             </Link>
             <LanguageToggle />

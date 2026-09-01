@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/db/prisma'
 import { getRequestUser } from '@/lib/auth/supabase'
 import { isCaseManager } from '@/lib/auth/access'
+import { deliverStatusEmail } from '@/lib/notifications/email'
 
 export async function GET(
     request: Request,
@@ -60,6 +61,8 @@ export async function PATCH(
                     href: `/hei/applications/${existing.id}`,
                 },
             })
+            const applicant = await tx.user.findUnique({ where: { id: existing.heiId }, select: { email: true } })
+            if (applicant?.email) await deliverStatusEmail({ recipient: applicant.email, applicationId: existing.id, status: nextStatus })
         }
         return updated
     })
