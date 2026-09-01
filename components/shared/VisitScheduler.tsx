@@ -1,8 +1,9 @@
 'use client'
 
-import { FormEvent, useEffect, useState } from 'react'
+import { FormEvent, useEffect, useRef, useState } from 'react'
 import { downloadIcsFile, getGoogleCalendarUrl } from '@/lib/utils/ics'
 import { useLocale } from './LocaleProvider'
+import TimePicker from './TimePicker'
 
 type Application = {
   id: string
@@ -24,6 +25,8 @@ export default function VisitScheduler() {
   const [applications, setApplications] = useState<Application[]>([])
   const [error, setError] = useState('')
   const [saving, setSaving] = useState(false)
+  const [visitTime, setVisitTime] = useState('')
+  const formRef = useRef<HTMLFormElement>(null)
   const { t, isRtl } = useLocale()
 
   async function load() {
@@ -60,8 +63,13 @@ export default function VisitScheduler() {
     const data = new FormData(event.currentTarget)
     // Combine separate date + time fields into a single ISO datetime string
     const visitDate = String(data.get('visitDate') || '')
-    const visitTime = String(data.get('visitTime') || '00:00')
-    const scheduledFor = visitDate && visitTime ? `${visitDate}T${visitTime}` : ''
+    const timeValue = visitTime || '00:00'
+    const scheduledFor = visitDate && timeValue ? `${visitDate}T${timeValue}` : ''
+    if (!visitTime) {
+      setError('Please select a visit time.')
+      setSaving(false)
+      return
+    }
     try {
       const response = await fetch('/api/visits', {
         method: 'POST',
@@ -84,6 +92,7 @@ export default function VisitScheduler() {
         return
       }
       event.currentTarget.reset()
+      setVisitTime('')
       await load()
     } catch (err: any) {
       setSaving(false)
@@ -113,7 +122,7 @@ export default function VisitScheduler() {
   return (
     <div className="grid gap-6 lg:grid-cols-2" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Schedule Form */}
-      <form onSubmit={schedule} className="card space-y-4">
+      <form ref={formRef} onSubmit={schedule} className="card space-y-4">
         <div>
           <h2 className="font-bold text-slate-900 text-lg">{t('Schedule a site inspection')}</h2>
           <p className="mt-1 text-sm text-slate-500 leading-relaxed">
@@ -164,14 +173,10 @@ export default function VisitScheduler() {
               <label className="block text-[11px] font-medium text-slate-400 mb-1">
                 {isRtl ? 'وقت' : 'Time'}
               </label>
-              <input
+              <TimePicker
+                value={visitTime}
+                onChange={setVisitTime}
                 required
-                name="visitTime"
-                type="text"
-                pattern="[0-2][0-9]:[0-5][0-9]:[0-5][0-9]"
-                placeholder="--:--:--"
-                maxLength={8}
-                className="w-full rounded-lg border border-slate-300 p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none text-slate-900 font-mono tracking-wider"
               />
             </div>
           </div>
