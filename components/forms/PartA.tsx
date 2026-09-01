@@ -34,16 +34,16 @@ export default function PartAForm({ onSubmit }: PartAProps) {
   }
 
   // Browser native "Please fill out this field" tooltip — override with Urdu when in RTL mode.
-  // onInvalid: sets the custom Urdu message so the browser shows it in the tooltip.
-  // onInput:   clears the custom message so the field re-validates normally after the user types.
+  // onInvalid: ALWAYS call setCustomValidity:
+  //   - Urdu text when RTL so the browser shows the Urdu tooltip.
+  //   - Empty string ('') when LTR so the browser reverts to its own default English message.
+  //   This ensures switching language after a failed submit always shows the correct tooltip.
+  // onInput: always reset so the field re-validates cleanly after the user starts typing.
   const urduRequiredMsg = 'براہ کرم یہ خانہ پُر کریں'
   const handleInvalid = (e: React.InvalidEvent<HTMLTextAreaElement>) => {
-    if (isRtl) {
-      e.target.setCustomValidity(urduRequiredMsg)
-    }
+    e.target.setCustomValidity(isRtl ? urduRequiredMsg : '')
   }
   const handleInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
-    // Reset custom validity so the field re-evaluates on next submit
     ;(e.target as HTMLTextAreaElement).setCustomValidity('')
   }
 
