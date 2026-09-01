@@ -16,15 +16,11 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<'en' | 'ur'>('en')
 
   useEffect(() => {
-    const saved = localStorage.getItem('hec-language') === 'ur' ? 'ur' : 'en'
-    setLanguageState(saved)
-    document.documentElement.lang = saved
-    document.documentElement.dir = saved === 'ur' ? 'rtl' : 'ltr'
-    if (saved === 'ur') {
-      document.documentElement.classList.add('font-urdu')
-    } else {
-      document.documentElement.classList.remove('font-urdu')
-    }
+    // Always start in English (LTR) on every page load.
+    // Language switching is per-session only; no localStorage restoration.
+    document.documentElement.lang = 'en'
+    document.documentElement.dir = 'ltr'
+    document.documentElement.classList.remove('font-urdu')
   }, [])
 
   function setLanguage(next: 'en' | 'ur') {

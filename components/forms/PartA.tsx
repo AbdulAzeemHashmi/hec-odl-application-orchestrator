@@ -33,6 +33,20 @@ export default function PartAForm({ onSubmit }: PartAProps) {
     onSubmit(data)
   }
 
+  // Browser native "Please fill out this field" tooltip — override with Urdu when in RTL mode.
+  // onInvalid: sets the custom Urdu message so the browser shows it in the tooltip.
+  // onInput:   clears the custom message so the field re-validates normally after the user types.
+  const urduRequiredMsg = 'براہ کرم یہ خانہ پُر کریں'
+  const handleInvalid = (e: React.InvalidEvent<HTMLTextAreaElement>) => {
+    if (isRtl) {
+      e.target.setCustomValidity(urduRequiredMsg)
+    }
+  }
+  const handleInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    // Reset custom validity so the field re-evaluates on next submit
+    ;(e.target as HTMLTextAreaElement).setCustomValidity('')
+  }
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="pb-2 border-b border-slate-200">
@@ -55,6 +69,8 @@ export default function PartAForm({ onSubmit }: PartAProps) {
           name="organizational"
           value={data.organizational}
           onChange={handleChange}
+          onInvalid={handleInvalid}
+          onInput={handleInput}
           placeholder={t('Describe organizational structure, ODL office, dedicated staff, and management hierarchy responsible for ODL program delivery.')}
           className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
@@ -72,6 +88,8 @@ export default function PartAForm({ onSubmit }: PartAProps) {
           name="hr"
           value={data.hr}
           onChange={handleChange}
+          onInvalid={handleInvalid}
+          onInput={handleInput}
           placeholder={t('List qualified teaching staff, instructional designers, content developers, tutors, and student support personnel with their qualifications.')}
           className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
@@ -89,6 +107,8 @@ export default function PartAForm({ onSubmit }: PartAProps) {
           name="technology"
           value={data.technology}
           onChange={handleChange}
+          onInvalid={handleInvalid}
+          onInput={handleInput}
           placeholder={t('Describe ICT infrastructure, Learning Management System (LMS), software, hardware, internet connectivity, and digital support systems in place.')}
           className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
@@ -106,6 +126,8 @@ export default function PartAForm({ onSubmit }: PartAProps) {
           name="assessment"
           value={data.assessment}
           onChange={handleChange}
+          onInvalid={handleInvalid}
+          onInput={handleInput}
           placeholder={t('Describe examination systems, question bank management, online proctoring arrangements, result mechanisms, and academic integrity policies.')}
           className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
