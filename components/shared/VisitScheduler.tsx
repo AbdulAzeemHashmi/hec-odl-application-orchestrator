@@ -167,9 +167,11 @@ export default function VisitScheduler() {
               <input
                 required
                 name="visitTime"
-                type="time"
-                step="1"
-                className="w-full rounded-lg border border-slate-300 p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none text-slate-900"
+                type="text"
+                pattern="[0-2][0-9]:[0-5][0-9]:[0-5][0-9]"
+                placeholder="--:--:--"
+                maxLength={8}
+                className="w-full rounded-lg border border-slate-300 p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none text-slate-900 font-mono tracking-wider"
               />
             </div>
           </div>
