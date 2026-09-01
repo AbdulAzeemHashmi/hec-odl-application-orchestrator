@@ -27,17 +27,30 @@ export default function VisitScheduler() {
   const { t, isRtl } = useLocale()
 
   async function load() {
-    const [visitResponse, appResponse] = await Promise.all([
-      fetch('/api/visits'),
-      fetch('/api/applications'),
-    ])
-    if (visitResponse.ok) setVisits(await visitResponse.json())
-    else setError('Visits could not be loaded.')
-    if (appResponse.ok) setApplications(await appResponse.json())
+    try {
+      const [visitResponse, appResponse] = await Promise.all([
+        fetch('/api/visits'),
+        fetch('/api/applications'),
+      ])
+      if (visitResponse.ok) {
+        const vData = await visitResponse.json()
+        setVisits(Array.isArray(vData) ? vData : [])
+      } else {
+        setVisits([])
+      }
+
+      if (appResponse.ok) {
+        const aData = await appResponse.json()
+        setApplications(Array.isArray(aData) ? aData : [])
+      }
+    } catch {
+      // Graceful fallback for demo or uninitialized DB
+      setVisits([])
+    }
   }
 
   useEffect(() => {
-    load().catch(() => setError('Visits could not be loaded.'))
+    load()
   }, [])
 
   async function schedule(event: FormEvent<HTMLFormElement>) {
@@ -45,37 +58,47 @@ export default function VisitScheduler() {
     setSaving(true)
     setError('')
     const data = new FormData(event.currentTarget)
-    const response = await fetch('/api/visits', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        applicationId: data.get('applicationId'),
-        scheduledFor: data.get('scheduledFor'),
-        venue: data.get('venue'),
-        attendees: String(data.get('attendees'))
-          .split(',')
-          .map((x) => x.trim())
-          .filter(Boolean),
-        notes: data.get('notes'),
-      }),
-    })
-    setSaving(false)
-    if (!response.ok) {
-      setError((await response.json()).error || 'Visit could not be scheduled.')
-      return
+    try {
+      const response = await fetch('/api/visits', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          applicationId: data.get('applicationId'),
+          scheduledFor: data.get('scheduledFor'),
+          venue: data.get('venue'),
+          attendees: String(data.get('attendees'))
+            .split(',')
+            .map((x) => x.trim())
+            .filter(Boolean),
+          notes: data.get('notes'),
+        }),
+      })
+      setSaving(false)
+      if (!response.ok) {
+        const errJson = await response.json().catch(() => ({}))
+        setError(errJson.error || 'Visit could not be scheduled. Case manager authorization required.')
+        return
+      }
+      event.currentTarget.reset()
+      await load()
+    } catch (err: any) {
+      setSaving(false)
+      setError(err?.message || 'Network error scheduling visit.')
     }
-    event.currentTarget.reset()
-    await load()
   }
 
   async function cancel(id: string) {
-    const response = await fetch(`/api/visits/${id}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status: 'CANCELLED' }),
-    })
-    if (response.ok) await load()
-    else setError('Visit could not be cancelled.')
+    try {
+      const response = await fetch(`/api/visits/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: 'CANCELLED' }),
+      })
+      if (response.ok) await load()
+      else setError('Visit status could not be updated.')
+    } catch {
+      setError('Visit status could not be updated.')
+    }
   }
 
   const label = (application: Application) =>
@@ -84,7 +107,7 @@ export default function VisitScheduler() {
     `Application ${application?.id?.slice(-8)}`
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <div className="grid gap-6 lg:grid-cols-2" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Schedule Form */}
       <form onSubmit={schedule} className="card space-y-4">
         <div>
@@ -98,7 +121,7 @@ export default function VisitScheduler() {
 
         <div>
           <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">
-            {t('Select application')}
+            {t('Select application:')}
           </label>
           <select
             required
@@ -119,7 +142,7 @@ export default function VisitScheduler() {
 
         <div>
           <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">
-            {t('Inspection Visit Scheduled')} (Date & Time)
+            {t('Inspection Visit Date & Time:')}
           </label>
           <input
             required
@@ -131,7 +154,7 @@ export default function VisitScheduler() {
 
         <div>
           <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">
-            {t('Venue')}
+            {t('Venue:')}
           </label>
           <input
             required
@@ -143,7 +166,7 @@ export default function VisitScheduler() {
 
         <div>
           <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">
-            {t('Panel members / attendees (comma separated)')}
+            {t('Panel members / attendees:')}
           </label>
           <input
             name="attendees"
@@ -154,7 +177,7 @@ export default function VisitScheduler() {
 
         <div>
           <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">
-            {t('Visit notes or agenda')}
+            {t('Visit notes or agenda:')}
           </label>
           <textarea
             name="notes"
@@ -181,7 +204,7 @@ export default function VisitScheduler() {
       <div className="card flex flex-col">
         <h2 className="font-bold text-slate-900 text-lg mb-1">{t('Upcoming inspections')}</h2>
         <p className="text-xs text-slate-500 mb-4">
-          Export directly to your personal calendar or manage status.
+          {t('Visits are shared with authorized case users and retained in the case audit record.')}
         </p>
 
         {!visits.length ? (

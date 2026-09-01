@@ -64,19 +64,19 @@ export default function LlmPage() {
 
           {answer && (
             <div className="mt-6 rounded-xl border border-blue-100 bg-blue-50/70 p-5 text-sm leading-7 text-slate-800 whitespace-pre-wrap">
-              <span className="font-bold text-blue-900 block mb-2">💡 Policy Response:</span>
+              <span className="font-bold text-blue-900 block mb-2">{t('Policy Response:')}</span>
               {answer}
             </div>
           )}
         </section>
 
         <aside className="card">
-          <h2 className="font-bold text-slate-900 text-sm">Grounded Safeguards</h2>
+          <h2 className="font-bold text-slate-900 text-sm">{t('Grounded Safeguards')}</h2>
           <ul className="mt-3 space-y-3 text-xs leading-5 text-slate-500">
-            <li>• Searches only ingested HEC policy references via local vector DB.</li>
-            <li>• Zero paid API requirement: Ollama-first local AI execution.</li>
-            <li>• Gemini and Grok are optional fallbacks.</li>
-            <li>• AI cannot make an official scrutiny or decision outcome.</li>
+            <li>• {t('Searches only ingested HEC policy references via local vector DB.')}</li>
+            <li>• {t('Zero paid API requirement: Ollama-first local AI execution.')}</li>
+            <li>• {t('Gemini and Grok are optional fallbacks.')}</li>
+            <li>• {t('AI cannot make an official scrutiny or decision outcome.')}</li>
           </ul>
         </aside>
       </div>
