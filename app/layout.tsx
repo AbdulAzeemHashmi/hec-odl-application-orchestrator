@@ -4,6 +4,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'HEC ODL Application Orchestrator',
   description: 'AI-Powered Application Processing System for Open and Distance Learning',
+  manifest: '/manifest.webmanifest',
 }
 
 export const viewport: Viewport = {
@@ -20,4 +21,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
-  manifest: '/manifest.webmanifest',
