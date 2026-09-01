@@ -183,6 +183,7 @@ export const translations: Record<string, string> = {
   'Select application': 'درخواست منتخب کریں',
   'Select application:': 'درخواست منتخب کریں:',
   'Inspection Visit Date & Time:': 'معائنہ کے دورے کی تاریخ اور وقت:',
+  'Click the calendar icon to select inspection date and time': 'معائنہ کی تاریخ اور وقت منتخب کرنے کے لیے کیلنڈر پر کلک کریں',
   'Date & Time:': 'تاریخ اور وقت:',
   'Venue': 'مقام / یونیورسٹی کیمپس',
   'Venue:': 'مقام / یونیورسٹی کیمپس:',

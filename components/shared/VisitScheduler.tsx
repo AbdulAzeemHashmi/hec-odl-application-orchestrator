@@ -148,8 +148,11 @@ export default function VisitScheduler() {
             required
             name="scheduledFor"
             type="datetime-local"
-            className="w-full rounded-lg border border-slate-300 p-2.5 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
+            className="w-full rounded-lg border border-slate-300 p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none text-slate-900"
           />
+          <p className="mt-1 text-[11px] text-slate-400">
+            {t('Click the calendar icon to select inspection date and time')}
+          </p>
         </div>
 
         <div>
