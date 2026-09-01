@@ -168,6 +168,7 @@ export default function VisitScheduler() {
                 required
                 name="visitTime"
                 type="time"
+                step="1"
                 className="w-full rounded-lg border border-slate-300 p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none text-slate-900"
               />
             </div>
