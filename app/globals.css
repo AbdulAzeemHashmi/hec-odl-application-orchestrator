@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --foreground-rgb: 15, 23, 42;
+  --background-start-rgb: 248, 250, 252;
   --background-end-rgb: 255, 255, 255;
+}
+
+html[dir="rtl"], html.font-urdu {
+  font-family: 'Noto Sans Arabic', 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, system-ui, sans-serif;
 }
 
 body {
@@ -16,15 +20,25 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-.btn-primary { @apply inline-flex items-center justify-center rounded-lg bg-blue-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-800; }
-.btn-secondary { @apply inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50; }
+html[dir="rtl"] body {
+  font-family: 'Noto Sans Arabic', 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, system-ui, sans-serif;
+}
+
+.btn-primary { @apply inline-flex items-center justify-center rounded-lg bg-blue-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2; }
+.btn-secondary { @apply inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2; }
 .eyebrow { @apply text-xs font-bold uppercase tracking-[0.16em] text-blue-700; }
 .card { @apply rounded-xl border border-slate-200 bg-white p-5 shadow-sm; }
 .status { @apply inline-flex rounded-full px-2.5 py-1 text-xs font-semibold; }
 
 @media print {
-  body { background: white; }
-  body * { visibility: hidden; }
-  #noc-certificate, #noc-certificate * { visibility: visible; }
-  #noc-certificate { position: absolute; inset: 1.5cm; width: auto; box-shadow: none; }
+  body { background: white !important; }
+  body * { visibility: hidden !important; }
+  #noc-certificate, #noc-certificate * { visibility: visible !important; }
+  #noc-certificate {
+    position: absolute !important;
+    inset: 0.5cm !important;
+    width: auto !important;
+    box-shadow: none !important;
+    border: 2px solid #0f172a !important;
+  }
 }

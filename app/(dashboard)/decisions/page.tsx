@@ -1,3 +1,23 @@
 import PortalShell from '@/components/shared/PortalShell'
 import { Metric, EmptyState } from '@/components/shared/DashboardBits'
-export default function DecisionsPage() { return <PortalShell title="Decision register" subtitle="Prepare authority decisions, NOC letters, conditions and approved program scope."><div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4"><Metric label="Pending authority" value="0" note="Reports ready for decision" /><Metric label="Provisional NOCs" value="0" note="Issued institutional approvals" /><Metric label="Refusals / appeals" value="0" note="Controlled appeal window" /></div><div className="mt-6"><EmptyState title="No decision cases" text="Final Expert Panel reports and post-visit reports will appear here for authorized approval, revisit or refusal decisions." /></div></PortalShell> }
+
+export default function DecisionsPage() {
+  return (
+    <PortalShell
+      title="Decision register"
+      subtitle="Prepare authority decisions, NOC letters, conditions and approved program scope."
+    >
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        <Metric label="Pending authority" value="0" note="Reports ready for decision" />
+        <Metric label="Provisional NOCs" value="0" note="Issued institutional approvals" />
+        <Metric label="Refusals / appeals" value="0" note="Controlled appeal window" />
+      </div>
+      <div className="mt-6">
+        <EmptyState
+          title="No decision cases"
+          text="Final Expert Panel reports and post-visit reports will appear here for authorized approval, revisit or refusal decisions."
+        />
+      </div>
+    </PortalShell>
+  )
+}

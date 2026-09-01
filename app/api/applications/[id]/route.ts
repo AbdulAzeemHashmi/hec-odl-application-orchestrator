@@ -62,7 +62,17 @@ export async function PATCH(
                 },
             })
             const applicant = await tx.user.findUnique({ where: { id: existing.heiId }, select: { email: true } })
-            if (applicant?.email) await deliverStatusEmail({ recipient: applicant.email, applicationId: existing.id, status: nextStatus })
+            if (applicant?.email) {
+                await deliverStatusEmail({
+                    type: 'application_status_changed',
+                    recipient: applicant.email,
+                    applicationId: existing.id,
+                    status: nextStatus,
+                    title: 'Application status updated',
+                    details: `Your application ${existing.id.slice(0, 8)} is now ${nextStatus.replaceAll('_', ' ')}.`,
+                    actionUrl: `/hei/applications/${existing.id}`,
+                })
+            }
         }
         return updated
     })

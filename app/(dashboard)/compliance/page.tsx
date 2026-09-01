@@ -1,3 +1,23 @@
 import PortalShell from '@/components/shared/PortalShell'
 import { Metric, EmptyState } from '@/components/shared/DashboardBits'
-export default function CompliancePage() { return <PortalShell title="NOC compliance & confirmation" subtitle="Track active NOCs, conditions, reminders and the three-year confirmation milestone."><div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4"><Metric label="Active NOCs" value="0" note="Institutional approvals in force" /><Metric label="Confirmation due" value="0" note="Next 90 days" /><Metric label="Conditions open" value="0" note="Outstanding compliance items" /></div><div className="mt-6"><EmptyState title="No active NOCs to track" text="When an Institutional NOC is issued, its validity, approved programs, student limits, conditions and confirmation date will be recorded here." /></div></PortalShell> }
+
+export default function CompliancePage() {
+  return (
+    <PortalShell
+      title="NOC compliance & confirmation"
+      subtitle="Track active NOCs, conditions, reminders and the three-year confirmation milestone."
+    >
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        <Metric label="Active NOCs" value="0" note="Institutional approvals in force" />
+        <Metric label="Confirmation due" value="0" note="Next 90 days" />
+        <Metric label="Conditions open" value="0" note="Outstanding compliance items" />
+      </div>
+      <div className="mt-6">
+        <EmptyState
+          title="No active NOCs to track"
+          text="When an Institutional NOC is issued, its validity, approved programs, student limits, conditions and confirmation date will be recorded here."
+        />
+      </div>
+    </PortalShell>
+  )
+}

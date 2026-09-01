@@ -5,6 +5,7 @@ import { useState } from 'react'
 import SignOutButton from './SignOutButton'
 import NotificationCenter from './NotificationCenter'
 import LanguageToggle from './LanguageToggle'
+import OfflineIndicator from './OfflineIndicator'
 import { useLocale } from './LocaleProvider'
 
 const nav = [
@@ -25,7 +26,7 @@ export default function PortalShell({
   children,
 }: {
   title: string
-  subtitle: string
+  subtitle?: string
   children: React.ReactNode
 }) {
   const path = usePathname()
@@ -48,7 +49,8 @@ export default function PortalShell({
   ))
 
   return (
-    <div className="min-h-screen bg-slate-100">
+    <div className="min-h-screen bg-slate-100" dir={isRtl ? 'rtl' : 'ltr'}>
+      <OfflineIndicator />
 
       {/* Mobile Backdrop Overlay */}
       {sidebarOpen && (
@@ -59,8 +61,12 @@ export default function PortalShell({
         />
       )}
 
-      {/* Desktop Sidebar (always visible on lg+) */}
-      <aside className={`fixed inset-y-0 z-40 hidden w-64 flex-col bg-slate-950 p-5 text-slate-300 lg:flex ${isRtl ? 'right-0' : 'left-0'}`}>
+      {/* Desktop Sidebar (fixed left for LTR, fixed right for RTL) */}
+      <aside
+        className={`fixed inset-y-0 z-40 hidden w-64 flex-col bg-slate-950 p-5 text-slate-300 lg:flex ${
+          isRtl ? 'right-0 border-l border-slate-800' : 'left-0 border-r border-slate-800'
+        }`}
+      >
         <Link href="/" className="block px-3 py-3 text-lg font-bold text-white">
           HEC ODL <span className="text-blue-400">Portal</span>
         </Link>
@@ -75,8 +81,14 @@ export default function PortalShell({
 
       {/* Mobile Slide-in Drawer */}
       <aside
-        className={`fixed inset-y-0 z-40 flex w-72 flex-col bg-slate-950 p-5 text-slate-300 shadow-2xl transition-transform duration-300 ease-in-out lg:hidden ${isRtl ? 'right-0' : 'left-0'} ${
-          sidebarOpen ? 'translate-x-0' : isRtl ? 'translate-x-full' : '-translate-x-full'
+        className={`fixed inset-y-0 z-40 flex w-72 flex-col bg-slate-950 p-5 text-slate-300 shadow-2xl transition-transform duration-300 ease-in-out lg:hidden ${
+          isRtl ? 'right-0' : 'left-0'
+        } ${
+          sidebarOpen
+            ? 'translate-x-0'
+            : isRtl
+            ? 'translate-x-full'
+            : '-translate-x-full'
         }`}
       >
         <div className="flex items-center justify-between mb-2">
@@ -92,7 +104,14 @@ export default function PortalShell({
             className="grid h-9 w-9 place-items-center rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
             aria-label="Close sidebar"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-5 w-5"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -107,19 +126,24 @@ export default function PortalShell({
       </aside>
 
       {/* Main Content Area */}
-      <div className={isRtl ? 'lg:pr-64' : 'lg:pl-64'}>
-
+      <div className={isRtl ? 'lg:pr-64 lg:pl-0' : 'lg:pl-64 lg:pr-0'}>
         {/* Top Header */}
-        <header className="sticky top-0 z-20 border-b border-slate-200 bg-white px-4 py-4 sm:px-6">
+        <header className="sticky top-0 z-20 border-b border-slate-200 bg-white px-4 py-4 sm:px-6 shadow-sm">
           <div className="mx-auto flex max-w-7xl items-center gap-4">
-
             {/* Hamburger button - mobile only */}
             <button
               onClick={() => setSidebarOpen(true)}
               className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-all lg:hidden"
               aria-label="Open sidebar"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="h-5 w-5"
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
             </button>
@@ -127,13 +151,15 @@ export default function PortalShell({
             {/* Title block */}
             <div className="min-w-0 flex-1">
               <p className="eyebrow truncate">{t('HEC ODL APPLICATION SYSTEM')}</p>
-              <h1 className="mt-0.5 truncate text-lg font-bold text-slate-900 sm:text-2xl">{t(title)}</h1>
+              <h1 className="mt-0.5 truncate text-lg font-bold text-slate-900 sm:text-2xl">
+                {t(title)}
+              </h1>
               {subtitle && (
                 <p className="mt-0.5 hidden text-sm text-slate-500 sm:block">{t(subtitle)}</p>
               )}
             </div>
 
-            {/* New application button */}
+            {/* Action buttons */}
             <Link
               href="/hei/applications/new"
               className="btn-primary flex-shrink-0 text-xs sm:text-sm"
