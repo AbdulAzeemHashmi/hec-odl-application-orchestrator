@@ -58,13 +58,17 @@ export default function VisitScheduler() {
     setSaving(true)
     setError('')
     const data = new FormData(event.currentTarget)
+    // Combine separate date + time fields into a single ISO datetime string
+    const visitDate = String(data.get('visitDate') || '')
+    const visitTime = String(data.get('visitTime') || '00:00')
+    const scheduledFor = visitDate && visitTime ? `${visitDate}T${visitTime}` : ''
     try {
       const response = await fetch('/api/visits', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           applicationId: data.get('applicationId'),
-          scheduledFor: data.get('scheduledFor'),
+          scheduledFor,
           venue: data.get('venue'),
           attendees: String(data.get('attendees'))
             .split(',')
@@ -141,18 +145,33 @@ export default function VisitScheduler() {
         </div>
 
         <div>
-          <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">
+          <label className="block text-xs font-semibold uppercase text-slate-500 mb-2">
             {t('Inspection Visit Date & Time:')}
           </label>
-          <input
-            required
-            name="scheduledFor"
-            type="datetime-local"
-            className="w-full rounded-lg border border-slate-300 p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none text-slate-900"
-          />
-          <p className="mt-1 text-[11px] text-slate-400">
-            {t('Click the calendar icon to select inspection date and time')}
-          </p>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block text-[11px] font-medium text-slate-400 mb-1">
+                {isRtl ? 'تاریخ' : 'Date'}
+              </label>
+              <input
+                required
+                name="visitDate"
+                type="date"
+                className="w-full rounded-lg border border-slate-300 p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none text-slate-900"
+              />
+            </div>
+            <div>
+              <label className="block text-[11px] font-medium text-slate-400 mb-1">
+                {isRtl ? 'وقت' : 'Time'}
+              </label>
+              <input
+                required
+                name="visitTime"
+                type="time"
+                className="w-full rounded-lg border border-slate-300 p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none text-slate-900"
+              />
+            </div>
+          </div>
         </div>
 
         <div>
