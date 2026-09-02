@@ -57,7 +57,7 @@ export default function LlmPage() {
           <button
             onClick={ask}
             disabled={loading}
-            className="btn-primary mt-4 font-semibold shadow-md"
+            className="btn-primary mt-4 w-full sm:w-auto font-semibold shadow-md"
           >
             {loading ? t('Thinking...') : t('Send')}
           </button>

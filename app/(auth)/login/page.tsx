@@ -102,12 +102,12 @@ export default function LoginPage() {
         </label>
 
         <div className="mt-4 space-y-3">
-          <label className="flex items-center gap-2 text-xs text-slate-600">
-            <span className="font-semibold">{t('Role:')}</span>
+          <label className="block text-sm font-medium text-slate-700">
+            {t('Role')}
             <select
               value={role}
               onChange={(e) => setRole(e.target.value as any)}
-              className="flex-1 rounded-lg border border-slate-300 p-2 text-xs text-slate-800 bg-slate-50 font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none"
+              className="mt-1 w-full rounded-lg border border-slate-300 p-3 text-sm text-slate-800 bg-white font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none text-base sm:text-sm"
             >
               <option value="hei">{t('HEI Institutional User')}</option>
               <option value="qad">{t('QAD Scrutiny Officer')}</option>

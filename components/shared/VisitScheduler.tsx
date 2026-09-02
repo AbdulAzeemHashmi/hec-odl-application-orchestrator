@@ -178,7 +178,7 @@ export default function VisitScheduler() {
           <label className="block text-xs font-semibold uppercase text-slate-500 mb-2">
             {t('Inspection Visit Date & Time:')}
           </label>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-3">
             <div>
               <label className="block text-[11px] font-medium text-slate-400 mb-1">
                 {isRtl ? 'تاریخ' : 'Date'}

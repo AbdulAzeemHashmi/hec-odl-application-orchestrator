@@ -55,7 +55,7 @@ export default function NewApplicationPage() {
 
         {/* Page Header */}
         <div className="mb-8">
-          <div className="flex items-start justify-between gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
             <div className="min-w-0">
               <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">
                 {t('New ODL NOC Application')}
@@ -64,7 +64,7 @@ export default function NewApplicationPage() {
                 {t('Complete both parts of the Model Application Dossier. All fields are required.')}
               </p>
             </div>
-            <div className="flex-shrink-0 pt-1">
+            <div className="flex-shrink-0 sm:pt-1">
               <LanguageToggle />
             </div>
           </div>

@@ -13,9 +13,9 @@ export default function ApplicationsPage() {
       subtitle="Drafts, submitted dossiers, deficiency returns and decisions."
     >
       <div className="card overflow-hidden">
-        <div className="flex items-center justify-between border-b pb-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b pb-4">
           <h2 className="font-semibold text-slate-900">{t('Application register')}</h2>
-          <Link href="/hei/applications/new" className="btn-primary">
+          <Link href="/hei/applications/new" className="btn-primary self-start sm:self-auto whitespace-nowrap">
             {t('New application')}
           </Link>
         </div>
