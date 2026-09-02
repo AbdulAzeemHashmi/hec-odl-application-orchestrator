@@ -1,9 +1,11 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { createBrowserAuthClient, isSupabaseAuthConfigured, clearAuthCookies } from '@/lib/auth/supabase'
+import { useLocale } from './LocaleProvider'
 
 export default function SignOutButton() {
   const router = useRouter()
+  const { t } = useLocale()
 
   async function signOut() {
     try {
@@ -22,9 +24,9 @@ export default function SignOutButton() {
   return (
     <button
       onClick={signOut}
-      className="rounded-lg bg-slate-800 px-3 py-2 text-xs font-semibold text-slate-300 hover:bg-red-900/40 hover:text-red-200 transition-colors"
+      className="w-full text-start rounded-lg bg-slate-800 px-3 py-2 text-xs font-semibold text-slate-300 hover:bg-red-900/40 hover:text-red-200 transition-colors"
     >
-      Sign out securely
+      {t('Sign out securely')}
     </button>
   )
 }
