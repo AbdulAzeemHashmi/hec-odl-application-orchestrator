@@ -16,15 +16,36 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<'en' | 'ur'>('en')
 
   useEffect(() => {
-    // Always start in English (LTR) on every page load.
-    // Language switching is per-session only; no localStorage restoration.
-    document.documentElement.lang = 'en'
-    document.documentElement.dir = 'ltr'
-    document.documentElement.classList.remove('font-urdu')
+    try {
+      // Clear any legacy localStorage value to prevent unexpected cross-session persistence
+      localStorage.removeItem('hec-language')
+    } catch {}
+
+    try {
+      // sessionStorage keeps the language across page navigation in the active tab/session,
+      // but resets to English whenever the screen/tab is closed and reopened.
+      const saved = sessionStorage.getItem('hec-language') === 'ur' ? 'ur' : 'en'
+      setLanguageState(saved)
+      document.documentElement.lang = saved
+      document.documentElement.dir = saved === 'ur' ? 'rtl' : 'ltr'
+      if (saved === 'ur') {
+        document.documentElement.classList.add('font-urdu')
+      } else {
+        document.documentElement.classList.remove('font-urdu')
+      }
+    } catch {
+      // Default to English if storage is inaccessible
+      setLanguageState('en')
+      document.documentElement.lang = 'en'
+      document.documentElement.dir = 'ltr'
+      document.documentElement.classList.remove('font-urdu')
+    }
   }, [])
 
   function setLanguage(next: 'en' | 'ur') {
-    localStorage.setItem('hec-language', next)
+    try {
+      sessionStorage.setItem('hec-language', next)
+    } catch {}
     document.documentElement.lang = next
     document.documentElement.dir = next === 'ur' ? 'rtl' : 'ltr'
     if (next === 'ur') {
