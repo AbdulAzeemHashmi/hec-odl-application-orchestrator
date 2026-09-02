@@ -14,7 +14,7 @@ export default function LanguageToggle() {
       <button
         onClick={() => setLanguage('en')}
         aria-pressed={language === 'en'}
-        className={`rounded-md px-3 py-1.5 text-xs font-bold transition-all ${
+        className={`rounded-md px-2 py-1 sm:px-2.5 sm:py-1.5 text-xs font-bold transition-all ${
           language === 'en'
             ? 'bg-white text-blue-700 shadow-sm'
             : 'text-slate-500 hover:text-slate-700'
@@ -25,7 +25,7 @@ export default function LanguageToggle() {
       <button
         onClick={() => setLanguage('ur')}
         aria-pressed={language === 'ur'}
-        className={`rounded-md px-3 py-1.5 text-xs font-bold transition-all ${
+        className={`rounded-md px-2 py-1 sm:px-2.5 sm:py-1.5 text-xs font-bold transition-all ${
           language === 'ur'
             ? 'bg-white text-blue-700 shadow-sm'
             : 'text-slate-500 hover:text-slate-700'
