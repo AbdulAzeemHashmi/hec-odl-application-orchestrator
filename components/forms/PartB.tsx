@@ -35,6 +35,15 @@ export default function PartBForm({ onSubmit, loading, onBack }: PartBProps) {
     onSubmit(data)
   }
 
+  // Urdu validation tooltip override
+  const urduRequiredMsg = 'براہ کرم یہ خانہ پُر کریں'
+  const handleInvalid = (e: React.InvalidEvent<HTMLTextAreaElement>) => {
+    e.target.setCustomValidity(isRtl ? urduRequiredMsg : '')
+  }
+  const handleInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    ;(e.target as HTMLTextAreaElement).setCustomValidity('')
+  }
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="pb-2 border-b border-slate-200">
@@ -57,8 +66,10 @@ export default function PartBForm({ onSubmit, loading, onBack }: PartBProps) {
           name="approvals"
           value={data.approvals}
           onChange={handleChange}
+          onInvalid={handleInvalid}
+          onInput={handleInput}
           placeholder={t('Provide details of Board of Studies, Academic Council, Syndicate approvals, and any other statutory or regulatory clearances obtained for the ODL program.')}
-          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          className="w-full p-3 border border-slate-300 rounded-lg text-base sm:text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
         />
       </div>
@@ -74,8 +85,10 @@ export default function PartBForm({ onSubmit, loading, onBack }: PartBProps) {
           name="aims"
           value={data.aims}
           onChange={handleChange}
+          onInvalid={handleInvalid}
+          onInput={handleInput}
           placeholder={t('State the program aims, learning outcomes, alignment with HEC ODL policy objectives, and national development priorities.')}
-          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          className="w-full p-3 border border-slate-300 rounded-lg text-base sm:text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
         />
       </div>
@@ -91,8 +104,10 @@ export default function PartBForm({ onSubmit, loading, onBack }: PartBProps) {
           name="learners"
           value={data.learners}
           onChange={handleChange}
+          onInvalid={handleInvalid}
+          onInput={handleInput}
           placeholder={t('Describe the target demographics, admission criteria, SWOT analysis of prospective learner cohorts, and diversity and inclusion provisions.')}
-          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          className="w-full p-3 border border-slate-300 rounded-lg text-base sm:text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
         />
       </div>
@@ -108,21 +123,23 @@ export default function PartBForm({ onSubmit, loading, onBack }: PartBProps) {
           name="resources"
           value={data.resources}
           onChange={handleChange}
+          onInvalid={handleInvalid}
+          onInput={handleInput}
           placeholder={t('Detail the Open Educational Resources (OER) available, library access arrangements, laboratory facilities, digital content repositories, and virtual lab provisions.')}
-          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          className="w-full p-3 border border-slate-300 rounded-lg text-base sm:text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
         />
       </div>
 
-      <div className={`flex gap-4 ${isRtl ? 'flex-row-reverse' : ''}`}>
-        <Button type="button" variant="outline" onClick={onBack} className="font-semibold">
+      <div className={`flex flex-col-reverse sm:flex-row gap-3 sm:gap-4 ${isRtl ? 'sm:flex-row-reverse' : ''}`}>
+        <Button type="button" variant="outline" onClick={onBack} className="w-full sm:w-auto font-semibold py-2.5">
           {isRtl ? '\u2192' : '\u2190'} {t('Back to Part A')}
         </Button>
         <Button
           type="submit"
           variant="default"
           disabled={loading}
-          className="flex-1 font-semibold shadow-md"
+          className="w-full sm:flex-1 font-semibold shadow-md py-2.5"
         >
           {loading ? t('Submitting...') : t('Submit Application')}
         </Button>

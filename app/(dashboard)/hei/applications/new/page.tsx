@@ -97,7 +97,7 @@ export default function NewApplicationPage() {
             </div>
 
             {/* Connector */}
-            <div className={`h-0.5 w-16 flex-shrink-0 mx-2 rounded transition-all ${step === 2 ? 'bg-blue-600' : 'bg-slate-200'}`} />
+            <div className={`h-0.5 flex-1 max-w-16 min-w-3 flex-shrink mx-2 rounded transition-all ${step === 2 ? 'bg-blue-600' : 'bg-slate-200'}`} />
 
             {/* Step 2 */}
             <div className="flex items-center gap-2 flex-1">

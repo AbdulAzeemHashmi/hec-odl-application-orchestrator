@@ -90,9 +90,9 @@ export default function QadAnalyticsDesk({
       ) : (
         <>
           {/* Main Visual Dashboard */}
-          <div className="grid gap-6 lg:grid-cols-5">
+          <div className="grid gap-6 lg:grid-cols-12">
             {/* Case Pipeline Status Bar */}
-            <section className="card lg:col-span-3">
+            <section className="card lg:col-span-7">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
                 <div>
                   <h2 className="font-bold text-slate-900 text-base">{t('Case pipeline')}</h2>
@@ -141,7 +141,7 @@ export default function QadAnalyticsDesk({
             </section>
 
             {/* Health & SLA Overview */}
-            <section className="card lg:col-span-2 flex flex-col justify-between">
+            <section className="card lg:col-span-5 flex flex-col justify-between">
               <div>
                 <h2 className="font-bold text-slate-900 text-base mb-1">{t('Decision health')}</h2>
                 <p className="text-xs text-slate-500">

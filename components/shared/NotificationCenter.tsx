@@ -95,8 +95,8 @@ export default function NotificationCenter() {
       {open && (
         <div
           className={`absolute ${
-            isRtl ? 'left-0' : 'right-0'
-          } top-12 z-50 w-80 sm:w-96 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl animate-in fade-in zoom-in-95 duration-150`}
+            isRtl ? 'left-0 sm:left-auto sm:right-0' : 'right-0'
+          } top-12 z-50 w-[calc(100vw-1.5rem)] sm:w-80 md:w-96 max-w-sm overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl animate-in fade-in zoom-in-95 duration-150`}
         >
           {/* Header */}
           <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50/80 px-4 py-3">

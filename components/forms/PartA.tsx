@@ -72,7 +72,7 @@ export default function PartAForm({ onSubmit }: PartAProps) {
           onInvalid={handleInvalid}
           onInput={handleInput}
           placeholder={t('Describe organizational structure, ODL office, dedicated staff, and management hierarchy responsible for ODL program delivery.')}
-          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          className="w-full p-3 border border-slate-300 rounded-lg text-base sm:text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
         />
       </div>
@@ -91,7 +91,7 @@ export default function PartAForm({ onSubmit }: PartAProps) {
           onInvalid={handleInvalid}
           onInput={handleInput}
           placeholder={t('List qualified teaching staff, instructional designers, content developers, tutors, and student support personnel with their qualifications.')}
-          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          className="w-full p-3 border border-slate-300 rounded-lg text-base sm:text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
         />
       </div>
@@ -110,7 +110,7 @@ export default function PartAForm({ onSubmit }: PartAProps) {
           onInvalid={handleInvalid}
           onInput={handleInput}
           placeholder={t('Describe ICT infrastructure, Learning Management System (LMS), software, hardware, internet connectivity, and digital support systems in place.')}
-          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          className="w-full p-3 border border-slate-300 rounded-lg text-base sm:text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
         />
       </div>
@@ -129,7 +129,7 @@ export default function PartAForm({ onSubmit }: PartAProps) {
           onInvalid={handleInvalid}
           onInput={handleInput}
           placeholder={t('Describe examination systems, question bank management, online proctoring arrangements, result mechanisms, and academic integrity policies.')}
-          className="w-full p-3 border border-slate-300 rounded-lg text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
+          className="w-full p-3 border border-slate-300 rounded-lg text-base sm:text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none resize-y transition"
           rows={4}
         />
       </div>

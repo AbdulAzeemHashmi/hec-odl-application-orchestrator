@@ -101,7 +101,7 @@ export default function NocCertificate({
       {/* Official Certificate Layout */}
       <section
         id="noc-certificate"
-        className="relative overflow-hidden rounded-2xl border-4 border-double border-slate-800 bg-white p-8 shadow-xl print:m-0 print:border-4 print:border-slate-900 print:p-8"
+        className="relative overflow-hidden rounded-2xl border-4 border-double border-slate-800 bg-white p-4 sm:p-8 shadow-xl print:m-0 print:border-4 print:border-slate-900 print:p-8"
         dir={isRtl ? 'rtl' : 'ltr'}
       >
         {/* Certificate Watermark */}

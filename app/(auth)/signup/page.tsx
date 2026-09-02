@@ -73,9 +73,9 @@ export default function SignupPage() {
   }
 
   return (
-    <main className="relative grid min-h-screen place-items-center bg-slate-100 p-4 sm:p-6" dir={isRtl ? 'rtl' : 'ltr'}>
+    <main className="min-h-screen bg-slate-100 flex flex-col justify-center items-center p-4 sm:p-6 py-8" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Top Bar with Language Toggle */}
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
+      <div className="w-full max-w-md flex justify-end mb-3">
         <LanguageToggle />
       </div>
 
@@ -101,7 +101,7 @@ export default function SignupPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="user@university.edu.pk"
-            className="mt-1 w-full rounded-lg border border-slate-300 p-3 text-slate-900 focus:border-blue-600 focus:outline-none text-sm"
+            className="mt-1 w-full rounded-lg border border-slate-300 p-3 text-slate-900 focus:border-blue-600 focus:outline-none text-base sm:text-sm"
           />
         </label>
 
@@ -114,7 +114,7 @@ export default function SignupPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="••••••••"
-            className="mt-1 w-full rounded-lg border border-slate-300 p-3 text-slate-900 focus:border-blue-600 focus:outline-none text-sm"
+            className="mt-1 w-full rounded-lg border border-slate-300 p-3 text-slate-900 focus:border-blue-600 focus:outline-none text-base sm:text-sm"
           />
         </label>
 
@@ -123,7 +123,7 @@ export default function SignupPage() {
           <select
             value={role}
             onChange={(e) => setRole(e.target.value as any)}
-            className="mt-1 w-full rounded-lg border border-slate-300 p-3 text-slate-900 bg-white focus:border-blue-600 focus:outline-none text-sm"
+            className="mt-1 w-full rounded-lg border border-slate-300 p-3 text-slate-900 bg-white focus:border-blue-600 focus:outline-none text-base sm:text-sm"
           >
             <option value="hei">{t('HEI Institutional Applicant')}</option>
             <option value="qad">{t('QAD Scrutiny Officer')}</option>

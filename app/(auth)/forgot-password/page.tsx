@@ -49,8 +49,8 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <main className="relative grid min-h-screen place-items-center bg-slate-100 p-4 sm:p-6" dir={isRtl ? 'rtl' : 'ltr'}>
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
+    <main className="min-h-screen bg-slate-100 flex flex-col justify-center items-center p-4 sm:p-6 py-8" dir={isRtl ? 'rtl' : 'ltr'}>
+      <div className="w-full max-w-md flex justify-end mb-3">
         <LanguageToggle />
       </div>
 
@@ -69,7 +69,7 @@ export default function ForgotPasswordPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="user@university.edu.pk"
-            className="mt-1 w-full rounded-lg border border-slate-300 p-3 text-slate-900 focus:border-blue-600 focus:outline-none text-sm"
+            className="mt-1 w-full rounded-lg border border-slate-300 p-3 text-slate-900 focus:border-blue-600 focus:outline-none text-base sm:text-sm"
           />
         </label>
 

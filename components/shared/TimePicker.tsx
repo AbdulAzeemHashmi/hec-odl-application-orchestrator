@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { useLocale } from './LocaleProvider'
 
 interface TimePickerProps {
   value: string        // "HH:MM" or ""
@@ -17,6 +18,7 @@ export default function TimePicker({ value, onChange, required, name }: TimePick
   const btnRef = useRef<HTMLButtonElement>(null)
   const hourRefs = useRef<(HTMLButtonElement | null)[]>([])
   const minRefs = useRef<(HTMLButtonElement | null)[]>([])
+  const { isRtl } = useLocale()
 
   // Parse incoming value
   useEffect(() => {
@@ -123,12 +125,15 @@ export default function TimePicker({ value, onChange, required, name }: TimePick
           ref={panelRef}
           role="dialog"
           aria-label="Select time"
-          className="absolute z-50 mt-1.5 left-0 w-64 rounded-2xl border border-slate-200 bg-white shadow-xl overflow-hidden"
-          style={{ minWidth: '16rem' }}
+          className={`absolute z-50 mt-1.5 ${
+            isRtl ? 'left-0 sm:left-auto sm:right-0' : 'right-0 sm:right-auto sm:left-0'
+          } w-64 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-slate-200 bg-white shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150`}
         >
           {/* Header */}
           <div className="px-4 pt-3 pb-2 border-b border-slate-100 flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wide text-slate-500">Select Time</span>
+            <span className="text-xs font-bold uppercase tracking-wide text-slate-500">
+              {isRtl ? 'وقت منتخب کریں' : 'Select Time'}
+            </span>
             <span className="text-lg font-bold text-blue-700 font-mono tracking-widest">
               {displayStr}
             </span>

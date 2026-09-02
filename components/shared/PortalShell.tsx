@@ -128,12 +128,12 @@ export default function PortalShell({
       {/* Main Content Area */}
       <div className={isRtl ? 'lg:pr-64 lg:pl-0' : 'lg:pl-64 lg:pr-0'}>
         {/* Top Header */}
-        <header className="sticky top-0 z-20 border-b border-slate-200 bg-white px-4 py-4 sm:px-6 shadow-sm">
-          <div className="mx-auto flex max-w-7xl items-center gap-4">
+        <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur-sm px-3 py-3 sm:px-6 sm:py-4 shadow-sm">
+          <div className="mx-auto flex max-w-7xl items-center gap-2 sm:gap-4">
             {/* Hamburger button - mobile only */}
             <button
               onClick={() => setSidebarOpen(true)}
-              className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-all lg:hidden"
+              className="grid h-10 w-10 min-w-[40px] min-h-[40px] flex-shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-all lg:hidden active:scale-95"
               aria-label="Open sidebar"
             >
               <svg
@@ -150,30 +150,32 @@ export default function PortalShell({
 
             {/* Title block */}
             <div className="min-w-0 flex-1">
-              <p className="eyebrow truncate">{t('HEC ODL APPLICATION SYSTEM')}</p>
-              <h1 className="mt-0.5 truncate text-lg font-bold text-slate-900 sm:text-2xl">
+              <p className="eyebrow truncate text-[10px] sm:text-xs">{t('HEC ODL APPLICATION SYSTEM')}</p>
+              <h1 className="mt-0.5 truncate text-base font-bold text-slate-900 sm:text-2xl">
                 {t(title)}
               </h1>
               {subtitle && (
-                <p className="mt-0.5 hidden text-sm text-slate-500 sm:block">{t(subtitle)}</p>
+                <p className="mt-0.5 hidden text-xs text-slate-500 md:block lg:text-sm">{t(subtitle)}</p>
               )}
             </div>
 
-            {/* Action buttons */}
-            <Link
-              href="/hei/applications/new"
-              className="btn-primary flex-shrink-0 text-xs sm:text-sm"
-            >
-              <span className="hidden sm:inline">{t('New application')}</span>
-              <span className="sm:hidden">+ New</span>
-            </Link>
-            <LanguageToggle />
-            <NotificationCenter />
+            {/* Action buttons with responsive spacing */}
+            <div className="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+              <Link
+                href="/hei/applications/new"
+                className="btn-primary flex-shrink-0 px-2.5 py-2 text-xs sm:px-4 sm:py-2.5 sm:text-sm font-semibold shadow-sm"
+              >
+                <span className="hidden md:inline">{t('New application')}</span>
+                <span className="md:hidden">+ New</span>
+              </Link>
+              <LanguageToggle />
+              <NotificationCenter />
+            </div>
           </div>
         </header>
 
         {/* Page Content */}
-        <main className="mx-auto max-w-7xl p-4 sm:p-6">{children}</main>
+        <main className="mx-auto max-w-7xl p-3 sm:p-6 lg:p-8">{children}</main>
       </div>
     </div>
   )
