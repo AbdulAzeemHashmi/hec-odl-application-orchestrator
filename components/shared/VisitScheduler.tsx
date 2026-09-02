@@ -29,6 +29,25 @@ export default function VisitScheduler() {
   const formRef = useRef<HTMLFormElement>(null)
   const { t, isRtl } = useLocale()
 
+  // Urdu overrides for browser-native validation tooltips.
+  // Always call setCustomValidity: Urdu text when RTL, '' when LTR
+  // so the browser reverts to its own default English message.
+  const urduSelectMsg  = 'براہ کرم فہرست میں سے ایک آئٹم منتخب کریں'
+  const urduFillMsg    = 'براہ کرم یہ خانہ پُر کریں'
+
+  const handleSelectInvalid = (e: React.InvalidEvent<HTMLSelectElement>) => {
+    e.target.setCustomValidity(isRtl ? urduSelectMsg : '')
+  }
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    e.target.setCustomValidity('')
+  }
+  const handleInputInvalid = (e: React.InvalidEvent<HTMLInputElement>) => {
+    e.target.setCustomValidity(isRtl ? urduFillMsg : '')
+  }
+  const handleInputInput = (e: React.FormEvent<HTMLInputElement>) => {
+    ;(e.target as HTMLInputElement).setCustomValidity('')
+  }
+
   async function load() {
     try {
       const [visitResponse, appResponse] = await Promise.all([
@@ -66,7 +85,7 @@ export default function VisitScheduler() {
     const timeValue = visitTime || '00:00'
     const scheduledFor = visitDate && timeValue ? `${visitDate}T${timeValue}` : ''
     if (!visitTime) {
-      setError('Please select a visit time.')
+      setError(isRtl ? 'براہ کرم دورے کا وقت منتخب کریں۔' : 'Please select a visit time.')
       setSaving(false)
       return
     }
@@ -141,6 +160,8 @@ export default function VisitScheduler() {
             name="applicationId"
             className="w-full rounded-lg border border-slate-300 p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none"
             defaultValue=""
+            onInvalid={handleSelectInvalid}
+            onChange={handleSelectChange}
           >
             <option value="" disabled>
               {t('Select application')}
@@ -167,6 +188,8 @@ export default function VisitScheduler() {
                 name="visitDate"
                 type="date"
                 className="w-full rounded-lg border border-slate-300 p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none text-slate-900"
+                onInvalid={handleInputInvalid}
+                onInput={handleInputInput}
               />
             </div>
             <div>
@@ -191,6 +214,8 @@ export default function VisitScheduler() {
             name="venue"
             placeholder={t('Venue')}
             className="w-full rounded-lg border border-slate-300 p-2.5 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
+            onInvalid={handleInputInvalid}
+            onInput={handleInputInput}
           />
         </div>
 
