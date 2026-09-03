@@ -128,37 +128,70 @@ export default function PortalShell({
       {/* Main Content Area */}
       <div className={isRtl ? 'lg:pr-64 lg:pl-0' : 'lg:pl-64 lg:pr-0'}>
         {/* Top Header */}
-        <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur-sm px-3 py-3 sm:px-6 sm:py-4 shadow-sm">
-          <div className="mx-auto flex max-w-7xl items-center gap-2 sm:gap-4">
-            {/* Hamburger button - mobile only */}
-            <button
-              onClick={() => setSidebarOpen(true)}
-              className="grid h-10 w-10 min-w-[40px] min-h-[40px] flex-shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-all lg:hidden active:scale-95"
-              aria-label="Open sidebar"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="h-5 w-5"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            </button>
-
-            {/* Title block */}
-            <div className="min-w-0 flex-1">
-              {/* Smartphone View: Single line "HEC ODL APPLICATION SYSTEM", second line removed */}
-              <div className="md:hidden">
-                <span className="font-extrabold text-slate-900 text-xs sm:text-sm tracking-tight truncate block">
+        <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur-sm px-3 py-2.5 sm:px-6 sm:py-4 shadow-sm">
+          <div className="mx-auto max-w-7xl">
+            {/* Mobile / Smartphone Layout (< md): 2 Rows */}
+            <div className="md:hidden space-y-2">
+              {/* Row 1: Hamburger button + full "HEC ODL APPLICATION SYSTEM" */}
+              <div className="flex items-center gap-2.5">
+                <button
+                  onClick={() => setSidebarOpen(true)}
+                  className="grid h-9 w-9 min-w-[36px] min-h-[36px] flex-shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-all active:scale-95"
+                  aria-label="Open sidebar"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="h-5 w-5"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+                </button>
+                <span className="font-extrabold text-slate-900 text-xs sm:text-sm tracking-tight truncate block flex-1">
                   {t('HEC ODL APPLICATION SYSTEM')}
                 </span>
               </div>
 
-              {/* Tablet & Desktop View: Eyebrow + full page title + subtitle */}
-              <div className="hidden md:block">
+              {/* Row 2 (slightly down): [New application] + [EN | اردو] + [Notification] */}
+              <div className="flex items-center justify-between gap-2 pt-1.5 border-t border-slate-100">
+                <Link
+                  href="/hei/applications/new"
+                  className="btn-primary flex-1 justify-center py-1.5 px-3 text-xs font-semibold shadow-sm whitespace-nowrap"
+                >
+                  {t('New application')}
+                </Link>
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                  <LanguageToggle />
+                  <NotificationCenter />
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop & Tablet Layout (>= md): Single Row */}
+            <div className="hidden md:flex items-center gap-4">
+              {/* Hamburger button (lg:hidden) */}
+              <button
+                onClick={() => setSidebarOpen(true)}
+                className="grid h-10 w-10 min-w-[40px] min-h-[40px] flex-shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-all lg:hidden active:scale-95"
+                aria-label="Open sidebar"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
+
+              {/* Title block */}
+              <div className="min-w-0 flex-1">
                 <p className="eyebrow truncate text-xs">{t('HEC ODL APPLICATION SYSTEM')}</p>
                 <h1 className="mt-0.5 truncate text-xl lg:text-2xl font-bold text-slate-900">
                   {t(title)}
@@ -167,18 +200,18 @@ export default function PortalShell({
                   <p className="mt-0.5 text-xs text-slate-500 lg:text-sm truncate">{t(subtitle)}</p>
                 )}
               </div>
-            </div>
 
-            {/* Action buttons with responsive spacing */}
-            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-              <Link
-                href="/hei/applications/new"
-                className="btn-primary hidden lg:inline-flex flex-shrink-0 whitespace-nowrap px-3 py-2 text-xs lg:px-4 lg:py-2.5 lg:text-sm font-semibold shadow-sm"
-              >
-                {t('New application')}
-              </Link>
-              <LanguageToggle />
-              <NotificationCenter />
+              {/* Action buttons with responsive spacing */}
+              <div className="flex items-center gap-3 flex-shrink-0">
+                <Link
+                  href="/hei/applications/new"
+                  className="btn-primary flex-shrink-0 whitespace-nowrap px-4 py-2.5 text-sm font-semibold shadow-sm"
+                >
+                  {t('New application')}
+                </Link>
+                <LanguageToggle />
+                <NotificationCenter />
+              </div>
             </div>
           </div>
         </header>
