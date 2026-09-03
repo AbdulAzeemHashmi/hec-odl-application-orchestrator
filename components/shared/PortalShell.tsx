@@ -130,42 +130,46 @@ export default function PortalShell({
         {/* Top Header */}
         <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur-sm px-3 py-2.5 sm:px-6 sm:py-4 shadow-sm">
           <div className="mx-auto max-w-7xl">
-            {/* Mobile / Smartphone Layout (< md): 2 Rows */}
+            {/* Mobile / Smartphone Layout (< md): 2 Coordinated Slim Rows */}
             <div className="md:hidden space-y-2">
-              {/* Row 1: Hamburger button + full "HEC ODL APPLICATION SYSTEM" */}
-              <div className="flex items-center gap-2.5">
-                <button
-                  onClick={() => setSidebarOpen(true)}
-                  className="grid h-9 w-9 min-w-[36px] min-h-[36px] flex-shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-all active:scale-95"
-                  aria-label="Open sidebar"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
-                    stroke="currentColor"
-                    className="h-5 w-5"
+              {/* Row 1: System Bar [Hamburger] + [HEC ODL APPLICATION SYSTEM] + [Notification Bell] */}
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                  <button
+                    onClick={() => setSidebarOpen(true)}
+                    className="grid h-9 w-9 min-w-[36px] min-h-[36px] flex-shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-all active:scale-95"
+                    aria-label="Open sidebar"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                  </svg>
-                </button>
-                <span className="font-extrabold text-slate-900 text-xs sm:text-sm tracking-tight truncate block flex-1">
-                  {t('HEC ODL APPLICATION SYSTEM')}
-                </span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                      stroke="currentColor"
+                      className="h-5 w-5"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                  </button>
+                  <span className="font-extrabold text-slate-900 text-xs sm:text-sm tracking-tight truncate">
+                    {t('HEC ODL APPLICATION SYSTEM')}
+                  </span>
+                </div>
+                <div className="flex-shrink-0">
+                  <NotificationCenter />
+                </div>
               </div>
 
-              {/* Row 2 (slightly down): [New application] + [EN | اردو] + [Notification] */}
+              {/* Row 2: Page Context Sub-Bar [Page Title with Accent] + [EN | اردو Language Toggle] */}
               <div className="flex items-center justify-between gap-2 pt-1.5 border-t border-slate-100">
-                <Link
-                  href="/hei/applications/new"
-                  className="btn-primary flex-1 justify-center py-1.5 px-3 text-xs font-semibold shadow-sm whitespace-nowrap"
-                >
-                  {t('New application')}
-                </Link>
-                <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                <div className="flex items-center gap-1.5 min-w-0 flex-1">
+                  <span className="h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
+                  <span className="font-bold text-slate-800 text-xs truncate">
+                    {t(title)}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 flex-shrink-0">
                   <LanguageToggle />
-                  <NotificationCenter />
                 </div>
               </div>
             </div>
