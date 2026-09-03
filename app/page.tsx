@@ -19,24 +19,24 @@ export default function Home() {
     <main className="min-h-screen bg-slate-50 text-slate-900" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Navigation Header */}
       <header className="border-b border-slate-200/80 bg-white/90 backdrop-blur-md sticky top-0 z-50">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-2.5 sm:px-6 sm:py-4">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-3 py-2.5 sm:px-6 sm:py-4">
           <div className="text-base sm:text-xl font-extrabold tracking-tight text-blue-900 flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
             <span className="grid h-7 w-7 sm:h-8 sm:w-8 place-items-center rounded-lg bg-blue-800 font-bold text-white text-xs sm:text-sm">
               ODL
             </span>
             <span>HEC <span className="text-slate-700 font-semibold">Portal</span></span>
           </div>
-          <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <LanguageToggle />
             <Link
               href="/login"
-              className="btn-secondary whitespace-nowrap px-2.5 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold"
+              className="btn-secondary whitespace-nowrap px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold"
             >
               {t('Sign in')}
             </Link>
             <Link
               href="/signup"
-              className="btn-primary hidden sm:inline-flex whitespace-nowrap px-3 py-2 text-xs sm:px-5 sm:text-sm font-semibold shadow-md shadow-blue-700/20"
+              className="btn-primary hidden md:inline-flex whitespace-nowrap px-3 py-2 text-xs sm:px-5 sm:text-sm font-semibold shadow-md shadow-blue-700/20"
             >
               {t('Create account')}
             </Link>

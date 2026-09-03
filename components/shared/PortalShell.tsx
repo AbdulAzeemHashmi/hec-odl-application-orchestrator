@@ -150,20 +150,30 @@ export default function PortalShell({
 
             {/* Title block */}
             <div className="min-w-0 flex-1">
-              <p className="eyebrow truncate text-[10px] sm:text-xs">{t('HEC ODL APPLICATION SYSTEM')}</p>
-              <h1 className="mt-0.5 truncate text-base font-bold text-slate-900 sm:text-2xl">
-                {t(title)}
-              </h1>
-              {subtitle && (
-                <p className="mt-0.5 hidden text-xs text-slate-500 md:block lg:text-sm">{t(subtitle)}</p>
-              )}
+              {/* Smartphone View: Single line "HEC ODL APPLICATION SYSTEM", second line removed */}
+              <div className="md:hidden">
+                <span className="font-extrabold text-slate-900 text-xs sm:text-sm tracking-tight truncate block">
+                  {t('HEC ODL APPLICATION SYSTEM')}
+                </span>
+              </div>
+
+              {/* Tablet & Desktop View: Eyebrow + full page title + subtitle */}
+              <div className="hidden md:block">
+                <p className="eyebrow truncate text-xs">{t('HEC ODL APPLICATION SYSTEM')}</p>
+                <h1 className="mt-0.5 truncate text-xl lg:text-2xl font-bold text-slate-900">
+                  {t(title)}
+                </h1>
+                {subtitle && (
+                  <p className="mt-0.5 text-xs text-slate-500 lg:text-sm truncate">{t(subtitle)}</p>
+                )}
+              </div>
             </div>
 
             {/* Action buttons with responsive spacing */}
             <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
               <Link
                 href="/hei/applications/new"
-                className="btn-primary hidden md:inline-flex flex-shrink-0 whitespace-nowrap px-3 py-2 text-xs lg:px-4 lg:py-2.5 lg:text-sm font-semibold shadow-sm"
+                className="btn-primary hidden lg:inline-flex flex-shrink-0 whitespace-nowrap px-3 py-2 text-xs lg:px-4 lg:py-2.5 lg:text-sm font-semibold shadow-sm"
               >
                 {t('New application')}
               </Link>
