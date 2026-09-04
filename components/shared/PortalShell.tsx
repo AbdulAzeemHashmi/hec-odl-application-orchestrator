@@ -1,24 +1,52 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SignOutButton from './SignOutButton'
 import NotificationCenter from './NotificationCenter'
 import LanguageToggle from './LanguageToggle'
 import OfflineIndicator from './OfflineIndicator'
 import { useLocale } from './LocaleProvider'
 
-const nav = [
-  ['Overview', '/hei'],
-  ['Applications', '/hei/applications'],
-  ['QAD scrutiny', '/qad'],
-  ['Expert panel', '/panel'],
-  ['Visits', '/visits'],
-  ['Decisions', '/decisions'],
-  ['Compliance', '/compliance'],
-  ['AI policy desk', '/llm'],
-  ['Administration', '/admin'],
-]
+const ROLE_NAV: Record<string, string[][]> = {
+  hei: [
+    ['Overview', '/hei'],
+    ['Applications', '/hei/applications'],
+    ['Visits', '/visits'],
+    ['AI policy desk', '/llm'],
+  ],
+  qad: [
+    ['QAD scrutiny', '/qad'],
+    ['Applications', '/hei/applications'],
+    ['Visits', '/visits'],
+    ['Decisions', '/decisions'],
+    ['Compliance', '/compliance'],
+    ['AI policy desk', '/llm'],
+  ],
+  panel: [
+    ['Expert panel', '/panel'],
+    ['Visits', '/visits'],
+    ['AI policy desk', '/llm'],
+  ],
+  admin: [
+    ['Overview', '/hei'],
+    ['Applications', '/hei/applications'],
+    ['QAD scrutiny', '/qad'],
+    ['Expert panel', '/panel'],
+    ['Visits', '/visits'],
+    ['Decisions', '/decisions'],
+    ['Compliance', '/compliance'],
+    ['AI policy desk', '/llm'],
+    ['Administration', '/admin'],
+  ],
+}
+
+const ROLE_LABELS: Record<string, { label: string; icon: string }> = {
+  hei: { label: 'HEI Institutional User', icon: '🏛️' },
+  qad: { label: 'QAD Scrutiny Officer', icon: '📋' },
+  panel: { label: 'Expert Panel Reviewer', icon: '👥' },
+  admin: { label: 'System Administrator', icon: '🛡️' },
+}
 
 export default function PortalShell({
   title,
@@ -31,9 +59,33 @@ export default function PortalShell({
 }) {
   const path = usePathname()
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [currentRole, setCurrentRole] = useState<'hei' | 'qad' | 'panel' | 'admin'>('hei')
   const { isRtl, t } = useLocale()
 
-  const navLinks = nav.map(([label, href]) => (
+  useEffect(() => {
+    const match = typeof document !== 'undefined' ? document.cookie.match(/(?:^|;\s*)hec-session-role=([^;]+)/) : null
+    if (match && ['hei', 'qad', 'panel', 'admin'].includes(match[1])) {
+      setCurrentRole(match[1] as any)
+    }
+  }, [])
+
+  function switchRole(newRole: 'hei' | 'qad' | 'panel' | 'admin') {
+    setCurrentRole(newRole)
+    if (typeof document !== 'undefined') {
+      document.cookie = `hec-session-role=${newRole}; path=/; max-age=604800; SameSite=Lax`
+    }
+    const defaultHome: Record<string, string> = {
+      hei: '/hei',
+      qad: '/qad',
+      panel: '/panel',
+      admin: '/admin',
+    }
+    window.location.href = defaultHome[newRole] || '/hei'
+  }
+
+  const activeNav = ROLE_NAV[currentRole] || ROLE_NAV.hei
+
+  const navLinks = activeNav.map(([label, href]) => (
     <Link
       key={href}
       href={href}
@@ -47,6 +99,39 @@ export default function PortalShell({
       {t(label)}
     </Link>
   ))
+
+  const roleBadgeWidget = (
+    <div className="mx-1 mb-4 rounded-xl bg-slate-900/90 border border-slate-800 p-3 shadow-inner">
+      <div className="flex items-center justify-between">
+        <span className="text-[10px] font-bold uppercase tracking-wider text-blue-400">
+          {t('Active Role')}
+        </span>
+        <span className="text-xs">
+          {ROLE_LABELS[currentRole]?.icon}
+        </span>
+      </div>
+      <p className="text-xs font-bold text-white mt-1 truncate">
+        {t(ROLE_LABELS[currentRole]?.label || 'User')}
+      </p>
+
+      {/* Role Switcher */}
+      <div className="mt-2.5 pt-2 border-t border-slate-800/80">
+        <label className="text-[10px] text-slate-400 block mb-1 font-medium">
+          {t('Switch active workspace:')}
+        </label>
+        <select
+          value={currentRole}
+          onChange={(e) => switchRole(e.target.value as any)}
+          className="w-full rounded-lg bg-slate-950 border border-slate-700 text-xs text-slate-200 py-1.5 px-2 focus:outline-none focus:border-blue-500 font-medium"
+        >
+          <option value="hei">🏛️ {t('HEI Institutional User')}</option>
+          <option value="qad">📋 {t('QAD Scrutiny Officer')}</option>
+          <option value="panel">👥 {t('Expert Panel Reviewer')}</option>
+          <option value="admin">🛡️ {t('System Administrator')}</option>
+        </select>
+      </div>
+    </div>
+  )
 
   return (
     <div className="min-h-screen bg-slate-100" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -70,9 +155,12 @@ export default function PortalShell({
         <Link href="/" className="block px-3 py-3 text-lg font-bold text-white">
           HEC ODL <span className="text-blue-400">Portal</span>
         </Link>
-        <p className="px-3 pb-6 text-xs uppercase tracking-widest text-slate-500">
+        <p className="px-3 pb-4 text-xs uppercase tracking-widest text-slate-500">
           {t('Case management')}
         </p>
+
+        {roleBadgeWidget}
+
         <nav className="flex-1 space-y-1 overflow-y-auto">{navLinks}</nav>
         <div className="mt-auto pt-6 px-1">
           <SignOutButton />
@@ -116,9 +204,12 @@ export default function PortalShell({
             </svg>
           </button>
         </div>
-        <p className="px-3 pb-4 text-xs uppercase tracking-widest text-slate-500">
+        <p className="px-3 pb-3 text-xs uppercase tracking-widest text-slate-500">
           {t('Case management')}
         </p>
+
+        {roleBadgeWidget}
+
         <nav className="flex-1 space-y-1 overflow-y-auto">{navLinks}</nav>
         <div className="mt-auto pt-6 px-1">
           <SignOutButton />
