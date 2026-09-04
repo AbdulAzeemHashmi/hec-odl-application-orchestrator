@@ -69,20 +69,6 @@ export default function PortalShell({
     }
   }, [])
 
-  function switchRole(newRole: 'hei' | 'qad' | 'panel' | 'admin') {
-    setCurrentRole(newRole)
-    if (typeof document !== 'undefined') {
-      document.cookie = `hec-session-role=${newRole}; path=/; max-age=604800; SameSite=Lax`
-    }
-    const defaultHome: Record<string, string> = {
-      hei: '/hei',
-      qad: '/qad',
-      panel: '/panel',
-      admin: '/admin',
-    }
-    window.location.href = defaultHome[newRole] || '/hei'
-  }
-
   const activeNav = ROLE_NAV[currentRole] || ROLE_NAV.hei
 
   const navLinks = activeNav.map(([label, href]) => (
@@ -113,23 +99,6 @@ export default function PortalShell({
       <p className="text-xs font-bold text-white mt-1 truncate">
         {t(ROLE_LABELS[currentRole]?.label || 'User')}
       </p>
-
-      {/* Role Switcher */}
-      <div className="mt-2.5 pt-2 border-t border-slate-800/80">
-        <label className="text-[10px] text-slate-400 block mb-1 font-medium">
-          {t('Switch active workspace:')}
-        </label>
-        <select
-          value={currentRole}
-          onChange={(e) => switchRole(e.target.value as any)}
-          className="w-full rounded-lg bg-slate-950 border border-slate-700 text-xs text-slate-200 py-1.5 px-2 focus:outline-none focus:border-blue-500 font-medium"
-        >
-          <option value="hei">🏛️ {t('HEI Institutional User')}</option>
-          <option value="qad">📋 {t('QAD Scrutiny Officer')}</option>
-          <option value="panel">👥 {t('Expert Panel Reviewer')}</option>
-          <option value="admin">🛡️ {t('System Administrator')}</option>
-        </select>
-      </div>
     </div>
   )
 
