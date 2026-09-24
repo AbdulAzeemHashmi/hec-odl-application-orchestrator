@@ -34,27 +34,66 @@ export class RAGPipeline {
 
     // Answer a question using RAG with failover
     async answerQuestion(question: string): Promise<string> {
-        // Step 1: Retrieve relevant documents
-        const docs = await this.retriever.retrieve(question, 5)
-        const context = docs.map((d) => d.content).join('\n\n')
+        const cleanQ = (question || '').trim().toLowerCase()
+
+        // Fast-path greetings
+        if (
+            cleanQ === 'hi' ||
+            cleanQ === 'hello' ||
+            cleanQ === 'hey' ||
+            cleanQ === 'assalam o alaikum' ||
+            cleanQ === 'aoa' ||
+            cleanQ === 'salam'
+        ) {
+            return `Hello! Welcome to the HEC ODL Policy Desk.
+
+I am your policy assistant for the Higher Education Commission (HEC) of Pakistan. I can assist you with:
+• Approved ODL policy guidelines and institutional readiness criteria
+• Faculty requirements and teacher-to-student ratios
+• LMS technical and infrastructural standards
+• Statutory approvals and Quality Assurance Division (QAD) scrutiny
+
+How can I help you with your institution's ODL program today?`
+        }
+
+        // Step 1: Retrieve relevant documents (safe, never throws)
+        let context = ''
+        try {
+            const docs = await this.retriever.retrieve(question, 5)
+            if (Array.isArray(docs) && docs.length > 0) {
+                context = docs
+                    .map((d: any) => d.content)
+                    .filter(Boolean)
+                    .join('\n\n')
+            }
+        } catch (error) {
+            console.warn('[RAGPipeline] Document retrieval error, falling back to base policy reasoning:', error)
+        }
 
         // Step 2: Construct prompt
-        const prompt = `
-      You are an assistant for HEC's ODL Application system.
-      Use the following context from policy documents to answer the question.
-      If the answer is not in the context, say "I don't have that information in the policy documents."
+        const prompt = context.trim().length > 0
+            ? `You are an expert AI assistant for the Higher Education Commission (HEC) of Pakistan's Open and Distance Learning (ODL) Application System.
+Use the following context from approved HEC ODL policy documents, toolkit guidelines, and regulatory requirements to answer the user's question accurately, concisely, and professionally.
 
-      Context:
-      ${context}
+Context:
+${context}
 
-      Question: ${question}
-    `
+Question: ${question}
+
+Provide a grounded, authoritative answer adhering to HEC ODL regulations.`
+            : `You are an expert AI assistant for the Higher Education Commission (HEC) of Pakistan's Open and Distance Learning (ODL) Application System.
+Answer the following question about HEC ODL policies, institutional readiness criteria, learning management systems (LMS), faculty requirements, statutory approvals, and quality assurance standards.
+
+Question: ${question}
+
+Provide an authoritative, clear, and professional response.`
 
         // Step 3: Generate response using the failover router
         try {
             return await createRouter().invoke(prompt)
         } catch (error: any) {
-            return `Error: ${error.message}`
+            console.error('[RAGPipeline] Router invocation failed:', error)
+            return new DeterministicClient().invoke(question)
         }
     }
 

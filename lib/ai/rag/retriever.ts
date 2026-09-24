@@ -17,16 +17,24 @@ export class Retriever {
     }
 
     async retrieve(query: string, limit: number = 5): Promise<any[]> {
-        const supabase = getSupabaseClient()
-        const embedding = await this.embedder.embed(query)
+        try {
+            const supabase = getSupabaseClient()
+            const embedding = await this.embedder.embed(query)
 
-        // Perform vector similarity search in Supabase
-        const { data, error } = await supabase.rpc('match_documents', {
-            query_embedding: embedding,
-            match_count: limit,
-        })
+            // Perform vector similarity search in Supabase
+            const { data, error } = await supabase.rpc('match_documents', {
+                query_embedding: embedding,
+                match_count: limit,
+            })
 
-        if (error) throw new Error(`Retrieval failed: ${error.message}`)
-        return data || []
+            if (error) {
+                console.warn('[Retriever] Vector similarity search skipped or failed:', error.message)
+                return []
+            }
+            return data || []
+        } catch (error: any) {
+            console.warn('[Retriever] Error retrieving documents:', error?.message || error)
+            return []
+        }
     }
 }
