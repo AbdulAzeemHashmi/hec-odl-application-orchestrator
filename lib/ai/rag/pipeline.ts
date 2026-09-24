@@ -7,6 +7,7 @@ import { OllamaClient } from '../clients/ollama'
 import { DeterministicClient } from '../clients/deterministic'
 import { prisma } from '@/lib/db/prisma'
 import { aiConfig, hasGemini, hasGrok, hasOllama } from '../config'
+import { cleanChatbotResponse } from '../cleaner'
 
 function createRouter() {
     const clients = [
@@ -36,7 +37,7 @@ export class RAGPipeline {
     async answerQuestion(question: string): Promise<string> {
         const cleanQ = (question || '').trim().toLowerCase()
 
-        // Fast-path greetings
+        // Fast-path greetings (clean, no hyphens, asterisks, hashes, dashes or emojis)
         if (
             cleanQ === 'hi' ||
             cleanQ === 'hello' ||
@@ -48,10 +49,10 @@ export class RAGPipeline {
             return `Hello! Welcome to the HEC ODL Policy Desk.
 
 I am your policy assistant for the Higher Education Commission (HEC) of Pakistan. I can assist you with:
-• Approved ODL policy guidelines and institutional readiness criteria
-• Faculty requirements and teacher-to-student ratios
-• LMS technical and infrastructural standards
-• Statutory approvals and Quality Assurance Division (QAD) scrutiny
+1. Approved ODL policy guidelines and institutional readiness criteria
+2. Faculty requirements and teacher to student ratios
+3. LMS technical and infrastructural standards
+4. Statutory approvals and Quality Assurance Division (QAD) scrutiny
 
 How can I help you with your institution's ODL program today?`
         }
@@ -70,10 +71,14 @@ How can I help you with your institution's ODL program today?`
             console.warn('[RAGPipeline] Document retrieval error, falling back to base policy reasoning:', error)
         }
 
-        // Step 2: Construct prompt
+        // Step 2: Construct prompt with strict formatting constraints
+        const formatRule = 'Format instructions: Do not use any markdown asterisks (*), hashes (#), hyphens (-), en dashes (–), em dashes (—), or emojis. Present headings in plain capitalized text and lists with numbers (1., 2.) or clean line breaks.'
+
         const prompt = context.trim().length > 0
             ? `You are an expert AI assistant for the Higher Education Commission (HEC) of Pakistan's Open and Distance Learning (ODL) Application System.
 Use the following context from approved HEC ODL policy documents, toolkit guidelines, and regulatory requirements to answer the user's question accurately, concisely, and professionally.
+
+${formatRule}
 
 Context:
 ${context}
@@ -84,17 +89,22 @@ Provide a grounded, authoritative answer adhering to HEC ODL regulations.`
             : `You are an expert AI assistant for the Higher Education Commission (HEC) of Pakistan's Open and Distance Learning (ODL) Application System.
 Answer the following question about HEC ODL policies, institutional readiness criteria, learning management systems (LMS), faculty requirements, statutory approvals, and quality assurance standards.
 
+${formatRule}
+
 Question: ${question}
 
 Provide an authoritative, clear, and professional response.`
 
-        // Step 3: Generate response using the failover router
+        // Step 3: Generate response using the failover router and sanitize output
+        let rawAnswer = ''
         try {
-            return await createRouter().invoke(prompt)
+            rawAnswer = await createRouter().invoke(prompt)
         } catch (error: any) {
             console.error('[RAGPipeline] Router invocation failed:', error)
-            return new DeterministicClient().invoke(question)
+            rawAnswer = await new DeterministicClient().invoke(question)
         }
+
+        return cleanChatbotResponse(rawAnswer)
     }
 
     // Ingest documents into the vector store
