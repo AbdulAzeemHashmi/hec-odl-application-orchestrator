@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { RAGPipeline } from '@/lib/ai/rag/pipeline'
+import { cleanChatbotResponse } from '@/lib/ai/cleaner'
 
 export async function POST(request: Request) {
     try {
@@ -7,12 +8,13 @@ export async function POST(request: Request) {
         const lastQuery = messages[messages.length - 1]?.content || 'Hello'
 
         const rag = new RAGPipeline()
-        const response = await rag.answerQuestion(lastQuery)
+        const rawResponse = await rag.answerQuestion(lastQuery)
+        const response = cleanChatbotResponse(rawResponse)
 
         return NextResponse.json({ response })
     } catch (error: any) {
         return NextResponse.json(
-            { error: `Failed to process request: ${error.message}` },
+            { error: cleanChatbotResponse(`Failed to process request: ${error.message}`) },
             { status: 500 }
         )
     }

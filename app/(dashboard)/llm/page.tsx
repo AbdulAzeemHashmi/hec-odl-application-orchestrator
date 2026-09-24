@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import PortalShell from '@/components/shared/PortalShell'
 import { useLocale } from '@/components/shared/LocaleProvider'
+import { cleanChatbotResponse } from '@/lib/ai/cleaner'
 
 export default function LlmPage() {
   const [question, setQuestion] = useState('')
@@ -21,10 +22,11 @@ export default function LlmPage() {
         body: JSON.stringify({ messages: [{ role: 'user', content: question }] }),
       })
       const data = await response.json()
-      setAnswer(data.response || data.error || 'No response received.')
+      const rawAnswer = data.response || data.error || 'No response received.'
+      setAnswer(cleanChatbotResponse(rawAnswer))
     } catch {
       setAnswer(
-        'The assistant could not be reached. Confirm that the AI provider and vector database are configured.'
+        t('The assistant could not be reached. Confirm that the AI provider and vector database are configured.')
       )
     } finally {
       setLoading(false)

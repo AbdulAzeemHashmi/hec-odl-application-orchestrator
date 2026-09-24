@@ -252,6 +252,8 @@ export const translations: Record<string, string> = {
   // AI Policy Assistant & Safeguards
   'AI Policy Assistant': 'اے آئی پالیسی اسسٹنٹ',
   'Query the approved HEC ODL Policy, Toolkit guidelines, and regulatory requirements.': 'منظور شدہ ایچ ای سی او ڈی ایل پالیسی، ٹول کٹ گائیڈ لائنز اور قواعد و ضوابط کے بارے میں سوال پوچھیں۔',
+  'Ask grounded questions over the approved ODL policy and ingested reference documents.': 'منظور شدہ او ڈی ایل پالیسی اور حوالہ جاتی دستاویزات پر مبنی مستند سوالات پوچھیں۔',
+  'The assistant could not be reached. Confirm that the AI provider and vector database are configured.': 'معاون سے رابطہ نہیں ہو سکا۔ تصدیق کریں کہ اے آئی فراہم کنندہ اور ویکٹر ڈیٹا بیس تشکیل شدہ ہیں۔',
   'Ask a question about ODL Policy...': 'او ڈی ایل پالیسی کے بارے میں سوال درج کریں...',
   'Send': 'ارسال کریں',
   'Thinking...': 'سوچ رہا ہے...',
@@ -261,6 +263,7 @@ export const translations: Record<string, string> = {
   'Gemini and Grok are optional fallbacks.': 'جیمنائی اور گروک اختیاری فال بیک ہیں۔',
   'AI cannot make an official scrutiny or decision outcome.': 'اے آئی کوئی سرکاری جانچ یا حتمی فیصلہ نہیں کر سکتا۔',
   'Policy Response:': 'پالیسی کا جواب:',
+  'Review dossier parameters and status': 'ڈوزیئر کے پیرامیٹرز اور حیثیت کا جائزہ لیں',
 
   // New Application Form - Stepper & Page
   'New ODL NOC Application': 'نئی او ڈی ایل این او سی درخواست',
